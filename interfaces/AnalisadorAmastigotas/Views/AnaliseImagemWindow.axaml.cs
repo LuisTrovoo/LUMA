@@ -544,13 +544,6 @@ public partial class AnaliseImagemWindow : Window
 
 
             // ========================================================
-            // FECHA A TELA DE ANÁLISE
-            // ========================================================
-
-            Close();
-
-
-            // ========================================================
             // ABRE O RESULTADO
             // ========================================================
 
@@ -559,6 +552,8 @@ public partial class AnaliseImagemWindow : Window
 
 
             resultadoWindow.Show();
+
+            Close();
         }
         catch (Exception ex)
         {
