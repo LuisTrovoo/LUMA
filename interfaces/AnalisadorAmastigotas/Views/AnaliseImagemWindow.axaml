@@ -1,0 +1,912 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:AnalisadorAmastigotas.Views"
+        x:Class="AnalisadorAmastigotas.Views.AnaliseImagemWindow"
+        Title="L.U.M.A. - Análise de Imagens"
+        Width="1400"
+        Height="850"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- ========================================================= -->
+    <!-- ESTILOS                                                   -->
+    <!-- ========================================================= -->
+
+    <Window.Styles>
+
+        <!-- BOTÕES GERAIS -->
+
+        <Style Selector="Button">
+            <Setter Property="FontFamily" Value="avares://Avalonia.Fonts.Inter/Assets#Inter"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+
+        <!-- BOTÕES DE NAVEGAÇÃO -->
+
+        <Style Selector="Button.navButton">
+            <Setter Property="Width" Value="52"/>
+            <Setter Property="Height" Value="44"/>
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#6838C8"/>
+            <Setter Property="BorderBrush" Value="#E1D8EE"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Button.navButton:pointerover:enabled">
+            <Setter Property="Background" Value="#F5F0FC"/>
+            <Setter Property="BorderBrush" Value="#BFA7E8"/>
+        </Style>
+
+        <Style Selector="Button.navButton:disabled">
+            <Setter Property="Background" Value="#E3E0E5"/>
+            <Setter Property="Foreground" Value="#B8B3BB"/>
+            <Setter Property="BorderBrush" Value="#E3E0E5"/>
+        </Style>
+
+
+        <!-- BOTÕES DE AÇÃO -->
+
+        <Style Selector="Button.actionButton">
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#6838C8"/>
+            <Setter Property="BorderBrush" Value="#DDD3EA"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Button.actionButton:pointerover:enabled">
+            <Setter Property="Background" Value="#F7F2FC"/>
+            <Setter Property="BorderBrush" Value="#BFA7E8"/>
+        </Style>
+
+        <Style Selector="Button.actionButton:disabled">
+            <Setter Property="Background" Value="#F1EFF2"/>
+            <Setter Property="Foreground" Value="#B2ADB5"/>
+            <Setter Property="BorderBrush" Value="#E2DEE5"/>
+        </Style>
+
+
+        <!-- BOTÃO FINALIZAR -->
+
+        <Style Selector="Button.finalizarButton">
+            <Setter Property="Height" Value="48"/>
+
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush
+                        StartPoint="0%,0%"
+                        EndPoint="100%,0%">
+
+                        <GradientStop
+                            Color="#713BD0"
+                            Offset="0"/>
+
+                        <GradientStop
+                            Color="#D83D94"
+                            Offset="1"/>
+
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Button.finalizarButton:pointerover">
+            <Setter Property="Opacity" Value="0.88"/>
+        </Style>
+
+
+        <!-- BOTÃO ADICIONAR DA ÁREA VAZIA -->
+
+        <Style Selector="Button.adicionarImagemButton">
+            <Setter Property="Width" Value="210"/>
+            <Setter Property="Height" Value="46"/>
+
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush
+                        StartPoint="0%,0%"
+                        EndPoint="100%,0%">
+
+                        <GradientStop
+                            Color="#713BD0"
+                            Offset="0"/>
+
+                        <GradientStop
+                            Color="#D83D94"
+                            Offset="1"/>
+
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="12,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Button.adicionarImagemButton:pointerover">
+            <Setter Property="Opacity" Value="0.88"/>
+        </Style>
+
+    </Window.Styles>
+
+
+    <!-- ========================================================= -->
+    <!-- FUNDO PRINCIPAL                                           -->
+    <!-- ========================================================= -->
+
+    <Grid Background="#F8F6FA">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="290"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <!-- ===================================================== -->
+        <!-- BARRA LATERAL                                         -->
+        <!-- ===================================================== -->
+
+        <Border
+            Grid.Column="0"
+            Background="#EEEAF2"
+            Padding="24,24,20,24">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+
+                <!-- TÍTULO DO GABARITO -->
+
+                <StackPanel
+                    Grid.Row="0"
+                    Spacing="5"
+                    Margin="0,0,0,20">
+
+                    <TextBlock
+                        Text="GABARITO"
+                        FontSize="24"
+                        FontWeight="Bold"
+                        Foreground="#5E2B97"/>
+
+                    <Border
+                        Width="42"
+                        Height="3"
+                        CornerRadius="2"
+                        Background="#D83D94"
+                        HorizontalAlignment="Left"/>
+
+                </StackPanel>
+
+
+                <!-- ETAPAS -->
+
+                <StackPanel
+                    Grid.Row="1"
+                    Spacing="9">
+
+
+                    <!-- DOENÇA -->
+
+                    <Border
+                        Background="#FFFFFF"
+                        CornerRadius="10"
+                        Padding="12">
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="38"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border
+                                Grid.Column="0"
+                                Width="32"
+                                Height="32"
+                                CornerRadius="16"
+                                Background="#713BD0"
+                                HorizontalAlignment="Center">
+
+                                <TextBlock
+                                    Text="✓"
+                                    Foreground="#FFFFFF"
+                                    FontSize="18"
+                                    FontWeight="Bold"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+
+                            </Border>
+
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="10,0,0,0"
+                                Spacing="2">
+
+                                <TextBlock
+                                    Text="DOENÇA"
+                                    FontSize="11"
+                                    FontWeight="Bold"
+                                    Foreground="#5E2B97"/>
+
+                                <TextBlock
+                                    x:Name="DoencaTextBlock"
+                                    Text="—"
+                                    FontSize="13"
+                                    Foreground="#6E667A"
+                                    TextWrapping="Wrap"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Border>
+
+
+                    <!-- LINHAGEM -->
+
+                    <Border
+                        Background="#FFFFFF"
+                        CornerRadius="10"
+                        Padding="12">
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="38"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border
+                                Grid.Column="0"
+                                Width="32"
+                                Height="32"
+                                CornerRadius="16"
+                                Background="#713BD0"
+                                HorizontalAlignment="Center">
+
+                                <TextBlock
+                                    Text="✓"
+                                    Foreground="#FFFFFF"
+                                    FontSize="18"
+                                    FontWeight="Bold"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+
+                            </Border>
+
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="10,0,0,0"
+                                Spacing="2">
+
+                                <TextBlock
+                                    Text="LINHAGEM"
+                                    FontSize="11"
+                                    FontWeight="Bold"
+                                    Foreground="#5E2B97"/>
+
+                                <TextBlock
+                                    x:Name="LinhagemTextBlock"
+                                    Text="—"
+                                    FontSize="13"
+                                    Foreground="#6E667A"
+                                    TextWrapping="Wrap"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Border>
+
+
+                    <!-- LÂMINA -->
+
+                    <Border
+                        Background="#FFFFFF"
+                        CornerRadius="10"
+                        Padding="12">
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="38"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border
+                                Grid.Column="0"
+                                Width="32"
+                                Height="32"
+                                CornerRadius="16"
+                                Background="#713BD0"
+                                HorizontalAlignment="Center">
+
+                                <TextBlock
+                                    Text="✓"
+                                    Foreground="#FFFFFF"
+                                    FontSize="18"
+                                    FontWeight="Bold"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+
+                            </Border>
+
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="10,0,0,0"
+                                Spacing="2">
+
+                                <TextBlock
+                                    Text="LÂMINA"
+                                    FontSize="11"
+                                    FontWeight="Bold"
+                                    Foreground="#5E2B97"/>
+
+                                <TextBlock
+                                    x:Name="LaminaTextBlock"
+                                    Text="—"
+                                    FontSize="13"
+                                    Foreground="#6E667A"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Border>
+
+
+                    <!-- POÇO -->
+
+                    <Border
+                        Background="#FFFFFF"
+                        CornerRadius="10"
+                        Padding="12">
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="38"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border
+                                Grid.Column="0"
+                                Width="32"
+                                Height="32"
+                                CornerRadius="16"
+                                Background="#713BD0"
+                                HorizontalAlignment="Center">
+
+                                <TextBlock
+                                    Text="✓"
+                                    Foreground="#FFFFFF"
+                                    FontSize="18"
+                                    FontWeight="Bold"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+
+                            </Border>
+
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="10,0,0,0"
+                                Spacing="2">
+
+                                <TextBlock
+                                    Text="POÇO"
+                                    FontSize="11"
+                                    FontWeight="Bold"
+                                    Foreground="#5E2B97"/>
+
+                                <TextBlock
+                                    x:Name="PocoTextBlock"
+                                    Text="—"
+                                    FontSize="13"
+                                    Foreground="#6E667A"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Border>
+
+
+                    <!-- QUADRANTE -->
+
+                    <Border
+                        Background="#FFFFFF"
+                        CornerRadius="10"
+                        Padding="12">
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="38"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border
+                                Grid.Column="0"
+                                Width="32"
+                                Height="32"
+                                CornerRadius="16"
+                                Background="#713BD0"
+                                HorizontalAlignment="Center">
+
+                                <TextBlock
+                                    Text="✓"
+                                    Foreground="#FFFFFF"
+                                    FontSize="18"
+                                    FontWeight="Bold"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+
+                            </Border>
+
+                            <StackPanel
+                                Grid.Column="1"
+                                Margin="10,0,0,0"
+                                Spacing="2">
+
+                                <TextBlock
+                                    Text="QUADRANTE"
+                                    FontSize="11"
+                                    FontWeight="Bold"
+                                    Foreground="#5E2B97"/>
+
+                                <TextBlock
+                                    x:Name="QuadranteTextBlock"
+                                    Text="—"
+                                    FontSize="13"
+                                    Foreground="#6E667A"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Border>
+
+
+                    <!-- SEPARADOR -->
+
+                    <Border
+                        Height="1"
+                        Background="#D7D0DE"
+                        Margin="2,8,2,5"/>
+
+
+                    <!-- RESULTADO -->
+
+                    <TextBlock
+                        Text="RESULTADO"
+                        FontSize="13"
+                        FontWeight="Bold"
+                        Foreground="#5E2B97"
+                        Margin="2,0,0,0"/>
+
+                    <Border
+                        Background="#FFFFFF"
+                        CornerRadius="10"
+                        Padding="12">
+
+                        <StackPanel Spacing="8">
+
+                            <Border
+                                Width="34"
+                                Height="34"
+                                CornerRadius="17"
+                                Background="#F1E8FB"
+                                HorizontalAlignment="Left">
+
+                                <TextBlock
+                                    Text="✦"
+                                    Foreground="#713BD0"
+                                    FontSize="18"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+
+                            </Border>
+
+                            <TextBlock
+                                x:Name="ResultadoTextBlock"
+                                Text="Nenhuma imagem analisada."
+                                TextWrapping="Wrap"
+                                FontSize="13"
+                                Foreground="#6838C8"/>
+
+                            <Border
+                                Height="1"
+                                Background="#E5DFE9"/>
+
+                            <TextBlock
+                                x:Name="ImagemAtualTextBlock"
+                                Text="Imagem 0 de 0"
+                                FontSize="12"
+                                Foreground="#88808F"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+                </StackPanel>
+
+
+                <!-- DECORAÇÃO DISCRETA -->
+
+                <StackPanel
+                    Grid.Row="2"
+                    Orientation="Horizontal"
+                    Spacing="8"
+                    Opacity="0.45"
+                    Margin="4,15,0,0">
+
+                    <Ellipse
+                        Width="5"
+                        Height="5"
+                        Fill="#CDBCEB"/>
+
+                    <Ellipse
+                        Width="5"
+                        Height="5"
+                        Fill="#E5B9DB"/>
+
+                    <Ellipse
+                        Width="5"
+                        Height="5"
+                        Fill="#CDBCEB"/>
+
+                    <Ellipse
+                        Width="5"
+                        Height="5"
+                        Fill="#E5B9DB"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+
+        <!-- ===================================================== -->
+        <!-- ÁREA PRINCIPAL                                       -->
+        <!-- ===================================================== -->
+
+        <Grid
+            Grid.Column="1"
+            Margin="28,24,28,22">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <!-- CABEÇALHO -->
+
+            <Grid
+                Grid.Row="0"
+                Margin="0,0,0,15">
+
+                <StackPanel
+                    HorizontalAlignment="Left"
+                    Spacing="3">
+
+                    <TextBlock
+                        Text="ANÁLISE DE IMAGENS"
+                        FontSize="29"
+                        FontWeight="Bold"
+                        Foreground="#5E2B97"/>
+
+                    <TextBlock
+                        Text="Adicione e analise as imagens do quadrante selecionado"
+                        FontSize="14"
+                        Foreground="#8A8190"/>
+
+                </StackPanel>
+
+            </Grid>
+
+
+            <!-- ================================================= -->
+            <!-- ÁREA DA IMAGEM                                    -->
+            <!-- ================================================= -->
+
+            <Border
+                Grid.Row="1"
+                Background="#FFFFFF"
+                BorderBrush="#DDD5E5"
+                BorderThickness="1"
+                CornerRadius="12"
+                Padding="12">
+
+                <Grid>
+
+
+                    <!-- ================================================= -->
+                    <!-- ESTADO SEM IMAGEM                                -->
+                    <!-- ================================================= -->
+
+                    <Grid
+                        x:Name="SemImagemTextBlock"
+                        Width="520"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+
+                        <!-- ÍCONE -->
+
+                        <Border
+                            Grid.Row="0"
+                            Width="74"
+                            Height="74"
+                            CornerRadius="37"
+                            Background="#F2EAF9"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,12">
+
+                            <TextBlock
+                                Text="＋"
+                                FontSize="38"
+                                FontWeight="Light"
+                                Foreground="#713BD0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+                        </Border>
+
+
+                        <!-- TÍTULO -->
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Text="NENHUMA IMAGEM ADICIONADA"
+                            HorizontalAlignment="Center"
+                            TextAlignment="Center"
+                            FontSize="19"
+                            FontWeight="Bold"
+                            Foreground="#6838C8"
+                            Margin="0,0,0,8"/>
+
+
+                        <!-- SUBTÍTULO -->
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Text="Adicione uma imagem para iniciar a análise"
+                            HorizontalAlignment="Center"
+                            TextAlignment="Center"
+                            FontSize="13"
+                            Foreground="#8B8292"
+                            Margin="0,0,0,4"/>
+
+
+                        <!-- BOTÃO -->
+
+                        <Button
+                            Grid.Row="3"
+                            Content="ADICIONAR IMAGEM"
+                            Classes="adicionarImagemButton"
+                            HorizontalAlignment="Center"
+                            Margin="0,8,0,0"
+                            Click="Adicionar_Click"/>
+
+                    </Grid>
+
+
+                    <!-- ================================================= -->
+                    <!-- VISUALIZADOR DA IMAGEM                            -->
+                    <!-- ================================================= -->
+
+                    <views:CellViewer
+                        x:Name="CellViewer"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        IsVisible="False"/>
+
+                </Grid>
+
+            </Border>
+
+
+            <!-- ================================================= -->
+            <!-- NAVEGAÇÃO                                         -->
+            <!-- ================================================= -->
+
+            <Grid
+                Grid.Row="2"
+                Margin="0,12,0,12">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+
+                <!-- ANTERIOR -->
+
+                <Button
+                    x:Name="AnteriorButton"
+                    Grid.Column="0"
+                    Content="←"
+                    Classes="navButton"
+                    IsEnabled="False"
+                    Click="Anterior_Click"/>
+
+
+                <!-- INDICADOR -->
+
+                <StackPanel
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Spacing="2">
+
+                    <TextBlock
+                        Text="IMAGEM ATUAL"
+                        HorizontalAlignment="Center"
+                        FontSize="10"
+                        FontWeight="Bold"
+                        Foreground="#9A91A0"/>
+
+                    <TextBlock
+                        x:Name="NumeroImagemTextBlock"
+                        Text="Imagem 0"
+                        HorizontalAlignment="Center"
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Foreground="#5E2B97"/>
+
+                </StackPanel>
+
+
+                <!-- PRÓXIMA -->
+
+                <Button
+                    x:Name="ProximaButton"
+                    Grid.Column="2"
+                    Content="→"
+                    Classes="navButton"
+                    IsEnabled="False"
+                    Click="Proxima_Click"/>
+
+            </Grid>
+
+
+            <!-- ================================================= -->
+            <!-- BOTÕES DE AÇÃO                                    -->
+            <!-- ================================================= -->
+
+            <Border
+                Grid.Row="3"
+                Background="#FFFFFF"
+                BorderBrush="#DDD5E5"
+                BorderThickness="1"
+                CornerRadius="12"
+                Padding="12">
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <!-- ADICIONAR IMAGEM -->
+
+                    <Button
+                        x:Name="AdicionarButton"
+                        Grid.Column="1"
+                        Content="ADICIONAR IMAGEM"
+                        Classes="actionButton"
+                        Width="170"
+                        Margin="4,0"
+                        Click="Adicionar_Click"/>
+
+
+                    <!-- REMOVER CÉLULA -->
+
+                    <Button
+                        x:Name="RemoverCelulaButton"
+                        Grid.Column="2"
+                        Content="REMOVER CÉLULA"
+                        Classes="actionButton"
+                        Width="160"
+                        Margin="4,0"
+                        IsEnabled="False"
+                        Click="RemoverCelula_Click"/>
+
+
+                    <!-- REMOVER IMAGEM -->
+
+                    <Button
+                        x:Name="RemoverButton"
+                        Grid.Column="3"
+                        Content="REMOVER IMAGEM"
+                        Classes="actionButton"
+                        Width="160"
+                        Margin="4,0"
+                        IsEnabled="False"
+                        Click="Remover_Click"/>
+
+
+                    <!-- PRÓXIMO QUADRANTE -->
+
+                    <Button
+                        x:Name="ProximoQuadranteButton"
+                        Grid.Column="4"
+                        Content="PRÓXIMO QUADRANTE"
+                        Classes="actionButton"
+                        Width="175"
+                        Margin="4,0"
+                        IsEnabled="False"
+                        Click="ProximoQuadrante_Click"/>
+
+
+                    <!-- FINALIZAR -->
+
+                    <Button
+                        x:Name="FinalizarButton"
+                        Grid.Column="5"
+                        Content="FINALIZAR CONSULTA"
+                        Classes="finalizarButton"
+                        Width="175"
+                        Margin="4,0"
+                        Click="Finalizar_Click"/>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

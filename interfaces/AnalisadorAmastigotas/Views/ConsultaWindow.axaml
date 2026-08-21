@@ -1,0 +1,840 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AnalisadorAmastigotas.Views.ConsultaWindow"
+        Title="L.U.M.A. - Nova Consulta"
+        Width="1200"
+        Height="700"
+        MinWidth="1050"
+        MinHeight="650"
+        WindowStartupLocation="CenterScreen"
+        Background="#F8F6FA">
+
+    <Window.Styles>
+
+        <!-- ====================================================== -->
+        <!-- ETAPAS LATERAIS                                        -->
+        <!-- ====================================================== -->
+
+        <Style Selector="Border.etapa">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="BorderBrush" Value="#E8E1EF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="11"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="Opacity" Value="1"/>
+        </Style>
+
+        <Style Selector="Border.etapa.ativa">
+            <Setter Property="BorderThickness" Value="0"/>
+
+            <Setter Property="Background">
+                <LinearGradientBrush
+                    StartPoint="0%,0%"
+                    EndPoint="100%,0%">
+
+                    <GradientStop Color="#7045CC" Offset="0"/>
+                    <GradientStop Color="#D83D94" Offset="1"/>
+
+                </LinearGradientBrush>
+            </Setter>
+        </Style>
+
+        <Style Selector="Border.etapa.bloqueada">
+            <Setter Property="Background" Value="#E2DFE8"/>
+            <Setter Property="BorderBrush" Value="#E2DFE8"/>
+            <Setter Property="Opacity" Value="0.95"/>
+        </Style>
+
+        <!-- ====================================================== -->
+        <!-- CARDS DAS LÂMINAS                                      -->
+        <!-- ====================================================== -->
+
+        <Style Selector="Button.lamina-card">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="BorderBrush" Value="#E7DFF0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+        <Style Selector="Button.lamina-card:pointerover">
+            <Setter Property="Background" Value="#FBF7FF"/>
+            <Setter Property="BorderBrush" Value="#A67ADD"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+
+        <Style Selector="Button.lamina-card.selecionada">
+            <Setter Property="Background" Value="#F6EEFC"/>
+            <Setter Property="BorderBrush" Value="#7045CC"/>
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+
+        <Style Selector="Button.lamina-card.selecionada:pointerover">
+            <Setter Property="Background" Value="#F2E8FA"/>
+            <Setter Property="BorderBrush" Value="#D83D94"/>
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+
+        <!-- ====================================================== -->
+        <!-- BOTÃO AVANÇAR                                          -->
+        <!-- ====================================================== -->
+
+        <Style Selector="Button.avancar">
+            <Setter Property="Background">
+                <LinearGradientBrush
+                    StartPoint="0%,0%"
+                    EndPoint="100%,0%">
+
+                    <GradientStop Color="#7045CC" Offset="0"/>
+                    <GradientStop Color="#D83D94" Offset="1"/>
+
+                </LinearGradientBrush>
+            </Setter>
+
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="9"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style Selector="Button.avancar:pointerover">
+            <Setter Property="Opacity" Value="0.88"/>
+        </Style>
+
+        <Style Selector="Button.avancar:pressed">
+            <Setter Property="Opacity" Value="0.78"/>
+        </Style>
+
+        <Style Selector="Button.avancar:disabled">
+            <Setter Property="Background" Value="#D9D6DC"/>
+            <Setter Property="Foreground" Value="#8B8790"/>
+            <Setter Property="Opacity" Value="1"/>
+        </Style>
+
+        <!-- ====================================================== -->
+        <!-- COMBOBOX                                                -->
+        <!-- ====================================================== -->
+
+        <Style Selector="ComboBox">
+            <Setter Property="CornerRadius" Value="8"/>
+        </Style>
+
+        <!-- ====================================================== -->
+        <!-- TEXTOS DAS ETAPAS                                       -->
+        <!-- ====================================================== -->
+
+        <Style Selector="TextBlock.etapa-titulo">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#51318F"/>
+        </Style>
+
+        <Style Selector="TextBlock.etapa-titulo.ativo">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style Selector="TextBlock.etapa-valor">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="#6E667A"/>
+        </Style>
+
+        <Style Selector="TextBlock.etapa-valor.ativo">
+            <Setter Property="Foreground" Value="#FFF7FC"/>
+        </Style>
+
+        <Style Selector="TextBlock.etapa-titulo.bloqueado">
+            <Setter Property="Foreground" Value="#66616F"/>
+        </Style>
+
+        <Style Selector="TextBlock.etapa-valor.bloqueado">
+            <Setter Property="Foreground" Value="#77727F"/>
+        </Style>
+
+    </Window.Styles>
+
+
+    <!-- ========================================================== -->
+    <!-- CONTEÚDO PRINCIPAL                                        -->
+    <!-- ========================================================== -->
+
+    <Grid Background="#F8F6FA"
+          ColumnDefinitions="260,*">
+
+        <!-- ====================================================== -->
+        <!-- GABARITO LATERAL                                       -->
+        <!-- ====================================================== -->
+
+        <Border Grid.Column="0"
+                Background="#F0EDF7"
+                Padding="20">
+
+            <Grid RowDefinitions="Auto,*,Auto">
+
+                <TextBlock Grid.Row="0"
+                           Text="GABARITO"
+                           HorizontalAlignment="Center"
+                           FontSize="25"
+                           FontWeight="Bold"
+                           Foreground="#51318F"
+                           Margin="0,8,0,22"/>
+
+
+                <!-- ================================================== -->
+                <!-- ETAPAS                                             -->
+                <!-- ================================================== -->
+
+                <StackPanel Grid.Row="1"
+                            Spacing="11">
+
+                    <!-- DOENÇA -->
+
+                    <Border x:Name="DoencaEtapaBorder"
+                            Classes="etapa ativa"
+                            Height="72">
+
+                        <Grid ColumnDefinitions="48,*">
+
+                            <Border x:Name="DoencaIconBorder"
+                                    Width="40"
+                                    Height="40"
+                                    CornerRadius="20"
+                                    Background="#FFFFFF"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+
+                                <TextBlock x:Name="DoencaIconTextBlock"
+                                           Text="✓"
+                                           FontSize="20"
+                                           FontWeight="Bold"
+                                           Foreground="#7045CC"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+
+                            <StackPanel Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        Spacing="2">
+
+                                <TextBlock x:Name="DoencaTituloTextBlock"
+                                           Text="DOENÇA"
+                                           Classes="etapa-titulo ativo"/>
+
+                                <TextBlock x:Name="DoencaSelecionadaTextBlock"
+                                           Text="Não selecionada"
+                                           Classes="etapa-valor ativo"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Border>
+
+
+                    <!-- LINHAGEM -->
+
+                    <Border x:Name="LinhagemEtapaBorder"
+                            Classes="etapa bloqueada"
+                            Height="72">
+
+                        <Grid ColumnDefinitions="48,*">
+
+                            <Border x:Name="LinhagemIconBorder"
+                                    Width="40"
+                                    Height="40"
+                                    CornerRadius="20"
+                                    Background="#D2CFD8"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+
+                                <TextBlock x:Name="LinhagemIconTextBlock"
+                                           Text="🔒"
+                                           FontSize="16"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+
+                            <StackPanel Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        Spacing="2">
+
+                                <TextBlock x:Name="LinhagemTituloTextBlock"
+                                           Text="LINHAGEM"
+                                           Classes="etapa-titulo bloqueado"/>
+
+                                <TextBlock x:Name="LinhagemSelecionadaTextBlock"
+                                           Text="Bloqueada"
+                                           Classes="etapa-valor bloqueado"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Border>
+
+
+                    <!-- LÂMINA -->
+
+                    <Border x:Name="LaminaEtapaBorder"
+                            Classes="etapa bloqueada"
+                            Height="72">
+
+                        <Grid ColumnDefinitions="48,*">
+
+                            <Border x:Name="LaminaIconBorder"
+                                    Width="40"
+                                    Height="40"
+                                    CornerRadius="20"
+                                    Background="#D2CFD8"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+
+                                <TextBlock x:Name="LaminaIconTextBlock"
+                                           Text="🔒"
+                                           FontSize="16"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+
+                            <StackPanel Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        Spacing="2">
+
+                                <TextBlock x:Name="LaminaTituloTextBlock"
+                                           Text="LÂMINA"
+                                           Classes="etapa-titulo bloqueado"/>
+
+                                <TextBlock x:Name="LaminaSelecionadaTextBlock"
+                                           Text="Bloqueada"
+                                           Classes="etapa-valor bloqueado"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Border>
+
+
+                    <!-- POÇO -->
+
+                    <Border x:Name="PocoEtapaBorder"
+                            Classes="etapa bloqueada"
+                            Height="72">
+
+                        <Grid ColumnDefinitions="48,*">
+
+                            <Border Width="40"
+                                    Height="40"
+                                    CornerRadius="20"
+                                    Background="#D2CFD8"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+
+                                <TextBlock Text="🔒"
+                                           FontSize="16"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+
+                            <StackPanel Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        Spacing="2">
+
+                                <TextBlock Text="POÇO"
+                                           Classes="etapa-titulo bloqueado"/>
+
+                                <TextBlock Text="Não disponível"
+                                           Classes="etapa-valor bloqueado"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Border>
+
+
+                    <!-- QUADRANTE -->
+
+                    <Border x:Name="QuadranteEtapaBorder"
+                            Classes="etapa bloqueada"
+                            Height="72">
+
+                        <Grid ColumnDefinitions="48,*">
+
+                            <Border Width="40"
+                                    Height="40"
+                                    CornerRadius="20"
+                                    Background="#D2CFD8"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+
+                                <TextBlock Text="🔒"
+                                           FontSize="16"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+
+                            <StackPanel Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        Spacing="2">
+
+                                <TextBlock Text="QUADRANTE"
+                                           Classes="etapa-titulo bloqueado"/>
+
+                                <TextBlock Text="Não disponível"
+                                           Classes="etapa-valor bloqueado"/>
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </Border>
+
+                </StackPanel>
+
+
+                <!-- DECORAÇÃO -->
+
+                <StackPanel Grid.Row="2"
+                            HorizontalAlignment="Center"
+                            Margin="0,18,0,0"
+                            Spacing="2">
+
+                    <TextBlock Text="🔬"
+                               FontSize="43"
+                               HorizontalAlignment="Center"
+                               Foreground="#D6C5F2"/>
+
+                    <TextBlock Text="• • • • • • •"
+                               FontSize="18"
+                               Foreground="#D9C8F3"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+
+        <!-- ====================================================== -->
+        <!-- ÁREA PRINCIPAL                                         -->
+        <!-- ====================================================== -->
+
+        <Grid Grid.Column="1"
+              Margin="40,35,55,30"
+              RowDefinitions="Auto,Auto,Auto,*">
+
+            <!-- CABEÇALHO -->
+
+            <StackPanel Grid.Row="0"
+                        Spacing="5">
+
+                <TextBlock Text="NOVA CONSULTA"
+                           FontSize="31"
+                           FontWeight="Bold"
+                           Foreground="#443083"/>
+
+                <TextBlock Text="Selecione a doença, a linhagem e a lâmina"
+                           FontSize="15"
+                           Foreground="#777184"/>
+
+                <Border Width="36"
+                        Height="4"
+                        CornerRadius="2"
+                        HorizontalAlignment="Left"
+                        Margin="0,7,0,0">
+
+                    <Border.Background>
+                        <LinearGradientBrush
+                            StartPoint="0%,0%"
+                            EndPoint="100%,0%">
+
+                            <GradientStop Color="#7045CC" Offset="0"/>
+                            <GradientStop Color="#EF5BAA" Offset="1"/>
+
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                </Border>
+
+            </StackPanel>
+
+
+            <!-- DOENÇA -->
+
+            <StackPanel Grid.Row="1"
+                        Margin="0,25,0,0"
+                        Spacing="7">
+
+                <TextBlock Text="DOENÇA"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           Foreground="#6540A4"/>
+
+                <ComboBox x:Name="DoencaComboBox"
+                          Width="420"
+                          Height="40"
+                          HorizontalAlignment="Left"
+                          PlaceholderText="Selecione a doença"
+                          SelectionChanged="DoencaComboBox_SelectionChanged">
+
+                    <ComboBoxItem Content="Doença de Chagas (Trypanosoma cruzi)"/>
+                    <ComboBoxItem Content="Leishmaniose Cutânea"/>
+                    <ComboBoxItem Content="Leishmaniose Visceral"/>
+
+                </ComboBox>
+
+            </StackPanel>
+
+
+            <!-- LINHAGEM -->
+
+            <StackPanel Grid.Row="2"
+                        Margin="0,20,0,0"
+                        Spacing="7">
+
+                <TextBlock Text="LINHAGEM"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           Foreground="#6540A4"/>
+
+                <ComboBox x:Name="LinhagemComboBox"
+                          Width="420"
+                          Height="40"
+                          HorizontalAlignment="Left"
+                          IsEnabled="False"
+                          PlaceholderText="Selecione primeiro a doença"
+                          SelectionChanged="LinhagemComboBox_SelectionChanged"/>
+
+            </StackPanel>
+
+
+            <!-- LÂMINAS -->
+
+            <Grid Grid.Row="3"
+                  Margin="0,20,0,0"
+                  RowDefinitions="Auto,Auto,*">
+
+                <TextBlock Grid.Row="0"
+                           Text="LÂMINA"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           Foreground="#6540A4"
+                           Margin="0,0,0,9"/>
+
+
+                <WrapPanel Grid.Row="1"
+                           Orientation="Horizontal"
+                           ItemSpacing="14"
+                           LineSpacing="12">
+
+                    <!-- LÂMINA 1 -->
+
+                    <Button x:Name="Lamina1Button"
+                            Classes="lamina-card"
+                            Width="125"
+                            Height="190"
+                            IsEnabled="False"
+                            Click="Lamina1_Click">
+
+                        <Grid RowDefinitions="Auto,*,Auto">
+
+                            <Border Grid.Row="0"
+                                    Width="25"
+                                    Height="25"
+                                    CornerRadius="7"
+                                    Background="#7045C5"
+                                    HorizontalAlignment="Right"
+                                    Margin="0,8,8,0">
+
+                                <TextBlock Text="1"
+                                           Foreground="White"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+
+                            <Border Grid.Row="1"
+                                    Margin="12,4"
+                                    CornerRadius="8"
+                                    Background="#FAF7FC"
+                                    Padding="4">
+
+                                <Image Source="/Assets/lamina 1.png"
+                                       Stretch="Uniform"/>
+                            </Border>
+
+                            <TextBlock Grid.Row="2"
+                                       Text="1 POÇO"
+                                       HorizontalAlignment="Center"
+                                       FontSize="12"
+                                       FontWeight="SemiBold"
+                                       Foreground="#5C5368"
+                                       Margin="0,0,0,10"/>
+
+                        </Grid>
+
+                    </Button>
+
+
+                    <!-- LÂMINA 2 -->
+
+                    <Button x:Name="Lamina2Button"
+                            Classes="lamina-card"
+                            Width="125"
+                            Height="190"
+                            IsEnabled="False"
+                            Click="Lamina2_Click">
+
+                        <Grid RowDefinitions="Auto,*,Auto">
+
+                            <Border Grid.Row="0"
+                                    Width="25"
+                                    Height="25"
+                                    CornerRadius="7"
+                                    Background="#7045C5"
+                                    HorizontalAlignment="Right"
+                                    Margin="0,8,8,0">
+
+                                <TextBlock Text="2"
+                                           Foreground="White"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+
+                            <Border Grid.Row="1"
+                                    Margin="12,4"
+                                    CornerRadius="8"
+                                    Background="#FAF7FC"
+                                    Padding="4">
+
+                                <Image Source="/Assets/lamina 2.png"
+                                       Stretch="Uniform"/>
+                            </Border>
+
+                            <TextBlock Grid.Row="2"
+                                       Text="2 POÇOS"
+                                       HorizontalAlignment="Center"
+                                       FontSize="12"
+                                       FontWeight="SemiBold"
+                                       Foreground="#5C5368"
+                                       Margin="0,0,0,10"/>
+
+                        </Grid>
+
+                    </Button>
+
+
+                    <!-- LÂMINA 3 -->
+
+                    <Button x:Name="Lamina3Button"
+                            Classes="lamina-card"
+                            Width="125"
+                            Height="190"
+                            IsEnabled="False"
+                            Click="Lamina3_Click">
+
+                        <Grid RowDefinitions="Auto,*,Auto">
+
+                            <Border Grid.Row="0"
+                                    Width="25"
+                                    Height="25"
+                                    CornerRadius="7"
+                                    Background="#7045C5"
+                                    HorizontalAlignment="Right"
+                                    Margin="0,8,8,0">
+
+                                <TextBlock Text="3"
+                                           Foreground="White"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+
+                            <Border Grid.Row="1"
+                                    Margin="12,4"
+                                    CornerRadius="8"
+                                    Background="#FAF7FC"
+                                    Padding="4">
+
+                                <Image Source="/Assets/lamina 3.png"
+                                       Stretch="Uniform"/>
+                            </Border>
+
+                            <TextBlock Grid.Row="2"
+                                       Text="3 POÇOS"
+                                       HorizontalAlignment="Center"
+                                       FontSize="12"
+                                       FontWeight="SemiBold"
+                                       Foreground="#5C5368"
+                                       Margin="0,0,0,10"/>
+
+                        </Grid>
+
+                    </Button>
+
+
+                    <!-- LÂMINA 4 -->
+
+                    <Button x:Name="Lamina4Button"
+                            Classes="lamina-card"
+                            Width="125"
+                            Height="190"
+                            IsEnabled="False"
+                            Click="Lamina4_Click">
+
+                        <Grid RowDefinitions="Auto,*,Auto">
+
+                            <Border Grid.Row="0"
+                                    Width="25"
+                                    Height="25"
+                                    CornerRadius="7"
+                                    Background="#7045C5"
+                                    HorizontalAlignment="Right"
+                                    Margin="0,8,8,0">
+
+                                <TextBlock Text="4"
+                                           Foreground="White"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+
+                            <Border Grid.Row="1"
+                                    Margin="12,4"
+                                    CornerRadius="8"
+                                    Background="#FAF7FC"
+                                    Padding="4">
+
+                                <Image Source="/Assets/lamina 4.png"
+                                       Stretch="Uniform"/>
+                            </Border>
+
+                            <TextBlock Grid.Row="2"
+                                       Text="4 POÇOS"
+                                       HorizontalAlignment="Center"
+                                       FontSize="12"
+                                       FontWeight="SemiBold"
+                                       Foreground="#5C5368"
+                                       Margin="0,0,0,10"/>
+
+                        </Grid>
+
+                    </Button>
+
+
+                    <!-- LÂMINA 5 -->
+
+                    <Button x:Name="Lamina5Button"
+                            Classes="lamina-card"
+                            Width="125"
+                            Height="190"
+                            IsEnabled="False"
+                            Click="Lamina5_Click">
+
+                        <Grid RowDefinitions="Auto,*,Auto">
+
+                            <Border Grid.Row="0"
+                                    Width="25"
+                                    Height="25"
+                                    CornerRadius="7"
+                                    Background="#7045C5"
+                                    HorizontalAlignment="Right"
+                                    Margin="0,8,8,0">
+
+                                <TextBlock Text="5"
+                                           Foreground="White"
+                                           FontWeight="Bold"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+
+                            <Border Grid.Row="1"
+                                    Margin="12,4"
+                                    CornerRadius="8"
+                                    Background="#FAF7FC"
+                                    Padding="4">
+
+                                <Image Source="/Assets/lamina 5.png"
+                                       Stretch="Uniform"/>
+                            </Border>
+
+                            <TextBlock Grid.Row="2"
+                                       Text="5 POÇOS"
+                                       HorizontalAlignment="Center"
+                                       FontSize="12"
+                                       FontWeight="SemiBold"
+                                       Foreground="#5C5368"
+                                       Margin="0,0,0,10"/>
+
+                        </Grid>
+
+                    </Button>
+
+                </WrapPanel>
+
+
+                <!-- ================================================== -->
+                <!-- RODAPÉ                                             -->
+                <!-- ================================================== -->
+
+                <Grid Grid.Row="2"
+                      Margin="0,20,0,0"
+                      ColumnDefinitions="*,180"
+                      RowDefinitions="Auto,Auto">
+
+                    <Button Grid.Column="1"
+                            x:Name="AvancarButton"
+                            Classes="avancar"
+                            Content="AVANÇAR    →"
+                            Width="180"
+                            Height="45"
+                            HorizontalAlignment="Right"
+                            IsEnabled="False"
+                            Click="Avancar_Click"/>
+
+                    <Border Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            Background="#F1EDF8"
+                            BorderBrush="#E2DBEE"
+                            BorderThickness="1"
+                            CornerRadius="9"
+                            Padding="12"
+                            Margin="0,12,0,0">
+
+                        <Grid ColumnDefinitions="32,*">
+
+                            <Border Width="24"
+                                    Height="24"
+                                    CornerRadius="12"
+                                    Background="#7650C6"
+                                    VerticalAlignment="Center">
+
+                                <TextBlock Text="i"
+                                           FontSize="15"
+                                           FontWeight="Bold"
+                                           Foreground="White"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+
+                            </Border>
+
+                            <TextBlock Grid.Column="1"
+                                       Text="Complete as etapas na ordem indicada para liberar as próximas opções."
+                                       FontSize="12"
+                                       Foreground="#665D76"
+                                       VerticalAlignment="Center"/>
+
+                        </Grid>
+
+                    </Border>
+
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

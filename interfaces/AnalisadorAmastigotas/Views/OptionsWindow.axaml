@@ -1,0 +1,726 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AnalisadorAmastigotas.Views.OptionsWindow"
+        Title="L.U.M.A. - Opções"
+        Width="1200"
+        Height="700"
+        MinWidth="1000"
+        MinHeight="600"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+
+        <!-- ===================================================== -->
+        <!-- CORES                                                  -->
+        <!-- ===================================================== -->
+
+        <SolidColorBrush x:Key="PageBackground"
+                         Color="#F8F6FA"/>
+
+        <SolidColorBrush x:Key="CardBackground"
+                         Color="#FFFFFF"/>
+
+        <SolidColorBrush x:Key="Purple"
+                         Color="#5E2B97"/>
+
+        <SolidColorBrush x:Key="PurpleDark"
+                         Color="#432078"/>
+
+        <SolidColorBrush x:Key="PurpleLight"
+                         Color="#E9DDF8"/>
+
+        <SolidColorBrush x:Key="PurpleVeryLight"
+                         Color="#F2EBFC"/>
+
+        <SolidColorBrush x:Key="Pink"
+                         Color="#E94F9A"/>
+
+        <SolidColorBrush x:Key="TextDark"
+                         Color="#302449"/>
+
+        <SolidColorBrush x:Key="TextMuted"
+                         Color="#766C8B"/>
+
+        <SolidColorBrush x:Key="BorderSoft"
+                         Color="#E8E0F1"/>
+
+
+        <!-- ===================================================== -->
+        <!-- GRADIENTE DA BARRA SUPERIOR                           -->
+        <!-- ===================================================== -->
+
+        <LinearGradientBrush x:Key="TopBarGradient"
+                             StartPoint="0%,0%"
+                             EndPoint="100%,0%">
+
+            <GradientStop Color="#6840D8"
+                          Offset="0"/>
+
+            <GradientStop Color="#8B45D2"
+                          Offset="0.50"/>
+
+            <GradientStop Color="#E94F9A"
+                          Offset="1"/>
+
+        </LinearGradientBrush>
+
+
+        <!-- ===================================================== -->
+        <!-- GRADIENTE DO BOTÃO VOLTAR                             -->
+        <!-- ===================================================== -->
+
+        <LinearGradientBrush x:Key="BackButtonGradient"
+                             StartPoint="0%,0%"
+                             EndPoint="100%,0%">
+
+            <GradientStop Color="#7040D4"
+                          Offset="0"/>
+
+            <GradientStop Color="#A044D1"
+                          Offset="0.52"/>
+
+            <GradientStop Color="#F052A1"
+                          Offset="1"/>
+
+        </LinearGradientBrush>
+
+    </Window.Resources>
+
+
+    <!-- ========================================================= -->
+    <!-- ESTILOS                                                    -->
+    <!-- ========================================================= -->
+
+    <Window.Styles>
+
+        <!-- ===================================================== -->
+        <!-- BOTÕES DOS CARDS                                       -->
+        <!-- ===================================================== -->
+
+        <Style Selector="Button.option-card">
+
+            <Setter Property="Background"
+                    Value="#F8F5FC"/>
+
+            <Setter Property="BorderBrush"
+                    Value="#E7DFF1"/>
+
+            <Setter Property="BorderThickness"
+                    Value="1"/>
+
+            <Setter Property="CornerRadius"
+                    Value="14"/>
+
+            <Setter Property="Foreground"
+                    Value="{StaticResource TextDark}"/>
+
+            <Setter Property="Padding"
+                    Value="0"/>
+
+        </Style>
+
+
+        <!-- ===================================================== -->
+        <!-- HOVER DOS CARDS                                        -->
+        <!-- ===================================================== -->
+
+        <Style Selector="Button.option-card:pointerover">
+
+            <Setter Property="Background"
+                    Value="#F1E8FB"/>
+
+            <Setter Property="BorderBrush"
+                    Value="#D5BDEA"/>
+
+        </Style>
+
+
+        <!-- ===================================================== -->
+        <!-- BOTÃO VOLTAR                                           -->
+        <!-- ===================================================== -->
+
+        <Style Selector="Button.back-button">
+
+            <Setter Property="Background"
+                    Value="{StaticResource BackButtonGradient}"/>
+
+            <Setter Property="Foreground"
+                    Value="#FFFFFF"/>
+
+            <Setter Property="BorderBrush"
+                    Value="Transparent"/>
+
+            <Setter Property="BorderThickness"
+                    Value="0"/>
+
+            <Setter Property="CornerRadius"
+                    Value="11"/>
+
+            <Setter Property="FontSize"
+                    Value="16"/>
+
+            <Setter Property="FontWeight"
+                    Value="Bold"/>
+
+            <Setter Property="Padding"
+                    Value="0"/>
+
+        </Style>
+
+
+        <Style Selector="Button.back-button:pointerover">
+
+            <Setter Property="Background"
+                    Value="#D94F9C"/>
+
+            <Setter Property="Foreground"
+                    Value="#FFFFFF"/>
+
+        </Style>
+
+
+        <Style Selector="Button.back-button:pressed">
+
+            <Setter Property="Background"
+                    Value="#B83C8A"/>
+
+            <Setter Property="Foreground"
+                    Value="#FFFFFF"/>
+
+        </Style>
+
+    </Window.Styles>
+
+
+    <!-- ========================================================= -->
+    <!-- TELA                                                       -->
+    <!-- ========================================================= -->
+
+    <Grid Background="{StaticResource PageBackground}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <!-- ===================================================== -->
+        <!-- BARRA SUPERIOR                                        -->
+        <!-- ===================================================== -->
+
+        <Border Grid.Row="0"
+                Background="{StaticResource TopBarGradient}">
+
+            <Grid>
+
+                <TextBlock Text="☰"
+                           FontSize="25"
+                           FontWeight="Bold"
+                           Foreground="#FFFFFF"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Margin="17,0,0,2"/>
+
+                <TextBlock Text="L.U.M.A. - Opções"
+                           FontSize="13"
+                           FontWeight="SemiBold"
+                           Foreground="#FFFFFF"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+            </Grid>
+
+        </Border>
+
+
+        <!-- ===================================================== -->
+        <!-- CONTEÚDO                                               -->
+        <!-- ===================================================== -->
+
+        <Grid Grid.Row="1"
+              ClipToBounds="True">
+
+
+            <!-- ================================================= -->
+            <!-- FUNDO DECORATIVO                                  -->
+            <!-- ================================================= -->
+
+            <Border Background="#F8F6FA"/>
+
+
+            <!-- ================================================= -->
+            <!-- MANCHA ROSA SUPERIOR DIREITA                     -->
+            <!-- ================================================= -->
+
+            <Ellipse Width="330"
+                     Height="330"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Top"
+                     Margin="0,-150,-110,0"
+                     Fill="#F7D8ED"
+                     Opacity="0.45"/>
+
+
+            <!-- ================================================= -->
+            <!-- MANCHA ROXA INFERIOR ESQUERDA                    -->
+            <!-- ================================================= -->
+
+            <Ellipse Width="350"
+                     Height="350"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Bottom"
+                     Margin="-160,0,0,-190"
+                     Fill="#E5D9FA"
+                     Opacity="0.65"/>
+
+
+            <!-- ================================================= -->
+            <!-- PONTOS DECORATIVOS — SUPERIOR ESQUERDO            -->
+            <!-- ================================================= -->
+
+            <StackPanel HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Margin="28,20,0,0"
+                        Spacing="8"
+                        Opacity="0.45">
+
+                <TextBlock Text="························"
+                           FontSize="18"
+                           Foreground="#D3B8E9"/>
+
+                <TextBlock Text="····················"
+                           FontSize="18"
+                           Foreground="#D3B8E9"
+                           Margin="15,0,0,0"/>
+
+                <TextBlock Text="················"
+                           FontSize="18"
+                           Foreground="#D3B8E9"
+                           Margin="30,0,0,0"/>
+
+                <TextBlock Text="············"
+                           FontSize="18"
+                           Foreground="#D3B8E9"
+                           Margin="45,0,0,0"/>
+
+            </StackPanel>
+
+
+            <!-- ================================================= -->
+            <!-- PONTOS DECORATIVOS — INFERIOR DIREITO             -->
+            <!-- ================================================= -->
+
+            <StackPanel HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,30,30"
+                        Spacing="8"
+                        Opacity="0.35">
+
+                <TextBlock Text="······················"
+                           FontSize="18"
+                           Foreground="#C8B0E4"/>
+
+                <TextBlock Text="················"
+                           FontSize="18"
+                           Foreground="#C8B0E4"
+                           Margin="15,0,0,0"/>
+
+                <TextBlock Text="············"
+                           FontSize="18"
+                           Foreground="#C8B0E4"
+                           Margin="30,0,0,0"/>
+
+            </StackPanel>
+
+
+            <!-- ================================================= -->
+            <!-- ÁREA CENTRAL                                      -->
+            <!-- ================================================= -->
+
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Margin="0,28,0,0"
+                        Spacing="0">
+
+
+                <!-- ============================================= -->
+                <!-- ÍCONE PRINCIPAL                               -->
+                <!-- ============================================= -->
+
+                <Border Width="105"
+                        Height="105"
+                        HorizontalAlignment="Center"
+                        Background="Transparent">
+
+                    <Grid>
+
+                        <!-- círculo externo -->
+
+                        <Ellipse Width="100"
+                                 Height="100"
+                                 Stroke="#DAB8EC"
+                                 StrokeThickness="4"
+                                 Opacity="0.8"/>
+
+                        <!-- círculo rosa -->
+
+                        <Ellipse Width="100"
+                                Height="100"
+                                Stroke="#E96AA8"
+                                StrokeThickness="4"
+                                StrokeDashArray="0,18"
+                                Opacity="0.75"/>
+
+                        <!-- engrenagem -->
+
+                        <TextBlock Text="⚙"
+                                   FontSize="67"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource Purple}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="0,-3,0,0"/>
+
+                    </Grid>
+
+                </Border>
+
+
+                <!-- ============================================= -->
+                <!-- TÍTULO                                         -->
+                <!-- ============================================= -->
+
+                <TextBlock Text="OPÇÕES"
+                           HorizontalAlignment="Center"
+                           FontSize="38"
+                           FontWeight="Bold"
+                           Foreground="{StaticResource Purple}"
+                           Margin="0,-2,0,0"/>
+
+
+                <!-- ============================================= -->
+                <!-- SUBTÍTULO                                      -->
+                <!-- ============================================= -->
+
+                <TextBlock Text="Configurações do sistema"
+                           HorizontalAlignment="Center"
+                           FontSize="18"
+                           Foreground="{StaticResource TextMuted}"
+                           Margin="0,1,0,0"/>
+
+
+                <!-- ============================================= -->
+                <!-- LINHA DECORATIVA                               -->
+                <!-- ============================================= -->
+
+                <Border Width="78"
+                        Height="4"
+                        HorizontalAlignment="Center"
+                        CornerRadius="2"
+                        Margin="0,11,0,20">
+
+                    <Border.Background>
+
+                        <LinearGradientBrush StartPoint="0%,0%"
+                                             EndPoint="100%,0%">
+
+                            <GradientStop Color="#7444D7"
+                                          Offset="0"/>
+
+                            <GradientStop Color="#B047D0"
+                                          Offset="0.50"/>
+
+                            <GradientStop Color="#EC55A4"
+                                          Offset="1"/>
+
+                        </LinearGradientBrush>
+
+                    </Border.Background>
+
+                </Border>
+
+
+                <!-- ============================================= -->
+                <!-- CARD PRINCIPAL                                 -->
+                <!-- ============================================= -->
+
+                <Border Width="575"
+                        Height="275"
+                        Background="{StaticResource CardBackground}"
+                        BorderBrush="#E8E0F0"
+                        BorderThickness="1"
+                        CornerRadius="20"
+                        Padding="17"
+                        BoxShadow="0 10 30 0 #28000000">
+
+                    <Grid RowDefinitions="*,*,Auto"
+                          ColumnDefinitions="*,*"
+                          RowSpacing="12"
+                          ColumnSpacing="12">
+
+
+                        <!-- ===================================== -->
+                        <!-- APARÊNCIA                             -->
+                        <!-- ===================================== -->
+
+                        <Button Grid.Row="0"
+                                Grid.Column="0"
+                                Classes="option-card">
+
+                            <Grid ColumnDefinitions="65,*,28"
+                                  VerticalAlignment="Center"
+                                  Margin="12,0">
+
+                                <Border Grid.Column="0"
+                                        Width="58"
+                                        Height="58"
+                                        Background="{StaticResource PurpleVeryLight}"
+                                        CornerRadius="30"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center">
+
+                                    <TextBlock Text="▣"
+                                               FontSize="32"
+                                               Foreground="{StaticResource Purple}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+
+                                </Border>
+
+                                <StackPanel Grid.Column="1"
+                                            VerticalAlignment="Center"
+                                            Spacing="1">
+
+                                    <TextBlock Text="Aparência"
+                                               FontSize="16"
+                                               FontWeight="Bold"
+                                               Foreground="{StaticResource TextDark}"/>
+
+                                    <TextBlock Text="Tema e interface"
+                                               FontSize="13"
+                                               Foreground="{StaticResource TextMuted}"/>
+
+                                </StackPanel>
+
+                                <TextBlock Grid.Column="2"
+                                           Text="›"
+                                           FontSize="32"
+                                           Foreground="{StaticResource Purple}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+
+                            </Grid>
+
+                        </Button>
+
+
+                        <!-- ===================================== -->
+                        <!-- SEGURANÇA                             -->
+                        <!-- ===================================== -->
+
+                        <Button Grid.Row="0"
+                                Grid.Column="1"
+                                Classes="option-card">
+
+                            <Grid ColumnDefinitions="65,*,28"
+                                  VerticalAlignment="Center"
+                                  Margin="12,0">
+
+                                <Border Grid.Column="0"
+                                        Width="58"
+                                        Height="58"
+                                        Background="{StaticResource PurpleVeryLight}"
+                                        CornerRadius="30"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center">
+
+                                    <TextBlock Text="♢"
+                                               FontSize="38"
+                                               FontWeight="Bold"
+                                               Foreground="{StaticResource Purple}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+
+                                </Border>
+
+                                <StackPanel Grid.Column="1"
+                                            VerticalAlignment="Center"
+                                            Spacing="1">
+
+                                    <TextBlock Text="Segurança"
+                                               FontSize="16"
+                                               FontWeight="Bold"
+                                               Foreground="{StaticResource TextDark}"/>
+
+                                    <TextBlock Text="Privacidade e acesso"
+                                               FontSize="13"
+                                               Foreground="{StaticResource TextMuted}"/>
+
+                                </StackPanel>
+
+                                <TextBlock Grid.Column="2"
+                                           Text="›"
+                                           FontSize="32"
+                                           Foreground="{StaticResource Purple}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+
+                            </Grid>
+
+                        </Button>
+
+
+                        <!-- ===================================== -->
+                        <!-- DADOS                                  -->
+                        <!-- ===================================== -->
+
+                        <Button Grid.Row="1"
+                                Grid.Column="0"
+                                Classes="option-card">
+
+                            <Grid ColumnDefinitions="65,*,28"
+                                  VerticalAlignment="Center"
+                                  Margin="12,0">
+
+                                <Border Grid.Column="0"
+                                        Width="58"
+                                        Height="58"
+                                        Background="{StaticResource PurpleVeryLight}"
+                                        CornerRadius="30"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center">
+
+                                    <TextBlock Text="▤"
+                                               FontSize="34"
+                                               Foreground="{StaticResource Purple}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+
+                                </Border>
+
+                                <StackPanel Grid.Column="1"
+                                            VerticalAlignment="Center"
+                                            Spacing="1">
+
+                                    <TextBlock Text="Dados"
+                                               FontSize="16"
+                                               FontWeight="Bold"
+                                               Foreground="{StaticResource TextDark}"/>
+
+                                    <TextBlock Text="Armazenamento e backup"
+                                               FontSize="13"
+                                               Foreground="{StaticResource TextMuted}"/>
+
+                                </StackPanel>
+
+                                <TextBlock Grid.Column="2"
+                                           Text="›"
+                                           FontSize="32"
+                                           Foreground="{StaticResource Purple}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+
+                            </Grid>
+
+                        </Button>
+
+
+                        <!-- ===================================== -->
+                        <!-- SOBRE                                  -->
+                        <!-- ===================================== -->
+
+                        <Button Grid.Row="1"
+                                Grid.Column="1"
+                                Classes="option-card">
+
+                            <Grid ColumnDefinitions="65,*,28"
+                                  VerticalAlignment="Center"
+                                  Margin="12,0">
+
+                                <Border Grid.Column="0"
+                                        Width="58"
+                                        Height="58"
+                                        Background="{StaticResource PurpleVeryLight}"
+                                        CornerRadius="30"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center">
+
+                                    <TextBlock Text="ⓘ"
+                                               FontSize="36"
+                                               FontWeight="Bold"
+                                               Foreground="{StaticResource Purple}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+
+                                </Border>
+
+                                <StackPanel Grid.Column="1"
+                                            VerticalAlignment="Center"
+                                            Spacing="1">
+
+                                    <TextBlock Text="Sobre"
+                                               FontSize="16"
+                                               FontWeight="Bold"
+                                               Foreground="{StaticResource TextDark}"/>
+
+                                    <TextBlock Text="Versão e informações"
+                                               FontSize="13"
+                                               Foreground="{StaticResource TextMuted}"/>
+
+                                </StackPanel>
+
+                                <TextBlock Grid.Column="2"
+                                           Text="›"
+                                           FontSize="32"
+                                           Foreground="{StaticResource Purple}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+
+                            </Grid>
+
+                        </Button>
+
+
+                        <!-- ===================================== -->
+                        <!-- VOLTAR                                 -->
+                        <!-- ===================================== -->
+
+                        <Button Grid.Row="2"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Classes="back-button"
+                                Width="245"
+                                Height="48"
+                                HorizontalAlignment="Center"
+                                Click="Voltar_Click">
+
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Spacing="12">
+
+                                <TextBlock Text="←"
+                                           FontSize="27"
+                                           FontWeight="Normal"
+                                           VerticalAlignment="Center"/>
+
+                                <TextBlock Text="VOLTAR"
+                                           FontSize="16"
+                                           FontWeight="Bold"
+                                           VerticalAlignment="Center"/>
+
+                            </StackPanel>
+
+                        </Button>
+
+                    </Grid>
+
+                </Border>
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

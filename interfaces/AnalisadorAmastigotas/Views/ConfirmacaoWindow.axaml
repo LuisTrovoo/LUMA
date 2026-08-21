@@ -1,0 +1,249 @@
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="AnalisadorAmastigotas.Views.ConfirmacaoWindow"
+    Title="L.U.M.A. - Confirmar"
+    Width="500"
+    Height="320"
+    WindowStartupLocation="CenterOwner"
+    CanResize="False">
+
+    <Window.Styles>
+
+        <!-- ===================================================== -->
+        <!-- BOTÕES                                                -->
+        <!-- ===================================================== -->
+
+        <Style Selector="Button.confirmarButton">
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <!-- PERMANECER -->
+
+        <Style Selector="Button.permanecerButton">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#713BD0"/>
+            <Setter Property="BorderBrush" Value="#DDD1EC"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+        </Style>
+
+        <Style Selector="Button.permanecerButton:pointerover">
+            <Setter Property="Background" Value="#F8F3FF"/>
+            <Setter Property="BorderBrush" Value="#B99AE5"/>
+        </Style>
+
+
+        <!-- AVANÇAR -->
+
+        <Style Selector="Button.avancarConfirmacaoButton">
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+
+        <Style Selector="Button.avancarConfirmacaoButton">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush
+                        StartPoint="0%,0%"
+                        EndPoint="100%,0%">
+
+                        <GradientStop
+                            Color="#713BD0"
+                            Offset="0"/>
+
+                        <GradientStop
+                            Color="#D83D94"
+                            Offset="1"/>
+
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style Selector="Button.avancarConfirmacaoButton:pointerover">
+            <Setter Property="Opacity" Value="0.88"/>
+        </Style>
+
+    </Window.Styles>
+
+
+    <!-- ========================================================= -->
+    <!-- FUNDO                                                     -->
+    <!-- ========================================================= -->
+
+    <Grid Background="#F8F6FA">
+
+        <!-- brilho decorativo superior -->
+
+        <Ellipse
+            Width="180"
+            Height="180"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,-110,-80,0"
+            Fill="#EBDDF8"
+            Opacity="0.35"/>
+
+
+        <!-- ===================================================== -->
+        <!-- CONTEÚDO                                               -->
+        <!-- ===================================================== -->
+
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="430"
+            Spacing="12">
+
+
+            <!-- ================================================= -->
+            <!-- ÍCONE DE CONFIRMAÇÃO                              -->
+            <!-- ================================================= -->
+
+            <Border
+                Width="72"
+                Height="72"
+                CornerRadius="36"
+                BorderThickness="3"
+                HorizontalAlignment="Center">
+
+                <Border.BorderBrush>
+
+                    <LinearGradientBrush
+                        StartPoint="0%,100%"
+                        EndPoint="100%,0%">
+
+                        <GradientStop
+                            Color="#713BD0"
+                            Offset="0"/>
+
+                        <GradientStop
+                            Color="#D83D94"
+                            Offset="1"/>
+
+                    </LinearGradientBrush>
+
+                </Border.BorderBrush>
+
+
+                <TextBlock
+                    Text="?"
+                    FontSize="42"
+                    FontWeight="Bold"
+                    Foreground="#713BD0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0,-4,0,0"/>
+
+            </Border>
+
+
+            <!-- ================================================= -->
+            <!-- TÍTULO                                             -->
+            <!-- ================================================= -->
+
+            <TextBlock
+                Text="CONFIRMAR AVANÇO"
+                HorizontalAlignment="Center"
+                FontSize="25"
+                FontWeight="Bold">
+
+                <TextBlock.Foreground>
+
+                    <LinearGradientBrush
+                        StartPoint="0%,0%"
+                        EndPoint="100%,0%">
+
+                        <GradientStop
+                            Color="#5E2B97"
+                            Offset="0"/>
+
+                        <GradientStop
+                            Color="#D83D94"
+                            Offset="1"/>
+
+                    </LinearGradientBrush>
+
+                </TextBlock.Foreground>
+
+            </TextBlock>
+
+
+            <!-- ================================================= -->
+            <!-- DESCRIÇÃO                                          -->
+            <!-- ================================================= -->
+
+            <TextBlock
+                Text="Após avançar, não será possível alterar os dados desta etapa. Deseja continuar?"
+                HorizontalAlignment="Center"
+                TextAlignment="Center"
+                TextWrapping="Wrap"
+                FontSize="15"
+                Foreground="#6E667A"
+                MaxWidth="400"
+                LineHeight="22"
+                Margin="0,0,0,2"/>
+
+
+            <!-- ================================================= -->
+            <!-- DIVISOR DECORATIVO                                -->
+            <!-- ================================================= -->
+
+            <Grid
+                Width="390"
+                Height="14"
+                HorizontalAlignment="Center">
+
+                <Border
+                    Height="1"
+                    Background="#E5D8ED"
+                    VerticalAlignment="Center"/>
+
+                <Ellipse
+                    Width="7"
+                    Height="7"
+                    Fill="#C9A4EB"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+
+            </Grid>
+
+
+            <!-- ================================================= -->
+            <!-- BOTÕES                                             -->
+            <!-- ================================================= -->
+
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                Spacing="18"
+                Margin="0,2,0,0">
+
+                <!-- PERMANECER -->
+
+                <Button
+                    Content="PERMANECER"
+                    Classes="confirmarButton permanecerButton"
+                    Click="Permanecer_Click"/>
+
+
+                <!-- AVANÇAR -->
+
+                <Button
+                    Content="AVANÇAR"
+                    Classes="confirmarButton avancarConfirmacaoButton"
+                    Click="Avancar_Click"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+
+</Window>

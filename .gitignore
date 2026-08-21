@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.mat
+*_results/
+
+# PyInstaller
+processing/build/
+processing/dist/
+processing/windows/process_image.exe
+processing/linux/process_image
+processing/macos/process_image
+
+# .NET / C#
+bin/
+obj/
+*.user
+.vs/
+
+# Release/build artifacts
+artifacts/*
+!artifacts/.gitkeep
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local environment
+.env

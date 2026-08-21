@@ -1,0 +1,38 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="AnalisadorAmastigotas.Views.CellViewer"
+    SizeChanged="CellViewer_SizeChanged"
+    KeyDown="CellViewer_KeyDown"
+    Focusable="True">
+    
+    <Border
+        Background="#FFFFFF"
+        BorderBrush="#D8D2DE"
+        BorderThickness="1"
+        CornerRadius="8"
+        ClipToBounds="True">
+
+        <ScrollViewer
+            x:Name="ImagemScrollViewer"
+            HorizontalScrollBarVisibility="Auto"
+            VerticalScrollBarVisibility="Auto"
+            PointerWheelChanged="ImagemScrollViewer_PointerWheelChanged"
+            PointerPressed="ImagemScrollViewer_PointerPressed"
+            PointerMoved="ImagemScrollViewer_PointerMoved"
+            PointerReleased="ImagemScrollViewer_PointerReleased">
+
+            <Canvas
+                x:Name="ImagemCanvas">
+
+                <Image
+                    x:Name="ImagemBase"
+                    Stretch="Fill"/>
+
+            </Canvas>
+
+        </ScrollViewer>
+
+    </Border>
+
+</UserControl>

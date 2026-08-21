@@ -1,0 +1,385 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AnalisadorAmastigotas.Views.AboutWindow"
+        Title="L.U.M.A. - Sobre"
+        Width="1200"
+        Height="700"
+        WindowStartupLocation="CenterScreen"
+        Background="#F8F6FA">
+
+    <Window.Resources>
+
+        <!-- ================================================= -->
+        <!-- CORES -->
+        <!-- ================================================= -->
+
+        <SolidColorBrush x:Key="Purple"
+                         Color="#5E2B97"/>
+
+        <SolidColorBrush x:Key="PurpleLight"
+                         Color="#7040A8"/>
+
+        <SolidColorBrush x:Key="Pink"
+                         Color="#E94F9B"/>
+
+        <SolidColorBrush x:Key="PinkLight"
+                         Color="#F28ABB"/>
+
+        <SolidColorBrush x:Key="TextDark"
+                         Color="#302547"/>
+
+        <SolidColorBrush x:Key="TextMuted"
+                         Color="#6E667A"/>
+
+        <SolidColorBrush x:Key="CardBackground"
+                         Color="#FFFFFF"/>
+
+        <LinearGradientBrush x:Key="TopGradient"
+                             StartPoint="0%,0%"
+                             EndPoint="100%,0%">
+
+            <GradientStop Color="#6333B8"
+                           Offset="0"/>
+
+            <GradientStop Color="#7B3FC4"
+                           Offset="0.48"/>
+
+            <GradientStop Color="#E94F9B"
+                           Offset="1"/>
+
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="ButtonGradient"
+                             StartPoint="0%,0%"
+                             EndPoint="100%,0%">
+
+            <GradientStop Color="#7040C7"
+                           Offset="0"/>
+
+            <GradientStop Color="#A13DCA"
+                           Offset="0.50"/>
+
+            <GradientStop Color="#E84D9E"
+                           Offset="1"/>
+
+        </LinearGradientBrush>
+
+    </Window.Resources>
+
+
+    <!-- ===================================================== -->
+    <!-- ESTILOS -->
+    <!-- ===================================================== -->
+
+    <Window.Styles>
+
+        <!-- BOTÃO VOLTAR -->
+
+        <Style Selector="Button.back-button">
+
+            <Setter Property="Width"
+                    Value="196"/>
+
+            <Setter Property="Height"
+                    Value="50"/>
+
+            <Setter Property="Background"
+                    Value="{StaticResource ButtonGradient}"/>
+
+            <Setter Property="Foreground"
+                    Value="White"/>
+
+            <Setter Property="FontSize"
+                    Value="17"/>
+
+            <Setter Property="FontWeight"
+                    Value="SemiBold"/>
+
+            <Setter Property="BorderThickness"
+                    Value="0"/>
+
+            <Setter Property="CornerRadius"
+                    Value="10"/>
+
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center"/>
+
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center"/>
+
+        </Style>
+
+
+        <Style Selector="Button.back-button:pointerover">
+
+            <Setter Property="Background"
+                    Value="#D94799"/>
+
+        </Style>
+
+
+        <Style Selector="Button.back-button:pressed">
+
+            <Setter Property="Background"
+                    Value="#B93682"/>
+
+        </Style>
+
+    </Window.Styles>
+
+
+    <!-- ===================================================== -->
+    <!-- TELA -->
+    <!-- ===================================================== -->
+
+    <Grid>
+
+        <!-- FUNDO PRINCIPAL -->
+
+        <Border Background="#F8F6FA"/>
+
+
+        <!-- ================================================= -->
+        <!-- DECORAÇÃO SUPERIOR ESQUERDA -->
+        <!-- ================================================= -->
+
+        <Canvas IsHitTestVisible="False">
+
+            <Ellipse Width="360"
+                     Height="360"
+                     Canvas.Left="-180"
+                     Canvas.Top="-170"
+                     Fill="#E7D8FA"
+                     Opacity="0.25"/>
+
+            <Ellipse Width="280"
+                     Height="280"
+                     Canvas.Left="-125"
+                     Canvas.Top="-115"
+                     Fill="#F4DDF0"
+                     Opacity="0.22"/>
+
+            <Ellipse Width="180"
+                     Height="180"
+                     Canvas.Left="-65"
+                     Canvas.Top="-65"
+                     Fill="#D9C5F2"
+                     Opacity="0.20"/>
+
+        </Canvas>
+
+
+        <!-- ================================================= -->
+        <!-- DECORAÇÃO INFERIOR DIREITA -->
+        <!-- ================================================= -->
+
+        <Canvas IsHitTestVisible="False">
+
+            <Ellipse Width="430"
+                     Height="430"
+                     Canvas.Left="920"
+                     Canvas.Top="440"
+                     Fill="#E8D7F7"
+                     Opacity="0.28"/>
+
+            <Ellipse Width="320"
+                     Height="320"
+                     Canvas.Left="960"
+                     Canvas.Top="480"
+                     Fill="#F3D9EC"
+                     Opacity="0.22"/>
+
+        </Canvas>
+
+
+        <!-- ================================================= -->
+        <!-- BARRA SUPERIOR -->
+        <!-- ================================================= -->
+
+        <Border Height="56"
+                VerticalAlignment="Top"
+                Background="{StaticResource TopGradient}">
+
+            <Grid>
+
+                <TextBlock Text="L.U.M.A. - Sobre"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="18"
+                           FontWeight="SemiBold"/>
+
+            </Grid>
+
+        </Border>
+
+
+        <!-- ================================================= -->
+        <!-- CONTEÚDO -->
+        <!-- ================================================= -->
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Margin="0,112,0,0"
+                    Spacing="0">
+
+
+            <!-- ================================================= -->
+            <!-- TÍTULO -->
+            <!-- ================================================= -->
+
+            <TextBlock Text="SOBRE"
+                       HorizontalAlignment="Center"
+                       FontSize="44"
+                       FontWeight="Bold"
+                       Foreground="{StaticResource Purple}"/>
+
+
+            <TextBlock Text="Informações sobre o sistema"
+                       HorizontalAlignment="Center"
+                       Margin="0,6,0,0"
+                       FontSize="18"
+                       Foreground="{StaticResource TextMuted}"/>
+
+
+            <!-- LINHA DECORATIVA -->
+
+            <Border Width="78"
+                    Height="4"
+                    HorizontalAlignment="Center"
+                    Margin="0,12,0,20"
+                    CornerRadius="2"
+                    Background="{StaticResource Pink}"/>
+
+
+            <!-- ================================================= -->
+            <!-- CARD -->
+            <!-- ================================================= -->
+
+            <Border Width="700"
+                    Height="300"
+                    Background="#FFFFFF"
+                    CornerRadius="20"
+                    Padding="34"
+                    BorderBrush="#E7DFF0"
+                    BorderThickness="1">
+
+                <Grid ColumnDefinitions="235,1,*"
+                      VerticalAlignment="Center">
+
+
+                    <!-- ========================================= -->
+                    <!-- ÁREA DA LOGO -->
+                    <!-- ========================================= -->
+
+                    <StackPanel Grid.Column="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Spacing="7">
+
+                        <Image Source="/Assets/logo LUMA ficticia.png"
+                               Width="180"
+                               Height="150"
+                               Stretch="Uniform"
+                               HorizontalAlignment="Center"/>
+
+                        <TextBlock Text="L.U.M.A."
+                                   HorizontalAlignment="Center"
+                                   FontSize="29"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource Purple}"/>
+
+                        <TextBlock Text="LABELED UNICELLULAR &amp;"
+                                   HorizontalAlignment="Center"
+                                   FontSize="10"
+                                   FontWeight="SemiBold"
+                                   LetterSpacing="1"
+                                   Foreground="{StaticResource Purple}"/>
+
+                        <TextBlock Text="MICROBE ANALYSIS"
+                                   HorizontalAlignment="Center"
+                                   FontSize="10"
+                                   FontWeight="SemiBold"
+                                   LetterSpacing="1"
+                                   Foreground="{StaticResource Purple}"/>
+
+                    </StackPanel>
+
+
+                    <!-- ========================================= -->
+                    <!-- DIVISÓRIA -->
+                    <!-- ========================================= -->
+
+                    <Border Grid.Column="1"
+                            Width="1"
+                            Height="190"
+                            Background="#E5DCEB"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+
+
+                    <!-- ========================================= -->
+                    <!-- TEXTO -->
+                    <!-- ========================================= -->
+
+                    <StackPanel Grid.Column="2"
+                                Margin="28,0,10,0"
+                                VerticalAlignment="Center"
+                                Spacing="14">
+
+                        <TextBlock Text="Sobre o L.U.M.A."
+                                   FontSize="22"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource Purple}"/>
+
+                        <TextBlock Text="O L.U.M.A. foi desenvolvido para oferecer uma experiência completa, segura e eficiente na análise de imagens microscópicas, auxiliando profissionais da saúde e pesquisadores na tomada de decisão."
+                                   FontSize="14"
+                                   Foreground="{StaticResource TextMuted}"
+                                   TextWrapping="Wrap"
+                                   LineHeight="22"/>
+
+                        <TextBlock Text="O sistema combina processamento de imagens e análise automatizada para facilitar a identificação e avaliação de estruturas microscópicas."
+                                   FontSize="14"
+                                   Foreground="{StaticResource TextMuted}"
+                                   TextWrapping="Wrap"
+                                   LineHeight="22"/>
+
+                    </StackPanel>
+
+                </Grid>
+
+            </Border>
+
+
+            <!-- ================================================= -->
+            <!-- BOTÃO VOLTAR -->
+            <!-- ================================================= -->
+
+            <Button Classes="back-button"
+                    HorizontalAlignment="Center"
+                    Margin="0,36,0,0"
+                    Click="Voltar_Click">
+
+                <StackPanel Orientation="Horizontal"
+                            Spacing="12"
+                            VerticalAlignment="Center">
+
+                    <TextBlock Text="←"
+                               FontSize="25"
+                               FontWeight="Normal"
+                               VerticalAlignment="Center"/>
+
+                    <TextBlock Text="VOLTAR"
+                               FontSize="17"
+                               FontWeight="SemiBold"
+                               VerticalAlignment="Center"/>
+
+                </StackPanel>
+
+            </Button>
+
+        </StackPanel>
+
+    </Grid>
+
+</Window>
