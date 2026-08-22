@@ -183,8 +183,9 @@
             <Setter Property="Margin"
                     Value="0,0,0,14"/>
 
+            <!-- CONTEÚDO USA TODA A LARGURA DO BOTÃO -->
             <Setter Property="HorizontalContentAlignment"
-                    Value="Center"/>
+                    Value="Stretch"/>
 
             <Setter Property="VerticalContentAlignment"
                     Value="Center"/>
@@ -341,9 +342,6 @@
 
             <!-- LATERAL -->
 
-            <!-- Sem Opacity aqui.
-                 A opacidade da Border afetaria todos os filhos. -->
-
             <Border Grid.Column="0"
                     Background="{StaticResource SidebarGradient}">
 
@@ -357,13 +355,15 @@
                                 Margin="20,32,20,20">
 
 
+                        <!-- ================================================= -->
                         <!-- NOVA CONSULTA -->
+                        <!-- ================================================= -->
 
                         <Button Classes="sidebar-button"
                                 Click="NovaConsulta_Click">
 
-                            <Grid ColumnDefinitions="44,*"
-                                  Width="214"
+                            <Grid ColumnDefinitions="30,*"
+                                  Margin="14,0,10,0"
                                   VerticalAlignment="Center">
 
                                 <Image Grid.Column="0"
@@ -389,8 +389,9 @@
                                            FontSize="18"
                                            FontWeight="SemiBold"
                                            Foreground="#FFFFFF"
-                                           HorizontalAlignment="Center"
+                                           HorizontalAlignment="Left"
                                            VerticalAlignment="Center"
+                                           Margin="12,0,0,0"
                                            TextWrapping="NoWrap"/>
 
                             </Grid>
@@ -398,13 +399,15 @@
                         </Button>
 
 
+                        <!-- ================================================= -->
                         <!-- OPÇÕES -->
+                        <!-- ================================================= -->
 
                         <Button Classes="sidebar-button"
                                 Click="Opcoes_Click">
 
-                            <Grid ColumnDefinitions="44,*"
-                                  Width="214"
+                            <Grid ColumnDefinitions="30,*"
+                                  Margin="14,0,10,0"
                                   VerticalAlignment="Center">
 
                                 <Image Grid.Column="0"
@@ -430,8 +433,9 @@
                                            FontSize="18"
                                            FontWeight="SemiBold"
                                            Foreground="#FFFFFF"
-                                           HorizontalAlignment="Center"
+                                           HorizontalAlignment="Left"
                                            VerticalAlignment="Center"
+                                           Margin="12,0,0,0"
                                            TextWrapping="NoWrap"/>
 
                             </Grid>
@@ -439,13 +443,15 @@
                         </Button>
 
 
+                        <!-- ================================================= -->
                         <!-- SOBRE -->
+                        <!-- ================================================= -->
 
                         <Button Classes="sidebar-button"
                                 Click="Sobre_Click">
 
-                            <Grid ColumnDefinitions="44,*"
-                                  Width="214"
+                            <Grid ColumnDefinitions="30,*"
+                                  Margin="14,0,10,0"
                                   VerticalAlignment="Center">
 
                                 <Image Grid.Column="0"
@@ -471,8 +477,9 @@
                                            FontSize="18"
                                            FontWeight="SemiBold"
                                            Foreground="#FFFFFF"
-                                           HorizontalAlignment="Center"
+                                           HorizontalAlignment="Left"
                                            VerticalAlignment="Center"
+                                           Margin="12,0,0,0"
                                            TextWrapping="NoWrap"/>
 
                             </Grid>
@@ -480,14 +487,16 @@
                         </Button>
 
 
+                        <!-- ================================================= -->
                         <!-- SAIR -->
+                        <!-- ================================================= -->
 
                         <Button Classes="sidebar-button"
                                 Margin="0"
                                 Click="Sair_Click">
 
-                            <Grid ColumnDefinitions="44,*"
-                                  Width="214"
+                            <Grid ColumnDefinitions="30,*"
+                                  Margin="14,0,10,0"
                                   VerticalAlignment="Center">
 
                                 <Image Grid.Column="0"
@@ -513,8 +522,9 @@
                                            FontSize="18"
                                            FontWeight="SemiBold"
                                            Foreground="#FFFFFF"
-                                           HorizontalAlignment="Center"
+                                           HorizontalAlignment="Left"
                                            VerticalAlignment="Center"
+                                           Margin="12,0,0,0"
                                            TextWrapping="NoWrap"/>
 
                             </Grid>
@@ -524,7 +534,9 @@
                     </StackPanel>
 
 
+                    <!-- ===================================================== -->
                     <!-- IDENTIDADE INSTITUCIONAL -->
+                    <!-- ===================================================== -->
 
                     <StackPanel Grid.Row="1"
                                 HorizontalAlignment="Center"
@@ -549,7 +561,9 @@
             </Border>
 
 
+            <!-- ============================================================= -->
             <!-- ÁREA CENTRAL -->
+            <!-- ============================================================= -->
 
             <Grid Grid.Column="1"
                   Background="Transparent">
@@ -586,7 +600,9 @@
                     <Border Height="18"/>
 
 
+                    <!-- ===================================================== -->
                     <!-- CARD DA LOGO -->
+                    <!-- ===================================================== -->
 
                     <Border Width="560"
                             Height="390"
