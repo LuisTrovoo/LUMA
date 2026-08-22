@@ -16,133 +16,52 @@
 
     <Window.Resources>
 
-        <!-- CORES -->
+        <!-- ===================================================== -->
+        <!-- CORES PRINCIPAIS -->
+        <!-- ===================================================== -->
 
-        <media:SolidColorBrush x:Key="GiemsaPurple"
-                               Color="#7040A8"/>
+        <media:SolidColorBrush x:Key="SidebarPurple"
+                               Color="#4E2E91"/>
 
-        <media:SolidColorBrush x:Key="GiemsaPurpleDark"
-                               Color="#4D277E"/>
+        <media:SolidColorBrush x:Key="ButtonPurple"
+                               Color="#6A4CB3"/>
 
-        <media:SolidColorBrush x:Key="GiemsaPurpleHover"
-                               Color="#542B86"/>
+        <media:SolidColorBrush x:Key="ButtonPurpleHover"
+                               Color="#7A5BC0"/>
 
-        <media:SolidColorBrush x:Key="GiemsaPink"
-                               Color="#D95B8A"/>
+        <media:SolidColorBrush x:Key="ButtonPurplePressed"
+                               Color="#5B3FA4"/>
 
-        <media:SolidColorBrush x:Key="GiemsaPinkLight"
-                               Color="#E982A6"/>
+        <media:SolidColorBrush x:Key="AccentPink"
+                               Color="#E56A9B"/>
 
         <media:SolidColorBrush x:Key="BackgroundLight"
-                               Color="#FBFAFD"/>
+                               Color="#F7F4FA"/>
 
         <media:SolidColorBrush x:Key="SurfaceWhite"
                                Color="#FFFFFF"/>
 
         <media:SolidColorBrush x:Key="BorderSoft"
-                               Color="#DED5E8"/>
+                               Color="#E3DCEF"/>
 
         <media:SolidColorBrush x:Key="TextDark"
-                               Color="#17131D"/>
+                               Color="#231A33"/>
 
         <media:SolidColorBrush x:Key="TextMuted"
-                               Color="#3F3948"/>
+                               Color="#5E5770"/>
 
+        <media:SolidColorBrush x:Key="TitlePurple"
+                               Color="#6B43AE"/>
 
-        <!-- GRADIENTE PRINCIPAL -->
-
-        <media:LinearGradientBrush x:Key="LumaGradient"
-                                   StartPoint="0%,0%"
-                                   EndPoint="100%,0%">
-
-            <media:GradientStop Color="#E982A6"
-                                Offset="0"/>
-
-            <media:GradientStop Color="#C6538D"
-                                Offset="0.24"/>
-
-            <media:GradientStop Color="#8F4AA1"
-                                Offset="0.48"/>
-
-            <media:GradientStop Color="#7040A8"
-                                Offset="0.70"/>
-
-            <media:GradientStop Color="#5A2C96"
-                                Offset="1"/>
-
-        </media:LinearGradientBrush>
-
-
-        <!-- GRADIENTE DA LATERAL -->
-
-        <media:LinearGradientBrush x:Key="SidebarGradient"
-                                   StartPoint="0%,100%"
-                                   EndPoint="100%,0%">
-
-            <media:GradientStop Color="#D45A8A"
-                                Offset="0"/>
-
-            <media:GradientStop Color="#944C9F"
-                                Offset="0.30"/>
-
-            <media:GradientStop Color="#7040A8"
-                                Offset="0.62"/>
-
-            <media:GradientStop Color="#5B2E97"
-                                Offset="1"/>
-
-        </media:LinearGradientBrush>
-
-
-        <!-- GRADIENTE NORMAL DOS BOTÕES -->
-
-        <media:LinearGradientBrush x:Key="ButtonGradient"
-                                   StartPoint="0%,0%"
-                                   EndPoint="100%,100%">
-
-            <media:GradientStop Color="#7040A8"
-                                Offset="0"/>
-
-            <media:GradientStop Color="#7542A9"
-                                Offset="0.50"/>
-
-            <media:GradientStop Color="#8147A5"
-                                Offset="1"/>
-
-        </media:LinearGradientBrush>
-
-
-        <!-- HOVER -->
-
-        <media:SolidColorBrush x:Key="ButtonHoverBrush"
-                               Color="#D95B8A"/>
-
-
-        <!-- PRESSIONADO -->
-
-        <media:SolidColorBrush x:Key="ButtonPressedBrush"
-                               Color="#C84C82"/>
-
-
-        <!-- BORDA NORMAL -->
-
-        <media:LinearGradientBrush x:Key="ButtonBorderGradient"
-                                   StartPoint="0%,0%"
-                                   EndPoint="100%,100%">
-
-            <media:GradientStop Color="#E982A6"
-                                Offset="0"/>
-
-            <media:GradientStop Color="#D95B8A"
-                                Offset="0.55"/>
-
-            <media:GradientStop Color="#C84C82"
-                                Offset="1"/>
-
-        </media:LinearGradientBrush>
+        <media:SolidColorBrush x:Key="CardLine"
+                               Color="#E8E0F0"/>
 
     </Window.Resources>
 
+
+    <!-- ========================================================= -->
+    <!-- ESTILOS -->
+    <!-- ========================================================= -->
 
     <Window.Styles>
 
@@ -160,7 +79,7 @@
                     Value="Center"/>
 
             <Setter Property="Background"
-                    Value="{StaticResource ButtonGradient}"/>
+                    Value="{StaticResource ButtonPurple}"/>
 
             <Setter Property="Foreground"
                     Value="#FFFFFF"/>
@@ -171,19 +90,15 @@
             <Setter Property="FontWeight"
                     Value="SemiBold"/>
 
-            <Setter Property="BorderBrush"
-                    Value="{StaticResource ButtonBorderGradient}"/>
-
             <Setter Property="BorderThickness"
-                    Value="2"/>
+                    Value="0"/>
 
             <Setter Property="CornerRadius"
-                    Value="9"/>
+                    Value="10"/>
 
             <Setter Property="Margin"
                     Value="0,0,0,14"/>
 
-            <!-- CONTEÚDO USA TODA A LARGURA DO BOTÃO -->
             <Setter Property="HorizontalContentAlignment"
                     Value="Stretch"/>
 
@@ -193,9 +108,6 @@
             <Setter Property="Padding"
                     Value="0"/>
 
-            <Setter Property="Opacity"
-                    Value="1"/>
-
         </Style>
 
 
@@ -204,16 +116,7 @@
         <Style Selector="Button.sidebar-button:pointerover">
 
             <Setter Property="Background"
-                    Value="{StaticResource ButtonHoverBrush}"/>
-
-            <Setter Property="BorderBrush"
-                    Value="{StaticResource ButtonHoverBrush}"/>
-
-            <Setter Property="Foreground"
-                    Value="#FFFFFF"/>
-
-            <Setter Property="Opacity"
-                    Value="1"/>
+                    Value="{StaticResource ButtonPurpleHover}"/>
 
         </Style>
 
@@ -223,116 +126,46 @@
         <Style Selector="Button.sidebar-button:pressed">
 
             <Setter Property="Background"
-                    Value="{StaticResource ButtonPressedBrush}"/>
-
-            <Setter Property="BorderBrush"
-                    Value="{StaticResource ButtonPressedBrush}"/>
-
-            <Setter Property="Foreground"
-                    Value="#FFFFFF"/>
-
-            <Setter Property="Opacity"
-                    Value="1"/>
+                    Value="{StaticResource ButtonPurplePressed}"/>
 
         </Style>
 
 
-        <!-- DESABILITADO -->
-
-        <Style Selector="Button.sidebar-button:disabled">
-
-            <Setter Property="Opacity"
-                    Value="1"/>
-
-        </Style>
-
-
-        <!-- ÍCONE BRANCO -->
+        <!-- ÍCONES -->
 
         <Style Selector="Image.sidebar-icon-white">
 
             <Setter Property="IsVisible"
                     Value="True"/>
 
-            <Setter Property="Opacity"
-                    Value="1"/>
-
         </Style>
-
-
-        <!-- ÍCONE COLORIDO -->
 
         <Style Selector="Image.sidebar-icon-hover">
 
             <Setter Property="IsVisible"
                     Value="False"/>
 
-            <Setter Property="Opacity"
-                    Value="1"/>
-
-        </Style>
-
-
-        <!-- HOVER: MANTÉM ÍCONE BRANCO -->
-
-        <Style Selector="Button.sidebar-button:pointerover Image.sidebar-icon-white">
-
-            <Setter Property="IsVisible"
-                    Value="True"/>
-
-            <Setter Property="Opacity"
-                    Value="1"/>
-
-        </Style>
-
-        <Style Selector="Button.sidebar-button:pointerover Image.sidebar-icon-hover">
-
-            <Setter Property="IsVisible"
-                    Value="False"/>
-
-            <Setter Property="Opacity"
-                    Value="1"/>
-
-        </Style>
-
-
-        <!-- PRESSIONADO: MANTÉM ÍCONE BRANCO -->
-
-        <Style Selector="Button.sidebar-button:pressed Image.sidebar-icon-white">
-
-            <Setter Property="IsVisible"
-                    Value="True"/>
-
-            <Setter Property="Opacity"
-                    Value="1"/>
-
-        </Style>
-
-        <Style Selector="Button.sidebar-button:pressed Image.sidebar-icon-hover">
-
-            <Setter Property="IsVisible"
-                    Value="False"/>
-
-            <Setter Property="Opacity"
-                    Value="1"/>
-
         </Style>
 
     </Window.Styles>
 
 
+    <!-- ========================================================= -->
+    <!-- INTERFACE -->
+    <!-- ========================================================= -->
+
     <Grid>
 
-        <!-- FUNDO -->
+        <!-- FUNDO GERAL -->
 
         <Border Background="{StaticResource BackgroundLight}"/>
 
 
-        <!-- IMAGEM MICROSCÓPICA DE FUNDO -->
+        <!-- FUNDO MICROSCÓPICO BEM SUAVE -->
 
         <Image Source="/Assets/giemsa ficticia.jpg"
                Stretch="UniformToFill"
-               Opacity="0.075"/>
+               Opacity="0.045"/>
 
 
         <!-- ESTRUTURA PRINCIPAL -->
@@ -340,10 +173,12 @@
         <Grid ColumnDefinitions="260,*">
 
 
-            <!-- LATERAL -->
+            <!-- ===================================================== -->
+            <!-- BARRA LATERAL -->
+            <!-- ===================================================== -->
 
             <Border Grid.Column="0"
-                    Background="{StaticResource SidebarGradient}">
+                    Background="{StaticResource SidebarPurple}">
 
                 <Grid RowDefinitions="*,Auto">
 
@@ -355,9 +190,7 @@
                                 Margin="20,32,20,20">
 
 
-                        <!-- ================================================= -->
                         <!-- NOVA CONSULTA -->
-                        <!-- ================================================= -->
 
                         <Button Classes="sidebar-button"
                                 Click="NovaConsulta_Click">
@@ -369,15 +202,6 @@
                                 <Image Grid.Column="0"
                                        Classes="sidebar-icon-white"
                                        Source="/Assets/nova branco.png"
-                                       Width="27"
-                                       Height="27"
-                                       HorizontalAlignment="Left"
-                                       VerticalAlignment="Center"
-                                       Stretch="Uniform"/>
-
-                                <Image Grid.Column="0"
-                                       Classes="sidebar-icon-hover"
-                                       Source="/Assets/nova.png"
                                        Width="27"
                                        Height="27"
                                        HorizontalAlignment="Left"
@@ -399,9 +223,7 @@
                         </Button>
 
 
-                        <!-- ================================================= -->
                         <!-- OPÇÕES -->
-                        <!-- ================================================= -->
 
                         <Button Classes="sidebar-button"
                                 Click="Opcoes_Click">
@@ -413,15 +235,6 @@
                                 <Image Grid.Column="0"
                                        Classes="sidebar-icon-white"
                                        Source="/Assets/opcoes branco.png"
-                                       Width="27"
-                                       Height="27"
-                                       HorizontalAlignment="Left"
-                                       VerticalAlignment="Center"
-                                       Stretch="Uniform"/>
-
-                                <Image Grid.Column="0"
-                                       Classes="sidebar-icon-hover"
-                                       Source="/Assets/opcoes.png"
                                        Width="27"
                                        Height="27"
                                        HorizontalAlignment="Left"
@@ -443,9 +256,7 @@
                         </Button>
 
 
-                        <!-- ================================================= -->
                         <!-- SOBRE -->
-                        <!-- ================================================= -->
 
                         <Button Classes="sidebar-button"
                                 Click="Sobre_Click">
@@ -457,15 +268,6 @@
                                 <Image Grid.Column="0"
                                        Classes="sidebar-icon-white"
                                        Source="/Assets/sobre branco.png"
-                                       Width="27"
-                                       Height="27"
-                                       HorizontalAlignment="Left"
-                                       VerticalAlignment="Center"
-                                       Stretch="Uniform"/>
-
-                                <Image Grid.Column="0"
-                                       Classes="sidebar-icon-hover"
-                                       Source="/Assets/sobre.png"
                                        Width="27"
                                        Height="27"
                                        HorizontalAlignment="Left"
@@ -487,9 +289,7 @@
                         </Button>
 
 
-                        <!-- ================================================= -->
                         <!-- SAIR -->
-                        <!-- ================================================= -->
 
                         <Button Classes="sidebar-button"
                                 Margin="0"
@@ -502,15 +302,6 @@
                                 <Image Grid.Column="0"
                                        Classes="sidebar-icon-white"
                                        Source="/Assets/sair branco.png"
-                                       Width="27"
-                                       Height="27"
-                                       HorizontalAlignment="Left"
-                                       VerticalAlignment="Center"
-                                       Stretch="Uniform"/>
-
-                                <Image Grid.Column="0"
-                                       Classes="sidebar-icon-hover"
-                                       Source="/Assets/sair.png"
                                        Width="27"
                                        Height="27"
                                        HorizontalAlignment="Left"
@@ -534,25 +325,18 @@
                     </StackPanel>
 
 
-                    <!-- ===================================================== -->
-                    <!-- IDENTIDADE INSTITUCIONAL -->
-                    <!-- ===================================================== -->
+                    <!-- LOGO GIM -->
 
                     <StackPanel Grid.Row="1"
                                 HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Spacing="14"
-                                Margin="15,10,15,22">
+                                VerticalAlignment="Bottom"
+                                Margin="15,10,15,24">
 
                         <Image Source="/Assets/logo GIM ficticia.png"
-                               Width="150"
-                               Height="110"
-                               Stretch="Uniform"/>
-
-                        <Image Source="/Assets/UFU.png"
-                               Width="110"
-                               Height="80"
-                               Stretch="Uniform"/>
+                               Width="145"
+                               Height="145"
+                               Stretch="Uniform"
+                               HorizontalAlignment="Center"/>
 
                     </StackPanel>
 
@@ -561,9 +345,9 @@
             </Border>
 
 
-            <!-- ============================================================= -->
+            <!-- ===================================================== -->
             <!-- ÁREA CENTRAL -->
-            <!-- ============================================================= -->
+            <!-- ===================================================== -->
 
             <Grid Grid.Column="1"
                   Background="Transparent">
@@ -578,19 +362,43 @@
                     <StackPanel HorizontalAlignment="Center"
                                 Spacing="2">
 
-                        <TextBlock Text="L.U.M.A."
-                                   HorizontalAlignment="Center"
+                        <TextBlock HorizontalAlignment="Center"
                                    FontSize="48"
                                    FontWeight="Bold"
-                                   LetterSpacing="2"
-                                   Foreground="{StaticResource LumaGradient}"/>
+                                   LetterSpacing="2">
+
+                            <Run Text="L"
+                                 Foreground="{StaticResource TitlePurple}"/>
+
+                            <Run Text="."
+                                 Foreground="{StaticResource AccentPink}"/>
+
+                            <Run Text="U"
+                                 Foreground="{StaticResource TitlePurple}"/>
+
+                            <Run Text="."
+                                 Foreground="{StaticResource AccentPink}"/>
+
+                            <Run Text="M"
+                                 Foreground="{StaticResource TitlePurple}"/>
+
+                            <Run Text="."
+                                 Foreground="{StaticResource AccentPink}"/>
+
+                            <Run Text="A"
+                                 Foreground="{StaticResource TitlePurple}"/>
+
+                            <Run Text="."
+                                 Foreground="{StaticResource AccentPink}"/>
+
+                        </TextBlock>
 
                         <TextBlock Text="Labeled Unicellular &amp; Microbe Analysis"
                                    HorizontalAlignment="Center"
                                    FontSize="15"
                                    FontWeight="Medium"
-                                   LetterSpacing="1"
-                                   Foreground="{StaticResource TextDark}"/>
+                                   LetterSpacing="0.8"
+                                   Foreground="{StaticResource TextMuted}"/>
 
                     </StackPanel>
 
@@ -600,26 +408,24 @@
                     <Border Height="18"/>
 
 
-                    <!-- ===================================================== -->
-                    <!-- CARD DA LOGO -->
-                    <!-- ===================================================== -->
+                    <!-- CARD CENTRAL -->
 
                     <Border Width="560"
                             Height="390"
-                            Background="#FEFDFE"
+                            Background="{StaticResource SurfaceWhite}"
                             BorderBrush="{StaticResource BorderSoft}"
                             BorderThickness="1"
                             CornerRadius="20"
                             Padding="30"
-                            BoxShadow="0 7 24 0 #35000000">
+                            BoxShadow="0 8 24 0 #22000000">
 
                         <StackPanel HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
-                                    Spacing="12">
+                                    Spacing="10">
 
                             <Image Source="/Assets/logo LUMA ficticia.png"
                                    Width="300"
-                                   Height="240"
+                                   Height="220"
                                    HorizontalAlignment="Center"
                                    Stretch="Uniform"/>
 
@@ -628,7 +434,7 @@
                                        FontSize="12"
                                        FontWeight="SemiBold"
                                        LetterSpacing="2"
-                                       Foreground="{StaticResource LumaGradient}"/>
+                                       Foreground="{StaticResource AccentPink}"/>
 
                         </StackPanel>
 
@@ -637,7 +443,7 @@
 
                     <!-- ESPAÇO -->
 
-                    <Border Height="14"/>
+                    <Border Height="16"/>
 
 
                     <!-- BOAS-VINDAS -->
@@ -646,8 +452,7 @@
                                HorizontalAlignment="Center"
                                FontSize="20"
                                FontWeight="SemiBold"
-                               LetterSpacing="0.5"
-                               Foreground="{StaticResource TextDark}"/>
+                               Foreground="{StaticResource TitlePurple}"/>
 
 
                     <!-- DESCRIÇÃO -->
@@ -656,7 +461,7 @@
                                HorizontalAlignment="Center"
                                FontSize="15"
                                FontWeight="Medium"
-                               Foreground="{StaticResource TextDark}"/>
+                               Foreground="{StaticResource TextMuted}"/>
 
                 </StackPanel>
 
