@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     x:Class="AnalisadorAmastigotas.Views.ConfirmacaoWindow"
     Title="L.U.M.A. - Confirmar"
+    Icon="/Assets/logo LUMA ficticia.png"
     Width="500"
     Height="320"
     WindowStartupLocation="CenterOwner"

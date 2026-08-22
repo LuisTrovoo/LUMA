@@ -12,29 +12,34 @@
         x:Class="AnalisadorAmastigotas.Views.MainWindow"
         x:DataType="vm:MainViewModel"
         Title="L.U.M.A."
+        Icon="/Assets/logo LUMA ficticia.png"
         WindowStartupLocation="CenterScreen">
+
+    <!-- ========================================================= -->
+    <!-- CORES                                                     -->
+    <!-- ========================================================= -->
 
     <Window.Resources>
 
-        <!-- ===================================================== -->
-        <!-- CORES PRINCIPAIS -->
-        <!-- ===================================================== -->
+        <!-- Roxo oficial da logo -->
+        <media:SolidColorBrush x:Key="LumaPurple"
+                               Color="#644899"/>
 
-        <media:SolidColorBrush x:Key="SidebarPurple"
-                               Color="#4E2E91"/>
-
+        <!-- Botões -->
         <media:SolidColorBrush x:Key="ButtonPurple"
-                               Color="#6A4CB3"/>
+                               Color="#7559AB"/>
 
         <media:SolidColorBrush x:Key="ButtonPurpleHover"
-                               Color="#7A5BC0"/>
+                               Color="#876CC0"/>
 
         <media:SolidColorBrush x:Key="ButtonPurplePressed"
-                               Color="#5B3FA4"/>
+                               Color="#523B7E"/>
 
+        <!-- Rosa de destaque -->
         <media:SolidColorBrush x:Key="AccentPink"
                                Color="#E56A9B"/>
 
+        <!-- Cores neutras -->
         <media:SolidColorBrush x:Key="BackgroundLight"
                                Color="#F7F4FA"/>
 
@@ -50,22 +55,16 @@
         <media:SolidColorBrush x:Key="TextMuted"
                                Color="#5E5770"/>
 
-        <media:SolidColorBrush x:Key="TitlePurple"
-                               Color="#6B43AE"/>
-
-        <media:SolidColorBrush x:Key="CardLine"
-                               Color="#E8E0F0"/>
-
     </Window.Resources>
 
 
     <!-- ========================================================= -->
-    <!-- ESTILOS -->
+    <!-- ESTILOS                                                   -->
     <!-- ========================================================= -->
 
     <Window.Styles>
 
-        <!-- BOTÕES DA LATERAL -->
+        <!-- BOTÕES DA BARRA LATERAL -->
 
         <Style Selector="Button.sidebar-button">
 
@@ -108,6 +107,9 @@
             <Setter Property="Padding"
                     Value="0"/>
 
+            <Setter Property="Opacity"
+                    Value="1"/>
+
         </Style>
 
 
@@ -130,42 +132,25 @@
 
         </Style>
 
-
-        <!-- ÍCONES -->
-
-        <Style Selector="Image.sidebar-icon-white">
-
-            <Setter Property="IsVisible"
-                    Value="True"/>
-
-        </Style>
-
-        <Style Selector="Image.sidebar-icon-hover">
-
-            <Setter Property="IsVisible"
-                    Value="False"/>
-
-        </Style>
-
     </Window.Styles>
 
 
     <!-- ========================================================= -->
-    <!-- INTERFACE -->
+    <!-- INTERFACE                                                 -->
     <!-- ========================================================= -->
 
     <Grid>
 
-        <!-- FUNDO GERAL -->
+        <!-- FUNDO -->
 
         <Border Background="{StaticResource BackgroundLight}"/>
 
 
-        <!-- FUNDO MICROSCÓPICO BEM SUAVE -->
+        <!-- IMAGEM MICROSCÓPICA DE FUNDO -->
 
-        <Image Source="/Assets/giemsa ficticia.jpg"
+        <Image Source="/Assets/giemsa ficticia.png"
                Stretch="UniformToFill"
-               Opacity="0.045"/>
+               Opacity="0.295"/>
 
 
         <!-- ESTRUTURA PRINCIPAL -->
@@ -173,12 +158,13 @@
         <Grid ColumnDefinitions="260,*">
 
 
-            <!-- ===================================================== -->
-            <!-- BARRA LATERAL -->
-            <!-- ===================================================== -->
+            <!-- ================================================= -->
+            <!-- BARRA LATERAL                                     -->
+            <!-- ================================================= -->
 
             <Border Grid.Column="0"
-                    Background="{StaticResource SidebarPurple}">
+                    Background="{StaticResource LumaPurple}"
+                    Opacity="1">
 
                 <Grid RowDefinitions="*,Auto">
 
@@ -200,7 +186,6 @@
                                   VerticalAlignment="Center">
 
                                 <Image Grid.Column="0"
-                                       Classes="sidebar-icon-white"
                                        Source="/Assets/nova branco.png"
                                        Width="27"
                                        Height="27"
@@ -209,7 +194,7 @@
                                        Stretch="Uniform"/>
 
                                 <TextBlock Grid.Column="1"
-                                           Text="NOVA CONSULTA"
+                                           Text="CONSULTA"
                                            FontSize="18"
                                            FontWeight="SemiBold"
                                            Foreground="#FFFFFF"
@@ -233,7 +218,6 @@
                                   VerticalAlignment="Center">
 
                                 <Image Grid.Column="0"
-                                       Classes="sidebar-icon-white"
                                        Source="/Assets/opcoes branco.png"
                                        Width="27"
                                        Height="27"
@@ -266,7 +250,6 @@
                                   VerticalAlignment="Center">
 
                                 <Image Grid.Column="0"
-                                       Classes="sidebar-icon-white"
                                        Source="/Assets/sobre branco.png"
                                        Width="27"
                                        Height="27"
@@ -300,7 +283,6 @@
                                   VerticalAlignment="Center">
 
                                 <Image Grid.Column="0"
-                                       Classes="sidebar-icon-white"
                                        Source="/Assets/sair branco.png"
                                        Width="27"
                                        Height="27"
@@ -345,9 +327,9 @@
             </Border>
 
 
-            <!-- ===================================================== -->
-            <!-- ÁREA CENTRAL -->
-            <!-- ===================================================== -->
+            <!-- ================================================= -->
+            <!-- ÁREA PRINCIPAL                                    -->
+            <!-- ================================================= -->
 
             <Grid Grid.Column="1"
                   Background="Transparent">
@@ -357,7 +339,9 @@
                             Spacing="10">
 
 
-                    <!-- TÍTULO -->
+                    <!-- ========================================= -->
+                    <!-- TÍTULO L.U.M.A.                           -->
+                    <!-- ========================================= -->
 
                     <StackPanel HorizontalAlignment="Center"
                                 Spacing="2">
@@ -368,30 +352,31 @@
                                    LetterSpacing="2">
 
                             <Run Text="L"
-                                 Foreground="{StaticResource TitlePurple}"/>
+                                 Foreground="{StaticResource LumaPurple}"/>
 
                             <Run Text="."
                                  Foreground="{StaticResource AccentPink}"/>
 
                             <Run Text="U"
-                                 Foreground="{StaticResource TitlePurple}"/>
+                                 Foreground="{StaticResource LumaPurple}"/>
 
                             <Run Text="."
                                  Foreground="{StaticResource AccentPink}"/>
 
                             <Run Text="M"
-                                 Foreground="{StaticResource TitlePurple}"/>
+                                 Foreground="{StaticResource LumaPurple}"/>
 
                             <Run Text="."
                                  Foreground="{StaticResource AccentPink}"/>
 
                             <Run Text="A"
-                                 Foreground="{StaticResource TitlePurple}"/>
+                                 Foreground="{StaticResource LumaPurple}"/>
 
                             <Run Text="."
                                  Foreground="{StaticResource AccentPink}"/>
 
                         </TextBlock>
+
 
                         <TextBlock Text="Labeled Unicellular &amp; Microbe Analysis"
                                    HorizontalAlignment="Center"
@@ -403,65 +388,76 @@
                     </StackPanel>
 
 
-                    <!-- ESPAÇO -->
-
                     <Border Height="18"/>
 
 
-                    <!-- CARD CENTRAL -->
+                    <!-- ========================================= -->
+                    <!-- CARD CENTRAL                              -->
+                    <!-- ========================================= -->
 
-                    <Border Width="560"
-                            Height="390"
+                    <Border Width="500"
+                            Height="350"
                             Background="{StaticResource SurfaceWhite}"
                             BorderBrush="{StaticResource BorderSoft}"
                             BorderThickness="1"
                             CornerRadius="20"
-                            Padding="30"
+                            Padding="26"
                             BoxShadow="0 8 24 0 #22000000">
 
                         <StackPanel HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     Spacing="10">
 
+                            <!-- LOGO -->
+
                             <Image Source="/Assets/logo LUMA ficticia.png"
-                                   Width="300"
-                                   Height="220"
+                                   Width="220"
+                                   Height="170"
                                    HorizontalAlignment="Center"
                                    Stretch="Uniform"/>
+
+
+                            <!-- BEM-VINDO -->
+
+                            <TextBlock Text="Bem-vindo ao L.U.M.A."
+                                       HorizontalAlignment="Center"
+                                       FontSize="19"
+                                       FontWeight="SemiBold"
+                                       Foreground="{StaticResource LumaPurple}"
+                                       Margin="0,4,0,0"/>
+
+
+                            <!-- DESCRIÇÃO -->
+
+                            <TextBlock Text="Sistema de análise e identificação de imagens microscópicas."
+                                       HorizontalAlignment="Center"
+                                       TextAlignment="Center"
+                                       MaxWidth="380"
+                                       FontSize="14"
+                                       FontWeight="Medium"
+                                       Foreground="{StaticResource TextMuted}"
+                                       TextWrapping="Wrap"
+                                       Margin="0,2,0,4"/>
+
+
+                            <!-- MICROSCOPIC -->
 
                             <TextBlock Text="MICROSCOPIC IMAGE ANALYSIS"
                                        HorizontalAlignment="Center"
                                        FontSize="12"
                                        FontWeight="SemiBold"
                                        LetterSpacing="2"
-                                       Foreground="{StaticResource AccentPink}"/>
+                                       Foreground="{StaticResource AccentPink}"
+                                       Margin="0,4,0,0"/>
 
                         </StackPanel>
 
                     </Border>
 
 
-                    <!-- ESPAÇO -->
+                    <!-- pequeno respiro abaixo do card -->
 
-                    <Border Height="16"/>
-
-
-                    <!-- BOAS-VINDAS -->
-
-                    <TextBlock Text="Bem-vindo ao L.U.M.A."
-                               HorizontalAlignment="Center"
-                               FontSize="20"
-                               FontWeight="SemiBold"
-                               Foreground="{StaticResource TitlePurple}"/>
-
-
-                    <!-- DESCRIÇÃO -->
-
-                    <TextBlock Text="Sistema de análise e identificação de imagens microscópicas."
-                               HorizontalAlignment="Center"
-                               FontSize="15"
-                               FontWeight="Medium"
-                               Foreground="{StaticResource TextMuted}"/>
+                    <Border Height="10"/>
 
                 </StackPanel>
 

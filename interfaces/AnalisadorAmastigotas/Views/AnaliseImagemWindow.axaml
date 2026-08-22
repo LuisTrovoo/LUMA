@@ -3,6 +3,7 @@
         xmlns:views="clr-namespace:AnalisadorAmastigotas.Views"
         x:Class="AnalisadorAmastigotas.Views.AnaliseImagemWindow"
         Title="L.U.M.A. - Análise de Imagens"
+        Icon="/Assets/logo LUMA ficticia.png"
         Width="1400"
         Height="850"
         WindowStartupLocation="CenterScreen">

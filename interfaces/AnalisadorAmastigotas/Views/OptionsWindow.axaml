@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="AnalisadorAmastigotas.Views.OptionsWindow"
         Title="L.U.M.A. - Opções"
+        Icon="/Assets/logo LUMA ficticia.png"
         Width="1200"
         Height="700"
         MinWidth="1000"
@@ -21,10 +22,10 @@
                          Color="#FFFFFF"/>
 
         <SolidColorBrush x:Key="Purple"
-                         Color="#5E2B97"/>
+                         Color="#644899"/>
 
         <SolidColorBrush x:Key="PurpleDark"
-                         Color="#432078"/>
+                         Color="#523B7E"/>
 
         <SolidColorBrush x:Key="PurpleLight"
                          Color="#E9DDF8"/>
@@ -53,13 +54,13 @@
                              StartPoint="0%,0%"
                              EndPoint="100%,0%">
 
-            <GradientStop Color="#6840D8"
+            <GradientStop Color="#644899"
                           Offset="0"/>
 
-            <GradientStop Color="#8B45D2"
+            <GradientStop Color="#644899"
                           Offset="0.50"/>
 
-            <GradientStop Color="#E94F9A"
+            <GradientStop Color="#644899"
                           Offset="1"/>
 
         </LinearGradientBrush>
@@ -73,13 +74,13 @@
                              StartPoint="0%,0%"
                              EndPoint="100%,0%">
 
-            <GradientStop Color="#7040D4"
+            <GradientStop Color="#644899"
                           Offset="0"/>
 
-            <GradientStop Color="#A044D1"
+            <GradientStop Color="#644899"
                           Offset="0.52"/>
 
-            <GradientStop Color="#F052A1"
+            <GradientStop Color="#644899"
                           Offset="1"/>
 
         </LinearGradientBrush>
@@ -116,6 +117,12 @@
 
             <Setter Property="Padding"
                     Value="0"/>
+
+            <Setter Property="HorizontalAlignment"
+                    Value="Stretch"/>
+
+            <Setter Property="VerticalAlignment"
+                    Value="Stretch"/>
 
         </Style>
 
@@ -171,7 +178,7 @@
         <Style Selector="Button.back-button:pointerover">
 
             <Setter Property="Background"
-                    Value="#D94F9C"/>
+                    Value="#7559AB"/>
 
             <Setter Property="Foreground"
                     Value="#FFFFFF"/>
@@ -182,7 +189,7 @@
         <Style Selector="Button.back-button:pressed">
 
             <Setter Property="Background"
-                    Value="#B83C8A"/>
+                    Value="#523B7E"/>
 
             <Setter Property="Foreground"
                     Value="#FFFFFF"/>
@@ -465,7 +472,8 @@
 
                         <Button Grid.Row="0"
                                 Grid.Column="0"
-                                Classes="option-card">
+                                Classes="option-card"
+                                HorizontalAlignment="Stretch">
 
                             <Grid ColumnDefinitions="65,*,28"
                                   VerticalAlignment="Center"
@@ -520,7 +528,8 @@
 
                         <Button Grid.Row="0"
                                 Grid.Column="1"
-                                Classes="option-card">
+                                Classes="option-card"
+                                HorizontalAlignment="Stretch">
 
                             <Grid ColumnDefinitions="65,*,28"
                                   VerticalAlignment="Center"
@@ -576,7 +585,8 @@
 
                         <Button Grid.Row="1"
                                 Grid.Column="0"
-                                Classes="option-card">
+                                Classes="option-card"
+                                HorizontalAlignment="Stretch">
 
                             <Grid ColumnDefinitions="65,*,28"
                                   VerticalAlignment="Center"
@@ -631,7 +641,8 @@
 
                         <Button Grid.Row="1"
                                 Grid.Column="1"
-                                Classes="option-card">
+                                Classes="option-card"
+                                HorizontalAlignment="Stretch">
 
                             <Grid ColumnDefinitions="65,*,28"
                                   VerticalAlignment="Center"

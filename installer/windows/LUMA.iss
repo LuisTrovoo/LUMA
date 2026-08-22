@@ -9,6 +9,8 @@ AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 
+SetupIconFile=..\..\interfaces\AnalisadorAmastigotas\Assets\luma.ico
+
 DefaultDirName={localappdata}\Programs\LUMA
 DefaultGroupName=L.U.M.A.
 

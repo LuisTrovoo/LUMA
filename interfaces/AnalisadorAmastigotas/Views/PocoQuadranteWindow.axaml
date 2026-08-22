@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     x:Class="AnalisadorAmastigotas.Views.PocoQuadranteWindow"
     Title="L.U.M.A. - Poço e Quadrante"
+    Icon="/Assets/logo LUMA ficticia.png"
     Width="1200"
     Height="700"
     WindowStartupLocation="CenterScreen"
