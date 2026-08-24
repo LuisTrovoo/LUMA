@@ -15,13 +15,13 @@
         <!-- ================================================= -->
 
         <SolidColorBrush x:Key="Purple"
-                         Color="#5E2B97"/>
+                         Color="#644899"/>
 
         <SolidColorBrush x:Key="PurpleLight"
-                         Color="#7040A8"/>
+                         Color="#7559AB"/>
 
         <SolidColorBrush x:Key="Pink"
-                         Color="#E94F9B"/>
+                         Color="#E56A9B"/>
 
         <SolidColorBrush x:Key="PinkLight"
                          Color="#F28ABB"/>
@@ -39,13 +39,13 @@
                              StartPoint="0%,0%"
                              EndPoint="100%,0%">
 
-            <GradientStop Color="#6333B8"
+            <GradientStop Color="#644899"
                           Offset="0"/>
 
-            <GradientStop Color="#7B3FC4"
+            <GradientStop Color="#644899"
                           Offset="0.48"/>
 
-            <GradientStop Color="#E94F9B"
+            <GradientStop Color="#644899"
                           Offset="1"/>
 
         </LinearGradientBrush>
@@ -54,13 +54,13 @@
                              StartPoint="0%,0%"
                              EndPoint="100%,0%">
 
-            <GradientStop Color="#7040C7"
+            <GradientStop Color="#644899"
                           Offset="0"/>
 
-            <GradientStop Color="#A13DCA"
+            <GradientStop Color="#644899"
                           Offset="0.50"/>
 
-            <GradientStop Color="#E84D9E"
+            <GradientStop Color="#644899"
                           Offset="1"/>
 
         </LinearGradientBrush>
@@ -114,7 +114,7 @@
         <Style Selector="Button.back-button:pointerover">
 
             <Setter Property="Background"
-                    Value="#D94799"/>
+                    Value="#7559AB"/>
 
         </Style>
 
@@ -122,7 +122,7 @@
         <Style Selector="Button.back-button:pressed">
 
             <Setter Property="Background"
-                    Value="#B93682"/>
+                    Value="#523B7E"/>
 
         </Style>
 

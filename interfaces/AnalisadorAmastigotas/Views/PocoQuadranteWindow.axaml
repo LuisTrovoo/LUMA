@@ -12,7 +12,7 @@
     <Window.Styles>
 
         <!-- ===================================================== -->
-        <!-- ETAPAS DO GABARITO LATERAL                           -->
+        <!-- ETAPAS LATERAIS                                      -->
         <!-- ===================================================== -->
 
         <Style Selector="Border.etapa">
@@ -24,18 +24,22 @@
         </Style>
 
         <Style Selector="Border.etapa.ativa">
+
             <Setter Property="BorderThickness" Value="0"/>
 
             <Setter Property="Background">
+
                 <LinearGradientBrush
                     StartPoint="0%,0%"
                     EndPoint="100%,0%">
 
-                    <GradientStop Color="#7045CC" Offset="0"/>
-                    <GradientStop Color="#D83D94" Offset="1"/>
+                    <GradientStop Color="#644899" Offset="0"/>
+                    <GradientStop Color="#644899" Offset="1"/>
 
                 </LinearGradientBrush>
+
             </Setter>
+
         </Style>
 
         <Style Selector="Border.etapa.bloqueada">
@@ -46,61 +50,111 @@
 
 
         <!-- ===================================================== -->
-        <!-- BOTÕES DE POÇO                                       -->
+        <!-- BOTÕES DOS POÇOS                                     -->
         <!-- ===================================================== -->
 
         <Style Selector="Button.pocoButton">
-            <Setter Property="Width" Value="76"/>
-            <Setter Property="Height" Value="76"/>
-            <Setter Property="CornerRadius" Value="38"/>
+
+            <Setter Property="Width" Value="52"/>
+            <Setter Property="Height" Value="52"/>
+            <Setter Property="CornerRadius" Value="26"/>
+
             <Setter Property="Background" Value="#FFFFFF"/>
-            <Setter Property="BorderBrush" Value="#6838C8"/>
+            <Setter Property="BorderBrush" Value="#644899"/>
             <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="Foreground" Value="#5E2B97"/>
-            <Setter Property="FontSize" Value="24"/>
+
+            <Setter Property="Foreground" Value="#644899"/>
+
+            <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+            <Setter Property="Padding" Value="0"/>
+
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center"/>
+
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center"/>
+
         </Style>
+
 
         <Style Selector="Button.pocoButton:pointerover">
-            <Setter Property="Background" Value="#F2ECFF"/>
+
+            <Setter Property="Background" Value="#F2EEFA"/>
+            <Setter Property="BorderBrush" Value="#7559AB"/>
+
         </Style>
 
+
+        <Style Selector="Button.pocoButton:pressed">
+
+            <Setter Property="Background" Value="#E8E0F2"/>
+            <Setter Property="BorderBrush" Value="#523B7E"/>
+
+        </Style>
+
+
         <Style Selector="Button.pocoButton.selected">
-            <Setter Property="Background" Value="#7A3FD1"/>
+
+            <Setter Property="Background" Value="#644899"/>
             <Setter Property="Foreground" Value="#FFFFFF"/>
-            <Setter Property="BorderBrush" Value="#7A3FD1"/>
+            <Setter Property="BorderBrush" Value="#644899"/>
+
         </Style>
 
 
         <!-- ===================================================== -->
-        <!-- BOTÕES DE QUADRANTE                                  -->
+        <!-- BOTÕES DOS QUADRANTES                                -->
         <!-- ===================================================== -->
 
         <Style Selector="Button.quadranteButton">
-            <Setter Property="Width" Value="92"/>
-            <Setter Property="Height" Value="92"/>
+
+            <Setter Property="Width" Value="88"/>
+            <Setter Property="Height" Value="88"/>
+
             <Setter Property="CornerRadius" Value="16"/>
+
             <Setter Property="Background" Value="#FFFFFF"/>
-            <Setter Property="BorderBrush" Value="#E7DDF4"/>
+            <Setter Property="BorderBrush" Value="#DED4EA"/>
             <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Foreground" Value="#D94B98"/>
+
+            <Setter Property="Foreground" Value="#644899"/>
+
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center"/>
+
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center"/>
+
         </Style>
+
 
         <Style Selector="Button.quadranteButton:pointerover">
-            <Setter Property="Background" Value="#FFF1F8"/>
-            <Setter Property="BorderBrush" Value="#E34A9B"/>
+
+            <Setter Property="Background" Value="#F2EEFA"/>
+            <Setter Property="BorderBrush" Value="#7559AB"/>
+
         </Style>
 
+
+        <Style Selector="Button.quadranteButton:pressed">
+
+            <Setter Property="Background" Value="#E8E0F2"/>
+            <Setter Property="BorderBrush" Value="#523B7E"/>
+
+        </Style>
+
+
         <Style Selector="Button.quadranteButton.selected">
-            <Setter Property="Background" Value="#D83D94"/>
+
+            <Setter Property="Background" Value="#644899"/>
             <Setter Property="Foreground" Value="#FFFFFF"/>
-            <Setter Property="BorderBrush" Value="#D83D94"/>
+            <Setter Property="BorderBrush" Value="#644899"/>
+
         </Style>
 
 
@@ -109,55 +163,78 @@
         <!-- ===================================================== -->
 
         <Style Selector="Button.avancarButton">
+
             <Setter Property="Width" Value="220"/>
             <Setter Property="Height" Value="52"/>
+
             <Setter Property="CornerRadius" Value="10"/>
 
             <Setter Property="Background">
+
                 <LinearGradientBrush
                     StartPoint="0%,0%"
                     EndPoint="100%,0%">
 
-                    <GradientStop Color="#7045CC" Offset="0"/>
-                    <GradientStop Color="#D83D94" Offset="1"/>
+                    <GradientStop Color="#644899" Offset="0"/>
+                    <GradientStop Color="#644899" Offset="1"/>
 
                 </LinearGradientBrush>
+
             </Setter>
 
             <Setter Property="Foreground" Value="#FFFFFF"/>
+
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
+
             <Setter Property="BorderThickness" Value="0"/>
+
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center"/>
+
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center"/>
+
         </Style>
 
+
         <Style Selector="Button.avancarButton:disabled">
+
             <Setter Property="Background" Value="#D9D6DC"/>
             <Setter Property="Foreground" Value="#888888"/>
             <Setter Property="Opacity" Value="1"/>
+
         </Style>
+
 
         <Style Selector="Button.avancarButton:pointerover:enabled">
-            <Setter Property="Opacity" Value="0.88"/>
+
+            <Setter Property="Background" Value="#7559AB"/>
+
         </Style>
 
+
         <Style Selector="Button.avancarButton:pressed:enabled">
-            <Setter Property="Opacity" Value="0.78"/>
+
+            <Setter Property="Background" Value="#523B7E"/>
+
         </Style>
 
     </Window.Styles>
 
 
     <!-- ========================================================= -->
-    <!-- FUNDO                                                     -->
+    <!-- TELA                                                      -->
     <!-- ========================================================= -->
 
     <Grid Background="#F8F6FA">
 
         <Grid.ColumnDefinitions>
+
             <ColumnDefinition Width="260"/>
+
             <ColumnDefinition Width="*"/>
+
         </Grid.ColumnDefinitions>
 
 
@@ -173,9 +250,13 @@
             <Grid>
 
                 <Grid.RowDefinitions>
+
                     <RowDefinition Height="Auto"/>
+
                     <RowDefinition Height="*"/>
+
                     <RowDefinition Height="Auto"/>
+
                 </Grid.RowDefinitions>
 
 
@@ -184,14 +265,10 @@
                     Text="GABARITO"
                     FontSize="25"
                     FontWeight="Bold"
-                    Foreground="#5E2B97"
+                    Foreground="#644899"
                     HorizontalAlignment="Center"
                     Margin="0,4,0,20"/>
 
-
-                <!-- ================================================= -->
-                <!-- ETAPAS                                             -->
-                <!-- ================================================= -->
 
                 <StackPanel
                     Grid.Row="1"
@@ -209,9 +286,13 @@
                         <Grid>
 
                             <Grid.ColumnDefinitions>
+
                                 <ColumnDefinition Width="40"/>
+
                                 <ColumnDefinition Width="*"/>
+
                             </Grid.ColumnDefinitions>
+
 
                             <Border
                                 x:Name="DoencaIconBorder"
@@ -219,7 +300,7 @@
                                 Width="34"
                                 Height="34"
                                 CornerRadius="17"
-                                Background="#713BD0"
+                                Background="#644899"
                                 HorizontalAlignment="Center">
 
                                 <TextBlock
@@ -233,6 +314,7 @@
 
                             </Border>
 
+
                             <StackPanel
                                 Grid.Column="1"
                                 Margin="10,0,0,0"
@@ -243,7 +325,7 @@
                                     Text="DOENÇA"
                                     FontSize="12"
                                     FontWeight="Bold"
-                                    Foreground="#5E2B97"/>
+                                    Foreground="#644899"/>
 
                                 <TextBlock
                                     x:Name="DoencaTextBlock"
@@ -260,7 +342,7 @@
 
 
                     <!-- ================================================= -->
-                    <!-- LINHAGEM                                           -->
+                    <!-- LINHAGEM                                          -->
                     <!-- ================================================= -->
 
                     <Border
@@ -270,9 +352,13 @@
                         <Grid>
 
                             <Grid.ColumnDefinitions>
+
                                 <ColumnDefinition Width="40"/>
+
                                 <ColumnDefinition Width="*"/>
+
                             </Grid.ColumnDefinitions>
+
 
                             <Border
                                 x:Name="LinhagemIconBorder"
@@ -280,7 +366,7 @@
                                 Width="34"
                                 Height="34"
                                 CornerRadius="17"
-                                Background="#713BD0"
+                                Background="#644899"
                                 HorizontalAlignment="Center">
 
                                 <TextBlock
@@ -294,6 +380,7 @@
 
                             </Border>
 
+
                             <StackPanel
                                 Grid.Column="1"
                                 Margin="10,0,0,0"
@@ -304,7 +391,7 @@
                                     Text="LINHAGEM"
                                     FontSize="12"
                                     FontWeight="Bold"
-                                    Foreground="#5E2B97"/>
+                                    Foreground="#644899"/>
 
                                 <TextBlock
                                     x:Name="LinhagemTextBlock"
@@ -321,7 +408,7 @@
 
 
                     <!-- ================================================= -->
-                    <!-- LÂMINA                                             -->
+                    <!-- LÂMINA                                            -->
                     <!-- ================================================= -->
 
                     <Border
@@ -331,9 +418,13 @@
                         <Grid>
 
                             <Grid.ColumnDefinitions>
+
                                 <ColumnDefinition Width="40"/>
+
                                 <ColumnDefinition Width="*"/>
+
                             </Grid.ColumnDefinitions>
+
 
                             <Border
                                 x:Name="LaminaIconBorder"
@@ -341,7 +432,7 @@
                                 Width="34"
                                 Height="34"
                                 CornerRadius="17"
-                                Background="#713BD0"
+                                Background="#644899"
                                 HorizontalAlignment="Center">
 
                                 <TextBlock
@@ -355,6 +446,7 @@
 
                             </Border>
 
+
                             <StackPanel
                                 Grid.Column="1"
                                 Margin="10,0,0,0"
@@ -365,7 +457,7 @@
                                     Text="LÂMINA"
                                     FontSize="12"
                                     FontWeight="Bold"
-                                    Foreground="#5E2B97"/>
+                                    Foreground="#644899"/>
 
                                 <TextBlock
                                     x:Name="LaminaTextBlock"
@@ -381,7 +473,7 @@
 
 
                     <!-- ================================================= -->
-                    <!-- POÇO                                               -->
+                    <!-- POÇO                                              -->
                     <!-- ================================================= -->
 
                     <Border
@@ -391,9 +483,13 @@
                         <Grid>
 
                             <Grid.ColumnDefinitions>
+
                                 <ColumnDefinition Width="40"/>
+
                                 <ColumnDefinition Width="*"/>
+
                             </Grid.ColumnDefinitions>
+
 
                             <Border
                                 x:Name="PocoIconBorder"
@@ -407,13 +503,14 @@
                                 <TextBlock
                                     x:Name="PocoIconTextBlock"
                                     Text="4"
-                                    Foreground="#713BD0"
+                                    Foreground="#644899"
                                     FontSize="18"
                                     FontWeight="Bold"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"/>
 
                             </Border>
+
 
                             <StackPanel
                                 Grid.Column="1"
@@ -441,7 +538,7 @@
 
 
                     <!-- ================================================= -->
-                    <!-- QUADRANTE                                          -->
+                    <!-- QUADRANTE                                         -->
                     <!-- ================================================= -->
 
                     <Border
@@ -451,9 +548,13 @@
                         <Grid>
 
                             <Grid.ColumnDefinitions>
+
                                 <ColumnDefinition Width="40"/>
+
                                 <ColumnDefinition Width="*"/>
+
                             </Grid.ColumnDefinitions>
+
 
                             <Border
                                 x:Name="QuadranteIconBorder"
@@ -474,6 +575,7 @@
                                     VerticalAlignment="Center"/>
 
                             </Border>
+
 
                             <StackPanel
                                 Grid.Column="1"
@@ -502,9 +604,7 @@
                 </StackPanel>
 
 
-                <!-- ================================================= -->
-                <!-- DECORAÇÃO                                          -->
-                <!-- ================================================= -->
+                <!-- DECORAÇÃO -->
 
                 <StackPanel
                     Grid.Row="2"
@@ -535,131 +635,277 @@
 
         <Grid
             Grid.Column="1"
-            Margin="40,25,40,25">
+            Margin="30,25,30,25">
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+            <!--
+                EXATAMENTE METADE / METADE
 
+                *   = POÇO
+                1   = linha divisória
+                *   = QUADRANTE
+            -->
 
-            <!-- ================================================= -->
-            <!-- POÇO                                                -->
-            <!-- ================================================= -->
+            <Grid.ColumnDefinitions>
 
-            <StackPanel
-                Grid.Row="0"
-                Spacing="4"
-                HorizontalAlignment="Center">
+                <ColumnDefinition Width="*"/>
 
-                <TextBlock
-                    Text="POÇO"
-                    FontSize="32"
-                    FontWeight="Bold"
-                    Foreground="#5E2B97"
-                    HorizontalAlignment="Center"/>
+                <ColumnDefinition Width="1"/>
 
-                <TextBlock
-                    Text="Selecione o poço da lâmina"
-                    FontSize="15"
-                    Foreground="#6E667A"
-                    HorizontalAlignment="Center"/>
+                <ColumnDefinition Width="*"/>
 
-                <Border
-                    Width="58"
-                    Height="4"
-                    CornerRadius="2"
-                    Background="#D83D94"
-                    HorizontalAlignment="Center"
-                    Margin="0,7,0,0"/>
-
-            </StackPanel>
+            </Grid.ColumnDefinitions>
 
 
             <!-- ================================================= -->
-            <!-- BOTÕES DOS POÇOS                                  -->
-            <!-- ================================================= -->
-
-            <StackPanel
-                Grid.Row="1"
-                Orientation="Horizontal"
-                HorizontalAlignment="Center"
-                Spacing="18"
-                Margin="0,18,0,12">
-
-                <Button
-                    x:Name="Poco1Button"
-                    Content="1"
-                    Classes="pocoButton"
-                    Click="Poco1_Click"/>
-
-                <Button
-                    x:Name="Poco2Button"
-                    Content="2"
-                    Classes="pocoButton"
-                    Click="Poco2_Click"/>
-
-                <Button
-                    x:Name="Poco3Button"
-                    Content="3"
-                    Classes="pocoButton"
-                    Click="Poco3_Click"/>
-
-                <Button
-                    x:Name="Poco4Button"
-                    Content="4"
-                    Classes="pocoButton"
-                    Click="Poco4_Click"/>
-
-                <Button
-                    x:Name="Poco5Button"
-                    Content="5"
-                    Classes="pocoButton"
-                    Click="Poco5_Click"/>
-
-            </StackPanel>
-
-
-            <!-- ================================================= -->
-            <!-- ÁREA DOS QUADRANTES                              -->
+            <!-- POÇO - ESQUERDA                                  -->
             <!-- ================================================= -->
 
             <Grid
-                Grid.Row="2"
-                Margin="0,30,0,0">
+                Grid.Column="0"
+                Margin="0,0,24,0">
 
                 <Grid.RowDefinitions>
+
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+
                     <RowDefinition Height="*"/>
+
                 </Grid.RowDefinitions>
-
-
-                <!-- LINHA DIVISÓRIA -->
-
-                <Border
-                    Grid.Row="0"
-                    Height="1"
-                    Background="#E4DDEC"
-                    VerticalAlignment="Top"
-                    Margin="40,0,40,0"/>
 
 
                 <!-- TÍTULO -->
 
                 <StackPanel
-                    Grid.Row="1"
+                    Grid.Row="0"
                     HorizontalAlignment="Center"
-                    Spacing="3"
-                    Margin="0,30,0,0">
+                    Spacing="4">
+
+                    <TextBlock
+                        Text="POÇO"
+                        FontSize="34"
+                        FontWeight="Bold"
+                        Foreground="#644899"
+                        HorizontalAlignment="Center"/>
+
+                    <TextBlock
+                        Text="Selecione o poço da lâmina"
+                        FontSize="15"
+                        Foreground="#6E667A"
+                        HorizontalAlignment="Center"/>
+
+                    <Border
+                        Width="58"
+                        Height="4"
+                        CornerRadius="2"
+                        Background="#D83D94"
+                        HorizontalAlignment="Center"
+                        Margin="0,7,0,0"/>
+
+                </StackPanel>
+
+
+                <!-- ================================================= -->
+                <!-- LÂMINA EM PÉ + BOTÕES LATERAIS                  -->
+                <!-- ================================================= -->
+
+                <Grid
+                    x:Name="PocosLayoutGrid"
+                    Grid.Row="1"
+                    Width="430"
+                    Height="500"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+                    <Grid.ColumnDefinitions>
+
+                        <!-- BOTÕES ESQUERDA -->
+
+                        <ColumnDefinition Width="70"/>
+
+                        <!-- IMAGEM CENTRAL -->
+
+                        <ColumnDefinition Width="290"/>
+
+                        <!-- BOTÕES DIREITA -->
+
+                        <ColumnDefinition Width="70"/>
+
+                    </Grid.ColumnDefinitions>
+
+
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="*"/>
+
+                        <RowDefinition Height="*"/>
+
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+
+
+                    <!-- ============================================= -->
+                    <!-- IMAGEM EM PÉ                                  -->
+                    <!-- ============================================= -->
+
+                    <Grid
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Grid.RowSpan="3"
+                        Width="255"
+                        Height="460"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        ClipToBounds="False">
+
+                        <!-- LÂMINA 1 -->
+                        <Image
+                            x:Name="Lamina1VisualImage"
+                            Source="/Assets/lamina1numerada.png"
+                            Stretch="Uniform"
+                            IsVisible="False"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+
+                        <!-- LÂMINA 2 -->
+                        <Image
+                            x:Name="Lamina2VisualImage"
+                            Source="/Assets/lamina2numerada.png"
+                            Stretch="Uniform"
+                            IsVisible="False"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+
+                        <!-- LÂMINA 3 -->
+                        <Image
+                            x:Name="Lamina3VisualImage"
+                            Source="/Assets/lamina3numerada.png"
+                            Stretch="Uniform"
+                            IsVisible="False"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+
+                        <!-- LÂMINA 4 -->
+                        <Image
+                            x:Name="Lamina4VisualImage"
+                            Source="/Assets/lamina4numerada.png"
+                            Stretch="Uniform"
+                            IsVisible="False"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+
+                        <!-- LÂMINA 5 -->
+                        <Image
+                            x:Name="Lamina5VisualImage"
+                            Source="/Assets/lamina5numerada.png"
+                            Stretch="Uniform"
+                            IsVisible="False"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+
+
+                    <!-- ============================================= -->
+                    <!-- BOTÕES DOS POÇOS                             -->
+                    <!-- C# DEFINE COLUNA E LINHA                      -->
+                    <!-- ============================================= -->
+
+                    <Button
+                        x:Name="Poco1Button"
+                        Content="1"
+                        Classes="pocoButton"
+                        IsVisible="False"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="Poco1_Click"/>
+
+
+                    <Button
+                        x:Name="Poco2Button"
+                        Content="2"
+                        Classes="pocoButton"
+                        IsVisible="False"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="Poco2_Click"/>
+
+
+                    <Button
+                        x:Name="Poco3Button"
+                        Content="3"
+                        Classes="pocoButton"
+                        IsVisible="False"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="Poco3_Click"/>
+
+
+                    <Button
+                        x:Name="Poco4Button"
+                        Content="4"
+                        Classes="pocoButton"
+                        IsVisible="False"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="Poco4_Click"/>
+
+
+                    <Button
+                        x:Name="Poco5Button"
+                        Content="5"
+                        Classes="pocoButton"
+                        IsVisible="False"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="Poco5_Click"/>
+
+                </Grid>
+
+            </Grid>
+
+
+            <!-- ================================================= -->
+            <!-- LINHA EXATAMENTE NO CENTRO                       -->
+            <!-- ================================================= -->
+
+            <Border
+                Grid.Column="1"
+                Width="1"
+                Background="#D9D2E4"
+                Margin="0,5,0,5"/>
+
+
+            <!-- ================================================= -->
+            <!-- QUADRANTE - DIREITA                              -->
+            <!-- ================================================= -->
+
+            <Grid
+                Grid.Column="2"
+                Margin="24,0,0,0">
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="Auto"/>
+
+                    <RowDefinition Height="*"/>
+
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+
+
+                <!-- TÍTULO -->
+
+                <StackPanel
+                    Grid.Row="0"
+                    HorizontalAlignment="Center"
+                    Spacing="4">
 
                     <TextBlock
                         Text="QUADRANTE"
-                        FontSize="28"
+                        FontSize="34"
                         FontWeight="Bold"
-                        Foreground="#5E2B97"
+                        Foreground="#644899"
                         HorizontalAlignment="Center"/>
 
                     <TextBlock
@@ -668,24 +914,30 @@
                         Foreground="#6E667A"
                         HorizontalAlignment="Center"/>
 
+                    <Border
+                        Width="58"
+                        Height="4"
+                        CornerRadius="2"
+                        Background="#D83D94"
+                        HorizontalAlignment="Center"
+                        Margin="0,7,0,0"/>
+
                 </StackPanel>
 
 
                 <!-- ================================================= -->
-                <!-- ÁREA CENTRAL DOS QUADRANTES                      -->
+                <!-- QUADRANTES                                       -->
                 <!-- ================================================= -->
 
                 <Grid
-                    Grid.Row="2"
-                    Width="520"
-                    Height="245"
+                    Grid.Row="1"
+                    Width="400"
+                    Height="420"
                     HorizontalAlignment="Center"
-                    Margin="0,18,0,0">
+                    VerticalAlignment="Center">
 
 
-                    <!-- ================================================= -->
-                    <!-- Q2 - SUPERIOR ESQUERDO                           -->
-                    <!-- ================================================= -->
+                    <!-- Q2 -->
 
                     <Button
                         x:Name="Quadrante2Button"
@@ -693,13 +945,11 @@
                         Classes="quadranteButton"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        Margin="10,12,0,0"
+                        Margin="12,45,0,0"
                         Click="Quadrante2_Click"/>
 
 
-                    <!-- ================================================= -->
-                    <!-- Q1 - SUPERIOR DIREITO                            -->
-                    <!-- ================================================= -->
+                    <!-- Q1 -->
 
                     <Button
                         x:Name="Quadrante1Button"
@@ -707,109 +957,32 @@
                         Classes="quadranteButton"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top"
-                        Margin="0,12,10,0"
+                        Margin="0,45,12,0"
                         Click="Quadrante1_Click"/>
 
 
-                    <!-- ================================================= -->
-                    <!-- CÉLULA                                           -->
-                    <!-- ================================================= -->
+                    <!-- ========================================= -->
+                    <!-- DESENHO CENTRAL                          -->
+                    <!-- ========================================= -->
 
-                    <Grid
-                        Width="220"
-                        Height="220"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center">
+<!-- ========================================= -->
+<!-- IMAGEM REAL DO QUADRANTE                 -->
+<!-- ========================================= -->
 
-                        <Ellipse
-                            Width="220"
-                            Height="220"
-                            Fill="#F2E8F4"
-                            Stroke="#FFFFFF"
-                            StrokeThickness="7"/>
+    
 
-
-                        <!-- manchas microscópicas -->
-
-                        <Ellipse
-                            Width="42"
-                            Height="30"
-                            Fill="#7B4AA8"
-                            Opacity="0.75"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            Margin="62,48,0,0"/>
-
-                        <Ellipse
-                            Width="34"
-                            Height="27"
-                            Fill="#62358F"
-                            Opacity="0.80"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Top"
-                            Margin="0,55,52,0"/>
-
-                        <Ellipse
-                            Width="46"
-                            Height="31"
-                            Fill="#8B55B5"
-                            Opacity="0.72"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Bottom"
-                            Margin="47,0,0,54"/>
-
-                        <Ellipse
-                            Width="36"
-                            Height="27"
-                            Fill="#60378D"
-                            Opacity="0.78"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Bottom"
-                            Margin="0,0,49,49"/>
-
-                        <Ellipse
-                            Width="25"
-                            Height="22"
-                            Fill="#A56BC4"
-                            Opacity="0.75"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Margin="-18,12,0,0"/>
-
-                        <Ellipse
-                            Width="21"
-                            Height="19"
-                            Fill="#663C96"
-                            Opacity="0.78"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Margin="28,-24,0,0"/>
-
-
-                        <!-- ================================================= -->
-                        <!-- LINHAS DOS QUADRANTES                           -->
-                        <!-- ================================================= -->
-
-                        <Border
-                            Width="2"
-                            Height="200"
-                            Background="#E34A9B"
+                        <Image
+                            Source="/Assets/quadrante.png"
+                            Width="215"
+                            Height="215"
+                            Stretch="Uniform"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>
 
-                        <Border
-                            Width="200"
-                            Height="2"
-                            Background="#E34A9B"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
-
-                    </Grid>
+            
 
 
-                    <!-- ================================================= -->
-                    <!-- Q3 - INFERIOR ESQUERDO                           -->
-                    <!-- ================================================= -->
+                    <!-- Q3 -->
 
                     <Button
                         x:Name="Quadrante3Button"
@@ -817,13 +990,11 @@
                         Classes="quadranteButton"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Bottom"
-                        Margin="10,0,0,12"
+                        Margin="12,0,0,45"
                         Click="Quadrante3_Click"/>
 
 
-                    <!-- ================================================= -->
-                    <!-- Q4 - INFERIOR DIREITO                            -->
-                    <!-- ================================================= -->
+                    <!-- Q4 -->
 
                     <Button
                         x:Name="Quadrante4Button"
@@ -831,28 +1002,83 @@
                         Classes="quadranteButton"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
-                        Margin="0,0,10,12"
+                        Margin="0,0,12,45"
                         Click="Quadrante4_Click"/>
 
                 </Grid>
 
+
+                <!-- ================================================= -->
+                <!-- AVANÇAR                                          -->
+                <!-- ================================================= -->
+
+                <Button
+                    x:Name="AvancarButton"
+                    Grid.Row="2"
+                    Content="AVANÇAR    →"
+                    Classes="avancarButton"
+                    HorizontalAlignment="Center"
+                    Margin="0,5,0,0"
+                    IsEnabled="False"
+                    Click="Avancar_Click"/>
+
+
+                <!-- ================================================= -->
+                <!-- BLOQUEIO DO LADO DIREITO                         -->
+                <!-- ================================================= -->
+
+                <Border
+                    x:Name="QuadranteBloqueioOverlay"
+                    Grid.Row="0"
+                    Grid.RowSpan="3"
+                    Background="#EDEBED"
+                    Opacity="0.96"
+                    CornerRadius="16">
+
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Spacing="10">
+
+                        <Border
+                            Width="62"
+                            Height="62"
+                            CornerRadius="31"
+                            Background="#D4D1D7"
+                            HorizontalAlignment="Center">
+
+                            <TextBlock
+                                Text="🔒"
+                                FontSize="27"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+
+                        </Border>
+
+
+                        <TextBlock
+                            Text="QUADRANTE BLOQUEADO"
+                            FontSize="18"
+                            FontWeight="Bold"
+                            Foreground="#66616F"
+                            HorizontalAlignment="Center"/>
+
+
+                        <TextBlock
+                            Text="Selecione um poço para liberar os quadrantes."
+                            FontSize="13"
+                            Foreground="#77727F"
+                            HorizontalAlignment="Center"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap"
+                            MaxWidth="280"/>
+
+                    </StackPanel>
+
+                </Border>
+
             </Grid>
 
-
-            <!-- ================================================= -->
-            <!-- AVANÇAR                                            -->
-            <!-- ================================================= -->
-
-            <Button
-                x:Name="AvancarButton"
-                Grid.Row="3"
-                Content="AVANÇAR    →"
-                Classes="avancarButton"
-                HorizontalAlignment="Center"
-                Margin="0,12,0,0"
-                IsEnabled="False"
-                Click="Avancar_Click"/>
- 
         </Grid>
 
     </Grid>

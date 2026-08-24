@@ -15,10 +15,10 @@ public partial class ConsultaWindow : Window
     // ============================================================
 
     private static readonly Color Roxo =
-        Color.FromRgb(112, 69, 204);
+        Color.FromRgb(100, 72, 153);
 
     private static readonly Color RoxoEscuro =
-        Color.FromRgb(81, 49, 143);
+        Color.FromRgb(82, 59, 126);
 
     private static readonly Color Rosa =
         Color.FromRgb(220, 57, 148);
@@ -78,7 +78,7 @@ public partial class ConsultaWindow : Window
                     0),
 
                 new GradientStop(
-                    Rosa,
+                    Roxo,
                     1)
             }
         };
