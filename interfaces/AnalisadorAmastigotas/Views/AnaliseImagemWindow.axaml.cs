@@ -94,8 +94,7 @@ public partial class AnaliseImagemWindow : Window
         {
             indiceImagemAtual = -1;
 
-            SemImagemTextBlock.IsVisible = true;
-            CellViewer.IsVisible = false;
+            MostrarEstadoSemImagem();
 
             ImagemAtualTextBlock.Text =
                 "Imagem 0 de 0";
@@ -213,6 +212,60 @@ public partial class AnaliseImagemWindow : Window
 
 
     // ============================================================
+    // ESTADO CENTRAL - SEM IMAGEM
+    // ============================================================
+
+    private void MostrarEstadoSemImagem()
+    {
+        SemImagemTextBlock.IsVisible = true;
+        CellViewer.IsVisible = false;
+
+        EstadoImagemIconeTextBlock.Text =
+            "＋";
+
+        EstadoImagemTituloTextBlock.Text =
+            "NENHUMA IMAGEM ADICIONADA";
+
+        EstadoImagemSubtituloTextBlock.Text =
+            "Adicione uma imagem para iniciar a análise";
+
+        AdicionarImagemVazioButton.IsVisible =
+            true;
+
+        AdicionarImagemVazioButton.IsEnabled =
+            true;
+    }
+
+
+    // ============================================================
+    // ESTADO CENTRAL - PROCESSANDO A PRIMEIRA IMAGEM
+    // ============================================================
+
+    private void MostrarEstadoProcessando()
+    {
+        CellViewer.Limpar();
+
+        CellViewer.IsVisible =
+            false;
+
+        SemImagemTextBlock.IsVisible =
+            true;
+
+        EstadoImagemIconeTextBlock.Text =
+            "⌛";
+
+        EstadoImagemTituloTextBlock.Text =
+            "PROCESSANDO IMAGEM";
+
+        EstadoImagemSubtituloTextBlock.Text =
+            "O processamento está sendo realizado. Aguarde...";
+
+        AdicionarImagemVazioButton.IsVisible =
+            false;
+    }
+
+
+    // ============================================================
     // IMAGEM ANTERIOR
     // ============================================================
 
@@ -304,11 +357,26 @@ public partial class AnaliseImagemWindow : Window
         }
 
 
+        bool primeiraImagemDoQuadrante =
+            ObterImagensDoQuadranteAtual().Count == 0;
+
+
         try
         {
             ResultadoTextBlock.Text =
                 "Processando imagem...\n"
                 + "Aguarde.";
+
+
+            // ====================================================
+            // PRIMEIRA IMAGEM:
+            // TROCA O ESTADO VAZIO PELO ESTADO DE PROCESSAMENTO
+            // ====================================================
+
+            if (primeiraImagemDoQuadrante)
+            {
+                MostrarEstadoProcessando();
+            }
 
 
             var trovo =
@@ -386,8 +454,18 @@ public partial class AnaliseImagemWindow : Window
                 "Erro durante o processamento:\n"
                 + ex.Message;
 
-            CellViewer.IsVisible = false;
-            SemImagemTextBlock.IsVisible = true;
+
+            // Se era a primeira imagem, volta ao estado inicial
+            // para permitir que o usuário tente novamente.
+
+            if (primeiraImagemDoQuadrante)
+            {
+                MostrarEstadoSemImagem();
+            }
+            else
+            {
+                AtualizarTela();
+            }
         }
     }
 

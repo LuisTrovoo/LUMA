@@ -678,6 +678,7 @@
                         <!-- ÍCONE -->
 
                         <Border
+                            x:Name="EstadoImagemIconeBorder"
                             Grid.Row="0"
                             Width="74"
                             Height="74"
@@ -687,6 +688,7 @@
                             Margin="0,0,0,12">
 
                             <TextBlock
+                                x:Name="EstadoImagemIconeTextBlock"
                                 Text="＋"
                                 FontSize="38"
                                 FontWeight="Light"
@@ -700,6 +702,7 @@
                         <!-- TÍTULO -->
 
                         <TextBlock
+                            x:Name="EstadoImagemTituloTextBlock"
                             Grid.Row="1"
                             Text="NENHUMA IMAGEM ADICIONADA"
                             HorizontalAlignment="Center"
@@ -713,6 +716,7 @@
                         <!-- SUBTÍTULO -->
 
                         <TextBlock
+                            x:Name="EstadoImagemSubtituloTextBlock"
                             Grid.Row="2"
                             Text="Adicione uma imagem para iniciar a análise"
                             HorizontalAlignment="Center"
@@ -725,6 +729,7 @@
                         <!-- BOTÃO -->
 
                         <Button
+                            x:Name="AdicionarImagemVazioButton"
                             Grid.Row="3"
                             Content="ADICIONAR IMAGEM"
                             Classes="adicionarImagemButton"
