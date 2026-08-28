@@ -2,7 +2,7 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     x:Class="AnalisadorAmastigotas.Views.ConfirmacaoWindow"
-    Title="L.U.M.A. - Confirmar"
+    Title="L.U.M.A. - Confirm"
     Icon="/Assets/logo LUMA ficticia.png"
     Width="500"
     Height="320"
@@ -12,7 +12,7 @@
     <Window.Styles>
 
         <!-- ===================================================== -->
-        <!-- BOTÕES                                                -->
+        <!-- BUTTONS                                               -->
         <!-- ===================================================== -->
 
         <Style Selector="Button.confirmarButton">
@@ -25,7 +25,7 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
 
-        <!-- PERMANECER -->
+        <!-- STAY -->
 
         <Style Selector="Button.permanecerButton">
             <Setter Property="Background" Value="#FFFFFF"/>
@@ -40,7 +40,7 @@
         </Style>
 
 
-        <!-- AVANÇAR -->
+        <!-- CONTINUE -->
 
         <Style Selector="Button.avancarConfirmacaoButton">
             <Setter Property="Foreground" Value="#FFFFFF"/>
@@ -75,12 +75,12 @@
 
 
     <!-- ========================================================= -->
-    <!-- FUNDO                                                     -->
+    <!-- BACKGROUND                                                -->
     <!-- ========================================================= -->
 
     <Grid Background="#F8F6FA">
 
-        <!-- brilho decorativo superior -->
+        <!-- decorative glow -->
 
         <Ellipse
             Width="180"
@@ -93,7 +93,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- CONTEÚDO                                               -->
+        <!-- CONTENT                                                -->
         <!-- ===================================================== -->
 
         <StackPanel
@@ -104,7 +104,7 @@
 
 
             <!-- ================================================= -->
-            <!-- ÍCONE DE CONFIRMAÇÃO                              -->
+            <!-- CONFIRMATION ICON                                  -->
             <!-- ================================================= -->
 
             <Border
@@ -146,11 +146,11 @@
 
 
             <!-- ================================================= -->
-            <!-- TÍTULO                                             -->
+            <!-- TITLE                                               -->
             <!-- ================================================= -->
 
             <TextBlock
-                Text="CONFIRMAR AVANÇO"
+                Text="CONFIRM CONTINUE"
                 HorizontalAlignment="Center"
                 FontSize="25"
                 FontWeight="Bold">
@@ -177,11 +177,11 @@
 
 
             <!-- ================================================= -->
-            <!-- DESCRIÇÃO                                          -->
+            <!-- DESCRIPTION                                         -->
             <!-- ================================================= -->
 
             <TextBlock
-                Text="Após avançar, não será possível alterar os dados desta etapa. Deseja continuar?"
+                Text="After continuing, you will not be able to change the data from this step. Do you want to continue?"
                 HorizontalAlignment="Center"
                 TextAlignment="Center"
                 TextWrapping="Wrap"
@@ -193,7 +193,7 @@
 
 
             <!-- ================================================= -->
-            <!-- DIVISOR DECORATIVO                                -->
+            <!-- DECORATIVE DIVIDER                                  -->
             <!-- ================================================= -->
 
             <Grid
@@ -217,7 +217,7 @@
 
 
             <!-- ================================================= -->
-            <!-- BOTÕES                                             -->
+            <!-- BUTTONS                                             -->
             <!-- ================================================= -->
 
             <StackPanel
@@ -226,18 +226,18 @@
                 Spacing="18"
                 Margin="0,2,0,0">
 
-                <!-- PERMANECER -->
+                <!-- STAY -->
 
                 <Button
-                    Content="PERMANECER"
+                    Content="STAY"
                     Classes="confirmarButton permanecerButton"
                     Click="Permanecer_Click"/>
 
 
-                <!-- AVANÇAR -->
+                <!-- CONTINUE -->
 
                 <Button
-                    Content="AVANÇAR"
+                    Content="CONTINUE"
                     Classes="confirmarButton avancarConfirmacaoButton"
                     Click="Avancar_Click"/>
 

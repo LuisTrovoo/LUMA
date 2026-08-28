@@ -65,7 +65,7 @@ public partial class PocoQuadranteWindow : Window
 
 
         // --------------------------------------------------------
-        // GABARITO
+        // WORKFLOW
         // --------------------------------------------------------
 
         DoencaTextBlock.Text =
@@ -75,14 +75,14 @@ public partial class PocoQuadranteWindow : Window
             linhagem;
 
         LaminaTextBlock.Text =
-            $"Lâmina {lamina}";
+            $"Slide {lamina}";
 
 
         PocoTextBlock.Text =
-            "Selecione o poço";
+            "Select the well";
 
         QuadranteTextBlock.Text =
-            "Bloqueado";
+            "Locked";
 
 
         // --------------------------------------------------------
@@ -180,7 +180,7 @@ public partial class PocoQuadranteWindow : Window
         switch (laminaSelecionada)
         {
             // ====================================================
-            // LÂMINA 1
+            // SLIDE 1
             //
             //                IMAGEM    [1]
             // ====================================================
@@ -200,7 +200,7 @@ public partial class PocoQuadranteWindow : Window
 
 
             // ====================================================
-            // LÂMINA 2
+            // SLIDE 2
             //
             //                          [1]
             //
@@ -230,7 +230,7 @@ public partial class PocoQuadranteWindow : Window
 
 
             // ====================================================
-            // LÂMINA 3
+            // SLIDE 3
             //
             //                          [1]
             //
@@ -266,7 +266,7 @@ public partial class PocoQuadranteWindow : Window
 
 
             // ====================================================
-            // LÂMINA 4
+            // SLIDE 4
             //
             // [1]                        [4]
             //
@@ -308,7 +308,7 @@ public partial class PocoQuadranteWindow : Window
 
 
             // ====================================================
-            // LÂMINA 5
+            // SLIDE 5
             //
             // [1]                        [4]
             //
@@ -410,7 +410,7 @@ public partial class PocoQuadranteWindow : Window
 
 
         QuadranteTextBlock.Text =
-            "Bloqueado";
+            "Locked";
 
 
         QuadranteBloqueioOverlay.IsVisible =
@@ -536,7 +536,7 @@ public partial class PocoQuadranteWindow : Window
 
 
         pocoSelecionado =
-            $"Poço {numero}";
+            $"Well {numero}";
 
 
         ConsultaAtual.Dados.Poco =
@@ -546,8 +546,8 @@ public partial class PocoQuadranteWindow : Window
         // --------------------------------------------------------
         // AGORA APARECE NA BARRA:
         //
-        // POÇO
-        // Poço 1
+        // WELL
+        // Well 1
         // --------------------------------------------------------
 
         PocoTextBlock.Text =
@@ -612,7 +612,7 @@ public partial class PocoQuadranteWindow : Window
 
 
         QuadranteTextBlock.Text =
-            "Selecione um quadrante";
+            "Select a quadrant";
 
 
         // --------------------------------------------------------
@@ -709,7 +709,7 @@ public partial class PocoQuadranteWindow : Window
 
 
         quadranteSelecionado =
-            $"Quadrante {numero}";
+            $"Quadrant {numero}";
 
 
         ConsultaAtual.Dados.Quadrante =
@@ -753,15 +753,15 @@ public partial class PocoQuadranteWindow : Window
     // ============================================================
     // ATUALIZA GABARITO
     //
-    // 1 = POÇO ATIVO
-    // 2 = QUADRANTE ATIVO
+    // 1 = WELL ATIVO
+    // 2 = QUADRANT ATIVO
     // ============================================================
 
     private void AtualizarGabarito(
         int etapa)
     {
         // --------------------------------------------------------
-        // DOENÇA
+        // DISEASE
         // --------------------------------------------------------
 
         AplicarEtapaConcluida(
@@ -773,7 +773,7 @@ public partial class PocoQuadranteWindow : Window
 
 
         // --------------------------------------------------------
-        // LINHAGEM
+        // CELL LINE
         // --------------------------------------------------------
 
         AplicarEtapaConcluida(
@@ -785,7 +785,7 @@ public partial class PocoQuadranteWindow : Window
 
 
         // --------------------------------------------------------
-        // LÂMINA
+        // SLIDE
         // --------------------------------------------------------
 
         AplicarEtapaConcluida(
@@ -797,7 +797,7 @@ public partial class PocoQuadranteWindow : Window
 
 
         // --------------------------------------------------------
-        // POÇO
+        // WELL
         // --------------------------------------------------------
 
         if (etapa == 1)
@@ -821,7 +821,7 @@ public partial class PocoQuadranteWindow : Window
 
 
         // --------------------------------------------------------
-        // QUADRANTE
+        // QUADRANT
         // --------------------------------------------------------
 
         if (etapa == 2)
@@ -955,7 +955,7 @@ public partial class PocoQuadranteWindow : Window
 
 
         // IMPORTANTE:
-        // garante que "Poço 1" apareça no fundo branco
+        // garante que "Well 1" apareça no fundo branco
 
         valor.Foreground =
             new SolidColorBrush(
@@ -1076,11 +1076,11 @@ public partial class PocoQuadranteWindow : Window
         // --------------------------------------------------------
 
         if (pocoSelecionado.StartsWith(
-                "Poço "))
+                "Well "))
         {
             string numeroPoco =
                 pocoSelecionado.Replace(
-                    "Poço ",
+                    "Well ",
                     "");
 
 
@@ -1099,11 +1099,11 @@ public partial class PocoQuadranteWindow : Window
         // --------------------------------------------------------
 
         if (quadranteSelecionado.StartsWith(
-                "Quadrante "))
+                "Quadrant "))
         {
             string numeroQuadrante =
                 quadranteSelecionado.Replace(
-                    "Quadrante ",
+                    "Quadrant ",
                     "");
 
 

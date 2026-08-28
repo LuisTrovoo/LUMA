@@ -1,7 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="AnalisadorAmastigotas.Views.ConsultaWindow"
-        Title="L.U.M.A. - Nova Consulta"
+        Title="L.U.M.A. - New Analysis"
         Icon="/Assets/logo LUMA ficticia.png"
         Width="1200"
         Height="700"
@@ -47,7 +47,7 @@
         </Style>
 
         <!-- ====================================================== -->
-        <!-- CARDS DAS LÂMINAS                                      -->
+        <!-- CARDS DAS SLIDES                                       -->
         <!-- ====================================================== -->
 
         <Style Selector="Button.lamina-card">
@@ -77,7 +77,7 @@
         </Style>
 
         <!-- ====================================================== -->
-        <!-- BOTÃO AVANÇAR                                          -->
+        <!-- CONTINUE BUTTON                                        -->
         <!-- ====================================================== -->
 
         <Style Selector="Button.avancar">
@@ -157,14 +157,14 @@
 
 
     <!-- ========================================================== -->
-    <!-- CONTEÚDO PRINCIPAL                                         -->
+    <!-- MAIN CONTENT                                               -->
     <!-- ========================================================== -->
 
     <Grid Background="#F8F6FA"
           ColumnDefinitions="260,*">
 
         <!-- ====================================================== -->
-        <!-- GABARITO LATERAL                                       -->
+        <!-- REFERENCE SIDEBAR                                      -->
         <!-- ====================================================== -->
 
         <Border Grid.Column="0"
@@ -174,7 +174,7 @@
             <Grid RowDefinitions="Auto,*,Auto">
 
                 <TextBlock Grid.Row="0"
-                           Text="GABARITO"
+                           Text="REFERENCE"
                            HorizontalAlignment="Center"
                            FontSize="25"
                            FontWeight="Bold"
@@ -183,13 +183,13 @@
 
 
                 <!-- ================================================== -->
-                <!-- ETAPAS                                             -->
+                <!-- STEPS                                               -->
                 <!-- ================================================== -->
 
                 <StackPanel Grid.Row="1"
                             Spacing="11">
 
-                    <!-- DOENÇA -->
+                    <!-- EXPERIMENTAL CONDITION -->
 
                     <Border x:Name="DoencaEtapaBorder"
                             Classes="etapa ativa"
@@ -219,11 +219,11 @@
                                         Spacing="2">
 
                                 <TextBlock x:Name="DoencaTituloTextBlock"
-                                           Text="DOENÇA"
+                                           Text="DISEASE"
                                            Classes="etapa-titulo ativo"/>
 
                                 <TextBlock x:Name="DoencaSelecionadaTextBlock"
-                                           Text="Não selecionada"
+                                           Text="Not selected"
                                            Classes="etapa-valor ativo"/>
 
                             </StackPanel>
@@ -233,7 +233,7 @@
                     </Border>
 
 
-                    <!-- LINHAGEM -->
+                    <!-- STRAIN -->
 
                     <Border x:Name="LinhagemEtapaBorder"
                             Classes="etapa bloqueada"
@@ -261,11 +261,11 @@
                                         Spacing="2">
 
                                 <TextBlock x:Name="LinhagemTituloTextBlock"
-                                           Text="LINHAGEM"
+                                           Text="STRAIN"
                                            Classes="etapa-titulo bloqueado"/>
 
                                 <TextBlock x:Name="LinhagemSelecionadaTextBlock"
-                                           Text="Bloqueada"
+                                           Text="Locked"
                                            Classes="etapa-valor bloqueado"/>
 
                             </StackPanel>
@@ -275,7 +275,7 @@
                     </Border>
 
 
-                    <!-- LÂMINA -->
+                    <!-- SLIDE -->
 
                     <Border x:Name="LaminaEtapaBorder"
                             Classes="etapa bloqueada"
@@ -303,11 +303,11 @@
                                         Spacing="2">
 
                                 <TextBlock x:Name="LaminaTituloTextBlock"
-                                           Text="LÂMINA"
+                                           Text="SLIDE"
                                            Classes="etapa-titulo bloqueado"/>
 
                                 <TextBlock x:Name="LaminaSelecionadaTextBlock"
-                                           Text="Bloqueada"
+                                           Text="Locked"
                                            Classes="etapa-valor bloqueado"/>
 
                             </StackPanel>
@@ -317,7 +317,7 @@
                     </Border>
 
 
-                    <!-- POÇO -->
+                    <!-- WELL -->
 
                     <Border x:Name="PocoEtapaBorder"
                             Classes="etapa bloqueada"
@@ -342,10 +342,10 @@
                                         VerticalAlignment="Center"
                                         Spacing="2">
 
-                                <TextBlock Text="POÇO"
+                                <TextBlock Text="WELL"
                                            Classes="etapa-titulo bloqueado"/>
 
-                                <TextBlock Text="Não disponível"
+                                <TextBlock Text="Not available"
                                            Classes="etapa-valor bloqueado"/>
 
                             </StackPanel>
@@ -355,7 +355,7 @@
                     </Border>
 
 
-                    <!-- QUADRANTE -->
+                    <!-- QUADRANT -->
 
                     <Border x:Name="QuadranteEtapaBorder"
                             Classes="etapa bloqueada"
@@ -380,10 +380,10 @@
                                         VerticalAlignment="Center"
                                         Spacing="2">
 
-                                <TextBlock Text="QUADRANTE"
+                                <TextBlock Text="QUADRANT"
                                            Classes="etapa-titulo bloqueado"/>
 
-                                <TextBlock Text="Não disponível"
+                                <TextBlock Text="Not available"
                                            Classes="etapa-valor bloqueado"/>
 
                             </StackPanel>
@@ -395,18 +395,17 @@
                 </StackPanel>
 
 
-                <!-- DECORAÇÃO -->
+                <!-- DECORATION -->
 
                 <StackPanel Grid.Row="2"
                             HorizontalAlignment="Center"
                             Margin="0,18,0,0">
-                            
 
                     <Image Source="/Assets/logo LUMA ficticia.png"
-                             Width="100"
-                            Height="75"
-                            Stretch="Uniform"
-                            HorizontalAlignment="Center"/>
+                           Width="100"
+                           Height="75"
+                           Stretch="Uniform"
+                           HorizontalAlignment="Center"/>
 
                 </StackPanel>
 
@@ -416,24 +415,24 @@
 
 
         <!-- ====================================================== -->
-        <!-- ÁREA PRINCIPAL                                         -->
+        <!-- MAIN AREA                                               -->
         <!-- ====================================================== -->
 
         <Grid Grid.Column="1"
               Margin="40,35,55,30"
               RowDefinitions="Auto,Auto,Auto,*">
 
-            <!-- CABEÇALHO -->
+            <!-- HEADER -->
 
             <StackPanel Grid.Row="0"
                         Spacing="5">
 
-                <TextBlock Text="NOVA CONSULTA"
+                <TextBlock Text="NEW ANALYSIS"
                            FontSize="31"
                            FontWeight="Bold"
                            Foreground="#644899"/>
 
-                <TextBlock Text="Selecione a doença, a linhagem e a lâmina"
+                <TextBlock Text="Select the experimental condition, strain, and slide"
                            FontSize="15"
                            Foreground="#777184"/>
 
@@ -459,13 +458,13 @@
             </StackPanel>
 
 
-            <!-- DOENÇA -->
+            <!-- EXPERIMENTAL CONDITION -->
 
             <StackPanel Grid.Row="1"
                         Margin="0,25,0,0"
                         Spacing="7">
 
-                <TextBlock Text="DOENÇA"
+                <TextBlock Text="EXPERIMENTAL CONDITION (DISEASE)"
                            FontSize="14"
                            FontWeight="Bold"
                            Foreground="#6540A4"/>
@@ -474,25 +473,25 @@
                           Width="420"
                           Height="40"
                           HorizontalAlignment="Left"
-                          PlaceholderText="Selecione a doença"
+                          PlaceholderText="Select the experimental condition (disease)"
                           SelectionChanged="DoencaComboBox_SelectionChanged">
 
-                    <ComboBoxItem Content="Doença de Chagas (Trypanosoma cruzi)"/>
-                    <ComboBoxItem Content="Leishmaniose Cutânea"/>
-                    <ComboBoxItem Content="Leishmaniose Visceral"/>
+                    <ComboBoxItem Content="Chagas Disease (Trypanosoma cruzi)"/>
+                    <ComboBoxItem Content="Cutaneous Leishmaniasis"/>
+                    <ComboBoxItem Content="Visceral Leishmaniasis"/>
 
                 </ComboBox>
 
             </StackPanel>
 
 
-            <!-- LINHAGEM -->
+            <!-- STRAIN -->
 
             <StackPanel Grid.Row="2"
                         Margin="0,20,0,0"
                         Spacing="7">
 
-                <TextBlock Text="LINHAGEM"
+                <TextBlock Text="STRAIN"
                            FontSize="14"
                            FontWeight="Bold"
                            Foreground="#6540A4"/>
@@ -502,20 +501,20 @@
                           Height="40"
                           HorizontalAlignment="Left"
                           IsEnabled="False"
-                          PlaceholderText="Selecione primeiro a doença"
+                          PlaceholderText="Select the experimental condition first"
                           SelectionChanged="LinhagemComboBox_SelectionChanged"/>
 
             </StackPanel>
 
 
-            <!-- LÂMINAS -->
+            <!-- SLIDES -->
 
             <Grid Grid.Row="3"
                   Margin="0,20,0,0"
                   RowDefinitions="Auto,Auto,*">
 
                 <TextBlock Grid.Row="0"
-                           Text="LÂMINA"
+                           Text="SLIDE"
                            FontSize="14"
                            FontWeight="Bold"
                            Foreground="#6540A4"
@@ -527,7 +526,7 @@
                            ItemSpacing="14"
                            LineSpacing="12">
 
-                    <!-- LÂMINA 1 -->
+                    <!-- SLIDE 1 -->
 
                     <Button x:Name="Lamina1Button"
                             Classes="lamina-card"
@@ -564,7 +563,7 @@
                             </Border>
 
                             <TextBlock Grid.Row="2"
-                                       Text="1 POÇO"
+                                       Text="1 WELL"
                                        HorizontalAlignment="Center"
                                        FontSize="12"
                                        FontWeight="SemiBold"
@@ -576,7 +575,7 @@
                     </Button>
 
 
-                    <!-- LÂMINA 2 -->
+                    <!-- SLIDE 2 -->
 
                     <Button x:Name="Lamina2Button"
                             Classes="lamina-card"
@@ -613,7 +612,7 @@
                             </Border>
 
                             <TextBlock Grid.Row="2"
-                                       Text="2 POÇOS"
+                                       Text="2 WELLS"
                                        HorizontalAlignment="Center"
                                        FontSize="12"
                                        FontWeight="SemiBold"
@@ -625,7 +624,7 @@
                     </Button>
 
 
-                    <!-- LÂMINA 3 -->
+                    <!-- SLIDE 3 -->
 
                     <Button x:Name="Lamina3Button"
                             Classes="lamina-card"
@@ -662,7 +661,7 @@
                             </Border>
 
                             <TextBlock Grid.Row="2"
-                                       Text="3 POÇOS"
+                                       Text="3 WELLS"
                                        HorizontalAlignment="Center"
                                        FontSize="12"
                                        FontWeight="SemiBold"
@@ -674,7 +673,7 @@
                     </Button>
 
 
-                    <!-- LÂMINA 4 -->
+                    <!-- SLIDE 4 -->
 
                     <Button x:Name="Lamina4Button"
                             Classes="lamina-card"
@@ -711,7 +710,7 @@
                             </Border>
 
                             <TextBlock Grid.Row="2"
-                                       Text="4 POÇOS"
+                                       Text="4 WELLS"
                                        HorizontalAlignment="Center"
                                        FontSize="12"
                                        FontWeight="SemiBold"
@@ -723,7 +722,7 @@
                     </Button>
 
 
-                    <!-- LÂMINA 5 -->
+                    <!-- SLIDE 5 -->
 
                     <Button x:Name="Lamina5Button"
                             Classes="lamina-card"
@@ -760,7 +759,7 @@
                             </Border>
 
                             <TextBlock Grid.Row="2"
-                                       Text="5 POÇOS"
+                                       Text="5 WELLS"
                                        HorizontalAlignment="Center"
                                        FontSize="12"
                                        FontWeight="SemiBold"
@@ -775,7 +774,7 @@
 
 
                 <!-- ================================================== -->
-                <!-- RODAPÉ                                             -->
+                <!-- FOOTER                                             -->
                 <!-- ================================================== -->
 
                 <Grid Grid.Row="2"
@@ -783,9 +782,7 @@
                       ColumnDefinitions="*,180"
                       RowDefinitions="Auto,Auto">
 
-                    <!-- ================================================= -->
-                    <!-- BOTÃO AVANÇAR - TEXTO CENTRAL + SETA À DIREITA   -->
-                    <!-- ================================================= -->
+                    <!-- CONTINUE BUTTON -->
 
                     <Button Grid.Column="1"
                             x:Name="AvancarButton"
@@ -799,9 +796,7 @@
                         <Grid Width="160"
                               Height="45">
 
-                            <!-- Texto centralizado considerando o botão inteiro -->
-
-                            <TextBlock Text="AVANÇAR →"
+                            <TextBlock Text="CONTINUE →"
                                        Foreground="White"
                                        FontWeight="Bold"
                                        HorizontalAlignment="Left"
@@ -839,7 +834,7 @@
                             </Border>
 
                             <TextBlock Grid.Column="1"
-                                       Text="Complete as etapas na ordem indicada para liberar as próximas opções."
+                                       Text="Complete the steps in the indicated order to unlock the next options."
                                        FontSize="12"
                                        Foreground="#665D76"
                                        VerticalAlignment="Center"/>

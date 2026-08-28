@@ -11,7 +11,7 @@ public partial class ConsultaWindow : Window
     private int? laminaSelecionada = null;
 
     // ============================================================
-    // CORES DA IDENTIDADE VISUAL DO L.U.M.A.
+    // L.U.M.A. VISUAL IDENTITY COLORS
     // ============================================================
 
     private static readonly Color Roxo =
@@ -52,7 +52,7 @@ public partial class ConsultaWindow : Window
 
 
     // ============================================================
-    // GRADIENTE GIEMSA
+    // GIEMSA GRADIENT
     // ============================================================
 
     private static LinearGradientBrush CriarGradienteGiemsa()
@@ -86,7 +86,7 @@ public partial class ConsultaWindow : Window
 
 
     // ============================================================
-    // DOENÇA
+    // EXPERIMENTAL CONDITION
     // ============================================================
 
     private void DoencaComboBox_SelectionChanged(
@@ -102,7 +102,7 @@ public partial class ConsultaWindow : Window
         ConsultaAtual.Dados.Doenca = doenca;
 
         // --------------------------------------------------------
-        // GABARITO
+        // GUIDE
         // --------------------------------------------------------
 
         DoencaSelecionadaTextBlock.Text = doenca;
@@ -110,7 +110,7 @@ public partial class ConsultaWindow : Window
             new SolidColorBrush(Brushes.White.Color);
 
         // --------------------------------------------------------
-        // LIMPA LINHAGEM
+        // CLEAR STRAIN
         // --------------------------------------------------------
 
         LinhagemComboBox.Items.Clear();
@@ -120,19 +120,19 @@ public partial class ConsultaWindow : Window
         ConsultaAtual.Dados.Lamina = null;
 
         LinhagemSelecionadaTextBlock.Text =
-            "Selecione uma linhagem";
+            "Select a strain";
 
         LinhagemSelecionadaTextBlock.Foreground =
             new SolidColorBrush(TextoSecundario);
 
         // --------------------------------------------------------
-        // RESET DAS LÂMINAS
+        // RESET SLIDES
         // --------------------------------------------------------
 
         ResetarLaminas();
 
         // --------------------------------------------------------
-        // LINHAGENS
+        // STRAINS
         // --------------------------------------------------------
 
         if (doenca.Contains("Chagas"))
@@ -142,7 +142,7 @@ public partial class ConsultaWindow : Window
             LinhagemComboBox.Items.Add("C2C12");
             LinhagemComboBox.Items.Add("Vero");
         }
-        else if (doenca.Contains("Cutânea"))
+        else if (doenca.Contains("Cutaneous"))
         {
             LinhagemComboBox.Items.Add("RAW 264.7");
             LinhagemComboBox.Items.Add("J774A.1");
@@ -159,10 +159,10 @@ public partial class ConsultaWindow : Window
 
         LinhagemComboBox.IsEnabled = true;
         LinhagemComboBox.PlaceholderText =
-            "Selecione a linhagem";
+            "Select a strain";
 
         // --------------------------------------------------------
-        // ETAPA ATUAL
+        // CURRENT STEP
         // --------------------------------------------------------
 
         AtualizarEtapaLateral(2);
@@ -170,7 +170,7 @@ public partial class ConsultaWindow : Window
 
 
     // ============================================================
-    // LINHAGEM
+    // STRAIN
     // ============================================================
 
     private void LinhagemComboBox_SelectionChanged(
@@ -195,7 +195,7 @@ public partial class ConsultaWindow : Window
 
 
     // ============================================================
-    // HABILITAR LÂMINAS
+    // ENABLE SLIDES
     // ============================================================
 
     private void HabilitarLaminas()
@@ -207,7 +207,7 @@ public partial class ConsultaWindow : Window
         Lamina5Button.IsEnabled = true;
 
         LaminaSelecionadaTextBlock.Text =
-            "Selecione uma lâmina";
+            "Select a slide";
 
         LaminaSelecionadaTextBlock.Foreground =
             new SolidColorBrush(TextoSecundario);
@@ -217,7 +217,7 @@ public partial class ConsultaWindow : Window
 
 
     // ============================================================
-    // RESET DAS LÂMINAS
+    // RESET SLIDES
     // ============================================================
 
     private void ResetarLaminas()
@@ -231,7 +231,7 @@ public partial class ConsultaWindow : Window
         laminaSelecionada = null;
 
         LaminaSelecionadaTextBlock.Text =
-            "Bloqueada";
+            "Locked";
 
         LaminaSelecionadaTextBlock.Foreground =
             new SolidColorBrush(TextoSecundario);
@@ -245,7 +245,7 @@ public partial class ConsultaWindow : Window
 
 
     // ============================================================
-    // SELEÇÃO DA LÂMINA
+    // SLIDE SELECTION
     // ============================================================
 
     private void SelecionarLamina(int numero)
@@ -255,7 +255,7 @@ public partial class ConsultaWindow : Window
         ConsultaAtual.Dados.Lamina = numero;
 
         LaminaSelecionadaTextBlock.Text =
-            $"Lâmina {numero}";
+            $"Slide {numero}";
 
         LaminaSelecionadaTextBlock.Foreground =
             new SolidColorBrush(RoxoEscuro);
@@ -269,7 +269,7 @@ public partial class ConsultaWindow : Window
 
 
     // ============================================================
-    // CLIQUES DAS LÂMINAS
+    // SLIDE CLICKS
     // ============================================================
 
     private void Lamina1_Click(
@@ -309,7 +309,7 @@ public partial class ConsultaWindow : Window
 
 
     // ============================================================
-    // VISUAL DAS LÂMINAS
+    // SLIDE VISUAL
     // ============================================================
 
     private void RestaurarVisualLaminas()
@@ -369,7 +369,7 @@ public partial class ConsultaWindow : Window
 
 
     // ============================================================
-    // BOTÃO AVANÇAR
+    // NEXT BUTTON
     // ============================================================
 
     private void AtualizarBotaoAvancar()
@@ -414,13 +414,13 @@ public partial class ConsultaWindow : Window
 
 
     // ============================================================
-    // GABARITO LATERAL
+    // SIDE GUIDE
     // ============================================================
 
     private void AtualizarEtapaLateral(int etapaAtual)
     {
         // --------------------------------------------------------
-        // DOENÇA
+        // EXPERIMENTAL CONDITION
         // --------------------------------------------------------
 
         if (etapaAtual == 1)
@@ -448,7 +448,7 @@ public partial class ConsultaWindow : Window
         }
 
         // --------------------------------------------------------
-        // LINHAGEM
+        // STRAIN
         // --------------------------------------------------------
 
         else if (etapaAtual == 2)
@@ -476,7 +476,7 @@ public partial class ConsultaWindow : Window
         }
 
         // --------------------------------------------------------
-        // LÂMINA
+        // SLIDE
         // --------------------------------------------------------
 
         else if (etapaAtual == 3)
@@ -565,9 +565,6 @@ public partial class ConsultaWindow : Window
         titulo.Foreground =
             new SolidColorBrush(RoxoEscuro);
 
-        // CORREÇÃO:
-        // A etapa concluída fica branca, então o valor
-        // não pode continuar branco como na etapa ativa.
         valor.Foreground =
             new SolidColorBrush(RoxoEscuro);
     }
@@ -608,7 +605,7 @@ public partial class ConsultaWindow : Window
 
 
     // ============================================================
-    // AVANÇAR
+    // NEXT
     // ============================================================
 
     private void Avancar_Click(

@@ -2,7 +2,7 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     x:Class="AnalisadorAmastigotas.Views.PocoQuadranteWindow"
-    Title="L.U.M.A. - Poço e Quadrante"
+    Title="L.U.M.A. - Well and Quadrant"
     Icon="/Assets/logo LUMA ficticia.png"
     Width="1200"
     Height="700"
@@ -262,7 +262,7 @@
 
                 <TextBlock
                     Grid.Row="0"
-                    Text="GABARITO"
+                    Text="WORKFLOW"
                     FontSize="25"
                     FontWeight="Bold"
                     Foreground="#644899"
@@ -322,7 +322,7 @@
 
                                 <TextBlock
                                     x:Name="DoencaTituloTextBlock"
-                                    Text="DOENÇA"
+                                    Text="DISEASE"
                                     FontSize="12"
                                     FontWeight="Bold"
                                     Foreground="#644899"/>
@@ -388,7 +388,7 @@
 
                                 <TextBlock
                                     x:Name="LinhagemTituloTextBlock"
-                                    Text="LINHAGEM"
+                                    Text="CELL LINE"
                                     FontSize="12"
                                     FontWeight="Bold"
                                     Foreground="#644899"/>
@@ -454,7 +454,7 @@
 
                                 <TextBlock
                                     x:Name="LaminaTituloTextBlock"
-                                    Text="LÂMINA"
+                                    Text="SLIDE"
                                     FontSize="12"
                                     FontWeight="Bold"
                                     Foreground="#644899"/>
@@ -519,14 +519,14 @@
 
                                 <TextBlock
                                     x:Name="PocoTituloTextBlock"
-                                    Text="POÇO"
+                                    Text="WELL"
                                     FontSize="12"
                                     FontWeight="Bold"
                                     Foreground="#FFFFFF"/>
 
                                 <TextBlock
                                     x:Name="PocoTextBlock"
-                                    Text="Selecione o poço"
+                                    Text="Select the well"
                                     FontSize="13"
                                     Foreground="#FFF7FC"/>
 
@@ -584,14 +584,14 @@
 
                                 <TextBlock
                                     x:Name="QuadranteTituloTextBlock"
-                                    Text="QUADRANTE"
+                                    Text="QUADRANT"
                                     FontSize="12"
                                     FontWeight="Bold"
                                     Foreground="#777777"/>
 
                                 <TextBlock
                                     x:Name="QuadranteTextBlock"
-                                    Text="Bloqueado"
+                                    Text="Locked"
                                     FontSize="13"
                                     Foreground="#888888"/>
 
@@ -637,14 +637,6 @@
             Grid.Column="1"
             Margin="30,25,30,25">
 
-            <!--
-                EXATAMENTE METADE / METADE
-
-                *   = POÇO
-                1   = linha divisória
-                *   = QUADRANTE
-            -->
-
             <Grid.ColumnDefinitions>
 
                 <ColumnDefinition Width="*"/>
@@ -681,14 +673,14 @@
                     Spacing="4">
 
                     <TextBlock
-                        Text="POÇO"
+                        Text="WELL"
                         FontSize="34"
                         FontWeight="Bold"
                         Foreground="#644899"
                         HorizontalAlignment="Center"/>
 
                     <TextBlock
-                        Text="Selecione o poço da lâmina"
+                        Text="Select the well on the slide"
                         FontSize="15"
                         Foreground="#6E667A"
                         HorizontalAlignment="Center"/>
@@ -718,15 +710,9 @@
 
                     <Grid.ColumnDefinitions>
 
-                        <!-- BOTÕES ESQUERDA -->
-
                         <ColumnDefinition Width="70"/>
 
-                        <!-- IMAGEM CENTRAL -->
-
                         <ColumnDefinition Width="290"/>
-
-                        <!-- BOTÕES DIREITA -->
 
                         <ColumnDefinition Width="70"/>
 
@@ -758,7 +744,7 @@
                         VerticalAlignment="Center"
                         ClipToBounds="False">
 
-                        <!-- LÂMINA 1 -->
+                        <!-- SLIDE 1 -->
                         <Image
                             x:Name="Lamina1VisualImage"
                             Source="/Assets/lamina1numerada.png"
@@ -767,7 +753,7 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>
 
-                        <!-- LÂMINA 2 -->
+                        <!-- SLIDE 2 -->
                         <Image
                             x:Name="Lamina2VisualImage"
                             Source="/Assets/lamina2numerada.png"
@@ -776,7 +762,7 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>
 
-                        <!-- LÂMINA 3 -->
+                        <!-- SLIDE 3 -->
                         <Image
                             x:Name="Lamina3VisualImage"
                             Source="/Assets/lamina3numerada.png"
@@ -785,7 +771,7 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>
 
-                        <!-- LÂMINA 4 -->
+                        <!-- SLIDE 4 -->
                         <Image
                             x:Name="Lamina4VisualImage"
                             Source="/Assets/lamina4numerada.png"
@@ -794,7 +780,7 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>
 
-                        <!-- LÂMINA 5 -->
+                        <!-- SLIDE 5 -->
                         <Image
                             x:Name="Lamina5VisualImage"
                             Source="/Assets/lamina5numerada.png"
@@ -807,7 +793,6 @@
 
                     <!-- ============================================= -->
                     <!-- BOTÕES DOS POÇOS                             -->
-                    <!-- C# DEFINE COLUNA E LINHA                      -->
                     <!-- ============================================= -->
 
                     <Button
@@ -902,14 +887,14 @@
                     Spacing="4">
 
                     <TextBlock
-                        Text="QUADRANTE"
+                        Text="QUADRANT"
                         FontSize="34"
                         FontWeight="Bold"
                         Foreground="#644899"
                         HorizontalAlignment="Center"/>
 
                     <TextBlock
-                        Text="Selecione o quadrante do poço"
+                        Text="Select the quadrant of the well"
                         FontSize="15"
                         Foreground="#6E667A"
                         HorizontalAlignment="Center"/>
@@ -962,24 +947,16 @@
 
 
                     <!-- ========================================= -->
-                    <!-- DESENHO CENTRAL                          -->
+                    <!-- IMAGEM REAL DO QUADRANTE                 -->
                     <!-- ========================================= -->
 
-<!-- ========================================= -->
-<!-- IMAGEM REAL DO QUADRANTE                 -->
-<!-- ========================================= -->
-
-    
-
-                        <Image
-                            Source="/Assets/quadrante.png"
-                            Width="215"
-                            Height="215"
-                            Stretch="Uniform"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
-
-            
+                    <Image
+                        Source="/Assets/quadrante.png"
+                        Width="215"
+                        Height="215"
+                        Stretch="Uniform"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
 
 
                     <!-- Q3 -->
@@ -1015,7 +992,7 @@
                 <Button
                     x:Name="AvancarButton"
                     Grid.Row="2"
-                    Content="AVANÇAR    →"
+                    Content="NEXT    →"
                     Classes="avancarButton"
                     HorizontalAlignment="Center"
                     Margin="0,5,0,0"
@@ -1057,7 +1034,7 @@
 
 
                         <TextBlock
-                            Text="QUADRANTE BLOQUEADO"
+                            Text="QUADRANT LOCKED"
                             FontSize="18"
                             FontWeight="Bold"
                             Foreground="#66616F"
@@ -1065,7 +1042,7 @@
 
 
                         <TextBlock
-                            Text="Selecione um poço para liberar os quadrantes."
+                            Text="Select a well to unlock the quadrants."
                             FontSize="13"
                             Foreground="#77727F"
                             HorizontalAlignment="Center"
