@@ -14,7 +14,7 @@ public partial class AnaliseImagemWindow : Window
 {
     private int indiceImagemAtual = -1;
 
-    private int QuadranteAtual =>
+     private int QuadranteAtual =>
         ConsultaAtual.Dados.Quadrante ?? 1;
 
     private int PocoAtual =>
