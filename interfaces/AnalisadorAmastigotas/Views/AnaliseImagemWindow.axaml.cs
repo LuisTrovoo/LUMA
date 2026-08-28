@@ -58,17 +58,17 @@ public partial class AnaliseImagemWindow : Window
 
         LaminaTextBlock.Text =
             ConsultaAtual.Dados.Lamina.HasValue
-                ? $"Lâmina {ConsultaAtual.Dados.Lamina}"
+                ? $"Slide {ConsultaAtual.Dados.Lamina}"
                 : "—";
 
         PocoTextBlock.Text =
             ConsultaAtual.Dados.Poco.HasValue
-                ? $"Poço {ConsultaAtual.Dados.Poco}"
+                ? $"Well {ConsultaAtual.Dados.Poco}"
                 : "—";
 
         QuadranteTextBlock.Text =
             ConsultaAtual.Dados.Quadrante.HasValue
-                ? $"Quadrante {ConsultaAtual.Dados.Quadrante}"
+                ? $"Quadrant {ConsultaAtual.Dados.Quadrante}"
                 : "—";
     }
 
@@ -97,13 +97,13 @@ public partial class AnaliseImagemWindow : Window
             MostrarEstadoSemImagem();
 
             ImagemAtualTextBlock.Text =
-                "Imagem 0 de 0";
+                "Image 0 of 0";
 
             NumeroImagemTextBlock.Text =
-                "Imagem 0";
+                "Image 0";
 
             ResultadoTextBlock.Text =
-                "Nenhuma imagem analisada.";
+                "No image analyzed.";
 
             AnteriorButton.IsEnabled = false;
             ProximaButton.IsEnabled = false;
@@ -137,10 +137,10 @@ public partial class AnaliseImagemWindow : Window
         // ========================================================
 
         ImagemAtualTextBlock.Text =
-            $"Imagem {indiceImagemAtual + 1} de {quantidade}";
+            $"Image {indiceImagemAtual + 1} of {quantidade}";
 
         NumeroImagemTextBlock.Text =
-            $"Imagem {imagem.Numero}";
+            $"Image {imagem.Numero}";
 
 
         AnteriorButton.IsEnabled =
@@ -171,10 +171,10 @@ public partial class AnaliseImagemWindow : Window
                 imagem.ResultadoTrovo;
 
             ResultadoTextBlock.Text =
-                $"Células detectadas: {resultado.NumeroCelulas}\n"
-                + $"Células grandes: {resultado.NumeroCelulasGrandes}\n"
-                + $"Células pequenas: {resultado.NumeroCelulasPequenas}\n"
-                + $"Células infectadas: {resultado.NumeroInfectadas}";
+                $"Detected cells: {resultado.NumeroCelulas}\n"
+                + $"Large cells: {resultado.NumeroCelulasGrandes}\n"
+                + $"Small cells: {resultado.NumeroCelulasPequenas}\n"
+                + $"Infected cells: {resultado.NumeroInfectadas}";
 
 
             if (!string.IsNullOrEmpty(
@@ -200,8 +200,8 @@ public partial class AnaliseImagemWindow : Window
         else
         {
             ResultadoTextBlock.Text =
-                "Imagem carregada.\n"
-                + "Aguardando resultado do Trovo.";
+                "Image loaded.\n"
+                + "Awaiting Trovo result.";
 
             CellViewer.Limpar();
 
@@ -224,10 +224,10 @@ public partial class AnaliseImagemWindow : Window
             "＋";
 
         EstadoImagemTituloTextBlock.Text =
-            "NENHUMA IMAGEM ADICIONADA";
+            "NO IMAGE ADDED";
 
         EstadoImagemSubtituloTextBlock.Text =
-            "Adicione uma imagem para iniciar a análise";
+            "Add an image to start the analysis";
 
         AdicionarImagemVazioButton.IsVisible =
             true;
@@ -255,10 +255,10 @@ public partial class AnaliseImagemWindow : Window
             "⌛";
 
         EstadoImagemTituloTextBlock.Text =
-            "PROCESSANDO IMAGEM";
+            "PROCESSING IMAGE";
 
         EstadoImagemSubtituloTextBlock.Text =
-            "O processamento está sendo realizado. Aguarde...";
+            "The image is being processed. Please wait...";
 
         AdicionarImagemVazioButton.IsVisible =
             false;
@@ -315,13 +315,13 @@ public partial class AnaliseImagemWindow : Window
             await StorageProvider.OpenFilePickerAsync(
                 new FilePickerOpenOptions
                 {
-                    Title = "Selecionar imagem",
+                    Title = "Select image",
 
                     AllowMultiple = false,
 
                     FileTypeFilter =
                     [
-                        new FilePickerFileType("Imagens")
+                        new FilePickerFileType("Images")
                         {
                             Patterns =
                             [
@@ -351,7 +351,7 @@ public partial class AnaliseImagemWindow : Window
         if (string.IsNullOrEmpty(caminho))
         {
             ResultadoTextBlock.Text =
-                "Não foi possível obter o caminho da imagem.";
+                "Unable to obtain the image path.";
 
             return;
         }
@@ -364,8 +364,8 @@ public partial class AnaliseImagemWindow : Window
         try
         {
             ResultadoTextBlock.Text =
-                "Processando imagem...\n"
-                + "Aguarde.";
+                "Processing image...\n"
+                + "Please wait.";
 
 
             // ====================================================
@@ -400,7 +400,7 @@ public partial class AnaliseImagemWindow : Window
                     resultadoTrovo.CaminhoImagemOriginal))
             {
                 throw new FileNotFoundException(
-                    "A imagem original não foi encontrada.",
+                    "The original image was not found.",
                     resultadoTrovo.CaminhoImagemOriginal);
             }
 
@@ -451,7 +451,7 @@ public partial class AnaliseImagemWindow : Window
         catch (Exception ex)
         {
             ResultadoTextBlock.Text =
-                "Erro durante o processamento:\n"
+                "Error during processing:\n"
                 + ex.Message;
 
 
@@ -636,7 +636,7 @@ public partial class AnaliseImagemWindow : Window
         catch (Exception ex)
         {
             ResultadoTextBlock.Text =
-                "Erro ao calcular o resultado:\n"
+                "Error calculating the result:\n"
                 + ex.Message;
         }
     }

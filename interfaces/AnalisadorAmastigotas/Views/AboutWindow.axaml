@@ -1,7 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="AnalisadorAmastigotas.Views.AboutWindow"
-        Title="L.U.M.A. - Sobre"
+        Title="L.U.M.A. - About"
         Icon="/Assets/logo LUMA ficticia.png"
         Width="1200"
         Height="700"
@@ -11,7 +11,7 @@
     <Window.Resources>
 
         <!-- ================================================= -->
-        <!-- CORES -->
+        <!-- COLORS -->
         <!-- ================================================= -->
 
         <SolidColorBrush x:Key="Purple"
@@ -69,12 +69,12 @@
 
 
     <!-- ===================================================== -->
-    <!-- ESTILOS -->
+    <!-- STYLES -->
     <!-- ===================================================== -->
 
     <Window.Styles>
 
-        <!-- BOTÃO VOLTAR -->
+        <!-- BACK BUTTON -->
 
         <Style Selector="Button.back-button">
 
@@ -130,18 +130,18 @@
 
 
     <!-- ===================================================== -->
-    <!-- TELA -->
+    <!-- SCREEN -->
     <!-- ===================================================== -->
 
     <Grid>
 
-        <!-- FUNDO PRINCIPAL -->
+        <!-- MAIN BACKGROUND -->
 
         <Border Background="#F8F6FA"/>
 
 
         <!-- ================================================= -->
-        <!-- DECORAÇÃO SUPERIOR ESQUERDA -->
+        <!-- TOP LEFT DECORATION -->
         <!-- ================================================= -->
 
         <Canvas IsHitTestVisible="False">
@@ -171,7 +171,7 @@
 
 
         <!-- ================================================= -->
-        <!-- DECORAÇÃO INFERIOR DIREITA -->
+        <!-- BOTTOM RIGHT DECORATION -->
         <!-- ================================================= -->
 
         <Canvas IsHitTestVisible="False">
@@ -194,7 +194,7 @@
 
 
         <!-- ================================================= -->
-        <!-- BARRA SUPERIOR -->
+        <!-- TOP BAR -->
         <!-- ================================================= -->
 
         <Border Height="56"
@@ -203,7 +203,7 @@
 
             <Grid>
 
-                <TextBlock Text="L.U.M.A. - Sobre"
+                <TextBlock Text="L.U.M.A. - About"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            Foreground="White"
@@ -216,7 +216,7 @@
 
 
         <!-- ================================================= -->
-        <!-- CONTEÚDO -->
+        <!-- CONTENT -->
         <!-- ================================================= -->
 
         <StackPanel HorizontalAlignment="Center"
@@ -226,24 +226,24 @@
 
 
             <!-- ================================================= -->
-            <!-- TÍTULO -->
+            <!-- TITLE -->
             <!-- ================================================= -->
 
-            <TextBlock Text="SOBRE"
+            <TextBlock Text="ABOUT"
                        HorizontalAlignment="Center"
                        FontSize="44"
                        FontWeight="Bold"
                        Foreground="{StaticResource Purple}"/>
 
 
-            <TextBlock Text="Informações sobre o sistema"
+            <TextBlock Text="System information"
                        HorizontalAlignment="Center"
                        Margin="0,6,0,0"
                        FontSize="18"
                        Foreground="{StaticResource TextMuted}"/>
 
 
-            <!-- LINHA DECORATIVA -->
+            <!-- DECORATIVE LINE -->
 
             <Border Width="78"
                     Height="4"
@@ -270,7 +270,7 @@
 
 
                     <!-- ========================================= -->
-                    <!-- ÁREA DA LOGO -->
+                    <!-- LOGO AREA -->
                     <!-- ========================================= -->
 
                     <StackPanel Grid.Column="0"
@@ -308,7 +308,7 @@
 
 
                     <!-- ========================================= -->
-                    <!-- DIVISÓRIA -->
+                    <!-- DIVIDER -->
                     <!-- ========================================= -->
 
                     <Border Grid.Column="1"
@@ -320,7 +320,7 @@
 
 
                     <!-- ========================================= -->
-                    <!-- TEXTO -->
+                    <!-- TEXT -->
                     <!-- ========================================= -->
 
                     <StackPanel Grid.Column="2"
@@ -328,18 +328,18 @@
                                 VerticalAlignment="Center"
                                 Spacing="14">
 
-                        <TextBlock Text="Sobre o L.U.M.A."
+                        <TextBlock Text="About L.U.M.A."
                                    FontSize="22"
                                    FontWeight="Bold"
                                    Foreground="{StaticResource Purple}"/>
 
-                        <TextBlock Text="O L.U.M.A. foi desenvolvido para oferecer uma experiência completa, segura e eficiente na análise de imagens microscópicas, auxiliando profissionais da saúde e pesquisadores na tomada de decisão."
+                        <TextBlock Text="L.U.M.A. was developed to provide a complete, safe, and efficient experience for microscopic image analysis, assisting healthcare professionals and researchers in decision-making."
                                    FontSize="14"
                                    Foreground="{StaticResource TextMuted}"
                                    TextWrapping="Wrap"
                                    LineHeight="22"/>
 
-                        <TextBlock Text="O sistema combina processamento de imagens e análise automatizada para facilitar a identificação e avaliação de estruturas microscópicas."
+                        <TextBlock Text="The system combines image processing and automated analysis to facilitate the identification and evaluation of microscopic structures."
                                    FontSize="14"
                                    Foreground="{StaticResource TextMuted}"
                                    TextWrapping="Wrap"
@@ -353,7 +353,7 @@
 
 
             <!-- ================================================= -->
-            <!-- BOTÃO VOLTAR -->
+            <!-- BACK BUTTON -->
             <!-- ================================================= -->
 
             <Button Classes="back-button"
@@ -370,7 +370,7 @@
                                FontWeight="Normal"
                                VerticalAlignment="Center"/>
 
-                    <TextBlock Text="VOLTAR"
+                    <TextBlock Text="BACK"
                                FontSize="17"
                                FontWeight="SemiBold"
                                VerticalAlignment="Center"/>

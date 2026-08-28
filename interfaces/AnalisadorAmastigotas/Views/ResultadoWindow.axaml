@@ -1,7 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="AnalisadorAmastigotas.Views.ResultadoWindow"
-        Title="L.U.M.A. - Resultado da Análise"
+        Title="L.U.M.A. - Analysis Result"
         Icon="/Assets/logo LUMA ficticia.png"
         Width="1200"
         Height="800"
@@ -10,13 +10,13 @@
         WindowStartupLocation="CenterScreen">
 
     <!-- ========================================================= -->
-    <!-- ESTILOS                                                   -->
+    <!-- STYLES                                                    -->
     <!-- ========================================================= -->
 
     <Window.Styles>
 
         <!-- ===================================================== -->
-        <!-- BOTÃO GERAL                                           -->
+        <!-- GENERAL BUTTON                                        -->
         <!-- ===================================================== -->
 
         <Style Selector="Button">
@@ -28,7 +28,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- BOTÕES INFERIORES                                     -->
+        <!-- BOTTOM BUTTONS                                        -->
         <!-- ===================================================== -->
 
         <Style Selector="Button.bottomButton">
@@ -52,7 +52,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- BOTÃO PDF                                             -->
+        <!-- PDF BUTTON                                            -->
         <!-- ===================================================== -->
 
         <Style Selector="Button.pdfButton">
@@ -76,7 +76,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- BOTÃO FECHAR / FINALIZAR                              -->
+        <!-- CLOSE / FINISH BUTTON                                 -->
         <!-- ===================================================== -->
 
         <Style Selector="Button.fecharButton">
@@ -117,7 +117,7 @@
 
 
     <!-- ========================================================= -->
-    <!-- FUNDO                                                     -->
+    <!-- BACKGROUND                                                -->
     <!-- ========================================================= -->
 
     <Grid Background="#F8F6FA">
@@ -130,7 +130,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- CABEÇALHO                                             -->
+        <!-- HEADER                                                 -->
         <!-- ===================================================== -->
 
         <Border
@@ -148,7 +148,7 @@
                 </Grid.ColumnDefinitions>
 
 
-                <!-- MARCA -->
+                <!-- BRAND -->
 
                 <StackPanel
                     Grid.Column="0"
@@ -161,7 +161,7 @@
                         Foreground="#5E2B97"/>
 
                     <TextBlock
-                        Text="RESULTADO DA ANÁLISE"
+                        Text="ANALYSIS RESULT"
                         FontSize="12"
                         FontWeight="Bold"
                         Foreground="#7B5BA6"/>
@@ -200,7 +200,7 @@
                             VerticalAlignment="Center"/>
 
                         <TextBlock
-                            Text="ANÁLISE CONCLUÍDA"
+                            Text="ANALYSIS COMPLETED"
                             FontSize="10"
                             FontWeight="Bold"
                             Foreground="#6838C8"
@@ -216,7 +216,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- CONTEÚDO ROLÁVEL                                      -->
+        <!-- SCROLLABLE CONTENT                                    -->
         <!-- ===================================================== -->
 
         <ScrollViewer
@@ -230,7 +230,7 @@
 
 
                 <!-- ================================================= -->
-                <!-- IDENTIFICAÇÃO DA CONSULTA                         -->
+                <!-- CONSULTATION IDENTIFICATION                       -->
                 <!-- ================================================= -->
 
                 <Border
@@ -245,20 +245,20 @@
                         <StackPanel Spacing="2">
 
                             <TextBlock
-                                Text="IDENTIFICAÇÃO DA CONSULTA"
+                                Text="CONSULTATION IDENTIFICATION"
                                 FontSize="15"
                                 FontWeight="Bold"
                                 Foreground="#5E2B97"/>
 
                             <TextBlock
-                                Text="Dados utilizados nesta análise"
+                                Text="Data used in this analysis"
                                 FontSize="11"
                                 Foreground="#968D9D"/>
 
                         </StackPanel>
 
 
-                        <!-- DADOS -->
+                        <!-- DATA -->
 
                         <Grid>
 
@@ -275,7 +275,7 @@
                             </Grid.RowDefinitions>
 
 
-                            <!-- DOENÇA -->
+                            <!-- DISEASE -->
 
                             <Border
                                 Grid.Row="0"
@@ -302,7 +302,7 @@
                                 Spacing="2">
 
                                 <TextBlock
-                                    Text="DOENÇA"
+                                    Text="EXPERIMENTAL CONDITION (DISEASE)"
                                     FontSize="9"
                                     FontWeight="Bold"
                                     Foreground="#91889A"/>
@@ -316,7 +316,7 @@
                             </StackPanel>
 
 
-                            <!-- LINHAGEM -->
+                            <!-- CELL LINE -->
 
                             <Border
                                 Grid.Row="0"
@@ -344,7 +344,7 @@
                                 Spacing="2">
 
                                 <TextBlock
-                                    Text="LINHAGEM"
+                                    Text="CELL LINE"
                                     FontSize="9"
                                     FontWeight="Bold"
                                     Foreground="#91889A"/>
@@ -358,7 +358,7 @@
                             </StackPanel>
 
 
-                            <!-- LÂMINA -->
+                            <!-- SLIDE -->
 
                             <Border
                                 Grid.Row="1"
@@ -386,7 +386,7 @@
                                 Spacing="2">
 
                                 <TextBlock
-                                    Text="LÂMINA"
+                                    Text="SLIDE"
                                     FontSize="9"
                                     FontWeight="Bold"
                                     Foreground="#91889A"/>
@@ -400,7 +400,7 @@
                             </StackPanel>
 
 
-                            <!-- POÇO -->
+                            <!-- WELL -->
 
                             <Border
                                 Grid.Row="1"
@@ -429,7 +429,7 @@
                                 Spacing="2">
 
                                 <TextBlock
-                                    Text="POÇO"
+                                    Text="WELL"
                                     FontSize="9"
                                     FontWeight="Bold"
                                     Foreground="#91889A"/>
@@ -450,7 +450,7 @@
 
 
                 <!-- ================================================= -->
-                <!-- RESUMO DA ANÁLISE                                 -->
+                <!-- ANALYSIS SUMMARY                                  -->
                 <!-- ================================================= -->
 
                 <Border
@@ -465,13 +465,13 @@
                         <StackPanel Spacing="2">
 
                             <TextBlock
-                                Text="RESUMO DA ANÁLISE"
+                                Text="ANALYSIS SUMMARY"
                                 FontSize="15"
                                 FontWeight="Bold"
                                 Foreground="#5E2B97"/>
 
                             <TextBlock
-                                Text="Panorama geral dos quadrantes avaliados"
+                                Text="Overview of the evaluated quadrants"
                                 FontSize="11"
                                 Foreground="#968D9D"/>
 
@@ -499,7 +499,7 @@
 
 
                 <!-- ================================================= -->
-                <!-- ANÁLISE DOS QUADRANTES                            -->
+                <!-- QUADRANT ANALYSIS                                 -->
                 <!-- ================================================= -->
 
                 <Border
@@ -514,13 +514,13 @@
                         <StackPanel Spacing="2">
 
                             <TextBlock
-                                Text="ANÁLISE DOS QUADRANTES"
+                                Text="QUADRANT ANALYSIS"
                                 FontSize="17"
                                 FontWeight="Bold"
                                 Foreground="#5E2B97"/>
 
                             <TextBlock
-                                Text="Resultados obtidos em cada quadrante da lâmina"
+                                Text="Results obtained from each quadrant of the slide"
                                 FontSize="11"
                                 Foreground="#968D9D"/>
 
@@ -528,7 +528,7 @@
 
 
                         <!-- ================================================= -->
-                        <!-- QUADRANTE 1                                       -->
+                        <!-- QUADRANT 1                                        -->
                         <!-- ================================================= -->
 
                         <Border
@@ -563,7 +563,7 @@
                                         Foreground="#3D1E6D"/>
 
                                     <TextBlock
-                                        Text="Resultado do quadrante"
+                                        Text="Quadrant result"
                                         FontSize="10"
                                         Foreground="#978D9F"/>
 
@@ -611,7 +611,7 @@
 
 
                         <!-- ================================================= -->
-                        <!-- QUADRANTE 2                                       -->
+                        <!-- QUADRANT 2                                        -->
                         <!-- ================================================= -->
 
                         <Border
@@ -646,7 +646,7 @@
                                         Foreground="#3D1E6D"/>
 
                                     <TextBlock
-                                        Text="Resultado do quadrante"
+                                        Text="Quadrant result"
                                         FontSize="10"
                                         Foreground="#978D9F"/>
 
@@ -694,7 +694,7 @@
 
 
                         <!-- ================================================= -->
-                        <!-- QUADRANTE 3                                       -->
+                        <!-- QUADRANT 3                                        -->
                         <!-- ================================================= -->
 
                         <Border
@@ -729,7 +729,7 @@
                                         Foreground="#3D1E6D"/>
 
                                     <TextBlock
-                                        Text="Resultado do quadrante"
+                                        Text="Quadrant result"
                                         FontSize="10"
                                         Foreground="#978D9F"/>
 
@@ -777,7 +777,7 @@
 
 
                         <!-- ================================================= -->
-                        <!-- QUADRANTE 4                                       -->
+                        <!-- QUADRANT 4                                        -->
                         <!-- ================================================= -->
 
                         <Border
@@ -812,7 +812,7 @@
                                         Foreground="#3D1E6D"/>
 
                                     <TextBlock
-                                        Text="Resultado do quadrante"
+                                        Text="Quadrant result"
                                         FontSize="10"
                                         Foreground="#978D9F"/>
 
@@ -864,7 +864,7 @@
 
 
                 <!-- ================================================= -->
-                <!-- RESULTADO FINAL                                   -->
+                <!-- FINAL SLIDE RESULT                                -->
                 <!-- ================================================= -->
 
                 <Border
@@ -883,13 +883,13 @@
                                 Spacing="2">
 
                                 <TextBlock
-                                    Text="RESULTADO FINAL DA LÂMINA"
+                                    Text="FINAL SLIDE RESULT"
                                     FontSize="18"
                                     FontWeight="Bold"
                                     Foreground="#5E2B97"/>
 
                                 <TextBlock
-                                    Text="Resumo consolidado dos dados analisados"
+                                    Text="Consolidated summary of the analyzed data"
                                     FontSize="11"
                                     Foreground="#968D9D"/>
 
@@ -904,7 +904,7 @@
                                 Padding="11,6">
 
                                 <TextBlock
-                                    Text="RESULTADO FINAL"
+                                    Text="FINAL RESULT"
                                     FontSize="9"
                                     FontWeight="Bold"
                                     Foreground="#713BD0"/>
@@ -914,7 +914,7 @@
                         </Grid>
 
 
-                        <!-- MÉTRICAS -->
+                        <!-- METRICS -->
 
                         <Grid>
 
@@ -929,7 +929,7 @@
                             </Grid.ColumnDefinitions>
 
 
-                            <!-- DETECTADAS -->
+                            <!-- DETECTED -->
 
                             <Border
                                 Grid.Column="0"
@@ -942,7 +942,7 @@
                                     Spacing="5">
 
                                     <TextBlock
-                                        Text="CÉLULAS DETECTADAS"
+                                        Text="DETECTED CELLS"
                                         HorizontalAlignment="Center"
                                         FontSize="9"
                                         FontWeight="Bold"
@@ -968,7 +968,7 @@
                                 Margin="0,8"/>
 
 
-                            <!-- GRANDES -->
+                            <!-- LARGE -->
 
                             <Border
                                 Grid.Column="2"
@@ -981,7 +981,7 @@
                                     Spacing="5">
 
                                     <TextBlock
-                                        Text="CÉLULAS GRANDES"
+                                        Text="LARGE CELLS"
                                         HorizontalAlignment="Center"
                                         FontSize="9"
                                         FontWeight="Bold"
@@ -1007,7 +1007,7 @@
                                 Margin="0,8"/>
 
 
-                            <!-- PEQUENAS -->
+                            <!-- SMALL -->
 
                             <Border
                                 Grid.Column="4"
@@ -1020,7 +1020,7 @@
                                     Spacing="5">
 
                                     <TextBlock
-                                        Text="CÉLULAS PEQUENAS"
+                                        Text="SMALL CELLS"
                                         HorizontalAlignment="Center"
                                         FontSize="9"
                                         FontWeight="Bold"
@@ -1046,7 +1046,7 @@
                                 Margin="0,8"/>
 
 
-                            <!-- INFECTADAS -->
+                            <!-- INFECTED -->
 
                             <Border
                                 Grid.Column="6"
@@ -1061,7 +1061,7 @@
                                     Spacing="5">
 
                                     <TextBlock
-                                        Text="CÉLULAS INFECTADAS"
+                                        Text="INFECTED CELLS"
                                         HorizontalAlignment="Center"
                                         FontSize="9"
                                         FontWeight="Bold"
@@ -1082,7 +1082,7 @@
                         </Grid>
 
 
-                        <!-- DESTAQUE FINAL -->
+                        <!-- FINAL HIGHLIGHT -->
 
                         <Border
                             Background="#F5EFFA"
@@ -1113,7 +1113,7 @@
                                 </Border>
 
                                 <TextBlock
-                                    Text="Análise consolidada da lâmina concluída"
+                                    Text="Consolidated slide analysis completed"
                                     FontSize="11"
                                     FontWeight="SemiBold"
                                     Foreground="#6838C8"
@@ -1134,7 +1134,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- BARRA INFERIOR                                       -->
+        <!-- BOTTOM BAR                                            -->
         <!-- ===================================================== -->
 
         <Border
@@ -1161,43 +1161,43 @@
                 <Button
                     x:Name="MenuPrincipalButton"
                     Grid.Column="1"
-                    Content="⌂   MENU PRINCIPAL"
+                    Content="⌂   MAIN MENU"
                     Classes="bottomButton"
                     Width="160"
                     Margin="4,0"
                     Click="MenuPrincipal_Click"/>
 
 
-                <!-- NOVA ANÁLISE -->
+                <!-- NEW ANALYSIS -->
 
                 <Button
                     x:Name="NovaAnaliseButton"
                     Grid.Column="2"
-                    Content="＋   NOVA ANÁLISE"
+                    Content="＋   NEW ANALYSIS"
                     Classes="bottomButton"
                     Width="155"
                     Margin="4,0"
                     Click="NovaAnalise_Click"/>
 
 
-                <!-- SALVAR PDF -->
+                <!-- SAVE PDF -->
 
                 <Button
                     x:Name="SalvarPdfButton"
                     Grid.Column="3"
-                    Content="▣   SALVAR PDF"
+                    Content="▣   SAVE PDF"
                     Classes="pdfButton"
                     Width="145"
                     Margin="4,0"
                     Click="SalvarPdf_Click"/>
 
 
-                <!-- FECHAR -->
+                <!-- CLOSE -->
 
                 <Button
                     x:Name="FecharButton"
                     Grid.Column="4"
-                    Content="✓   FECHAR"
+                    Content="✓   CLOSE"
                     Classes="fecharButton"
                     Width="125"
                     Margin="4,0"

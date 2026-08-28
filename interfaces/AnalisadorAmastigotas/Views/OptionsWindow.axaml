@@ -1,7 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="AnalisadorAmastigotas.Views.OptionsWindow"
-        Title="L.U.M.A. - Opções"
+        Title="L.U.M.A. - Options"
         Icon="/Assets/logo LUMA ficticia.png"
         Width="1200"
         Height="700"
@@ -12,7 +12,7 @@
     <Window.Resources>
 
         <!-- ===================================================== -->
-        <!-- CORES                                                  -->
+        <!-- COLORS                                                  -->
         <!-- ===================================================== -->
 
         <SolidColorBrush x:Key="PageBackground"
@@ -47,7 +47,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- GRADIENTE DA BARRA SUPERIOR                           -->
+        <!-- TOP BAR GRADIENT                                      -->
         <!-- ===================================================== -->
 
         <LinearGradientBrush x:Key="TopBarGradient"
@@ -67,7 +67,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- GRADIENTE DO BOTÃO VOLTAR                             -->
+        <!-- BACK BUTTON GRADIENT                                  -->
         <!-- ===================================================== -->
 
         <LinearGradientBrush x:Key="BackButtonGradient"
@@ -89,13 +89,13 @@
 
 
     <!-- ========================================================= -->
-    <!-- ESTILOS                                                    -->
+    <!-- STYLES                                                    -->
     <!-- ========================================================= -->
 
     <Window.Styles>
 
         <!-- ===================================================== -->
-        <!-- BOTÕES DOS CARDS                                       -->
+        <!-- OPTION CARD BUTTONS                                   -->
         <!-- ===================================================== -->
 
         <Style Selector="Button.option-card">
@@ -128,7 +128,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- HOVER DOS CARDS                                        -->
+        <!-- CARD HOVER                                            -->
         <!-- ===================================================== -->
 
         <Style Selector="Button.option-card:pointerover">
@@ -143,7 +143,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- BOTÃO VOLTAR                                           -->
+        <!-- BACK BUTTON                                           -->
         <!-- ===================================================== -->
 
         <Style Selector="Button.back-button">
@@ -200,7 +200,7 @@
 
 
     <!-- ========================================================= -->
-    <!-- TELA                                                       -->
+    <!-- SCREEN                                                     -->
     <!-- ========================================================= -->
 
     <Grid Background="{StaticResource PageBackground}">
@@ -212,7 +212,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- BARRA SUPERIOR                                        -->
+        <!-- TOP BAR                                                -->
         <!-- ===================================================== -->
 
         <Border Grid.Row="0"
@@ -228,7 +228,7 @@
                            VerticalAlignment="Center"
                            Margin="17,0,0,2"/>
 
-                <TextBlock Text="L.U.M.A. - Opções"
+                <TextBlock Text="L.U.M.A. - Options"
                            FontSize="13"
                            FontWeight="SemiBold"
                            Foreground="#FFFFFF"
@@ -241,7 +241,7 @@
 
 
         <!-- ===================================================== -->
-        <!-- CONTEÚDO                                               -->
+        <!-- CONTENT                                                -->
         <!-- ===================================================== -->
 
         <Grid Grid.Row="1"
@@ -249,14 +249,14 @@
 
 
             <!-- ================================================= -->
-            <!-- FUNDO DECORATIVO                                  -->
+            <!-- DECORATIVE BACKGROUND                              -->
             <!-- ================================================= -->
 
             <Border Background="#F8F6FA"/>
 
 
             <!-- ================================================= -->
-            <!-- MANCHA ROSA SUPERIOR DIREITA                     -->
+            <!-- TOP RIGHT PINK SHAPE                               -->
             <!-- ================================================= -->
 
             <Ellipse Width="330"
@@ -269,7 +269,7 @@
 
 
             <!-- ================================================= -->
-            <!-- MANCHA ROXA INFERIOR ESQUERDA                    -->
+            <!-- BOTTOM LEFT PURPLE SHAPE                           -->
             <!-- ================================================= -->
 
             <Ellipse Width="350"
@@ -282,7 +282,7 @@
 
 
             <!-- ================================================= -->
-            <!-- PONTOS DECORATIVOS — SUPERIOR ESQUERDO            -->
+            <!-- DECORATIVE DOTS — TOP LEFT                         -->
             <!-- ================================================= -->
 
             <StackPanel HorizontalAlignment="Left"
@@ -314,7 +314,7 @@
 
 
             <!-- ================================================= -->
-            <!-- PONTOS DECORATIVOS — INFERIOR DIREITO             -->
+            <!-- DECORATIVE DOTS — BOTTOM RIGHT                    -->
             <!-- ================================================= -->
 
             <StackPanel HorizontalAlignment="Right"
@@ -341,7 +341,7 @@
 
 
             <!-- ================================================= -->
-            <!-- ÁREA CENTRAL                                      -->
+            <!-- CENTRAL AREA                                       -->
             <!-- ================================================= -->
 
             <StackPanel HorizontalAlignment="Center"
@@ -351,7 +351,7 @@
 
 
                 <!-- ============================================= -->
-                <!-- ÍCONE PRINCIPAL                               -->
+                <!-- MAIN ICON                                      -->
                 <!-- ============================================= -->
 
                 <Border Width="105"
@@ -361,7 +361,7 @@
 
                     <Grid>
 
-                        <!-- círculo externo -->
+                        <!-- outer circle -->
 
                         <Ellipse Width="100"
                                  Height="100"
@@ -369,16 +369,16 @@
                                  StrokeThickness="4"
                                  Opacity="0.8"/>
 
-                        <!-- círculo rosa -->
+                        <!-- pink circle -->
 
                         <Ellipse Width="100"
-                                Height="100"
-                                Stroke="#E96AA8"
-                                StrokeThickness="4"
-                                StrokeDashArray="0,18"
-                                Opacity="0.75"/>
+                                 Height="100"
+                                 Stroke="#E96AA8"
+                                 StrokeThickness="4"
+                                 StrokeDashArray="0,18"
+                                 Opacity="0.75"/>
 
-                        <!-- engrenagem -->
+                        <!-- gear -->
 
                         <TextBlock Text="⚙"
                                    FontSize="67"
@@ -394,10 +394,10 @@
 
 
                 <!-- ============================================= -->
-                <!-- TÍTULO                                         -->
+                <!-- TITLE                                          -->
                 <!-- ============================================= -->
 
-                <TextBlock Text="OPÇÕES"
+                <TextBlock Text="OPTIONS"
                            HorizontalAlignment="Center"
                            FontSize="38"
                            FontWeight="Bold"
@@ -406,10 +406,10 @@
 
 
                 <!-- ============================================= -->
-                <!-- SUBTÍTULO                                      -->
+                <!-- SUBTITLE                                       -->
                 <!-- ============================================= -->
 
-                <TextBlock Text="Configurações do sistema"
+                <TextBlock Text="System settings"
                            HorizontalAlignment="Center"
                            FontSize="18"
                            Foreground="{StaticResource TextMuted}"
@@ -417,7 +417,7 @@
 
 
                 <!-- ============================================= -->
-                <!-- LINHA DECORATIVA                               -->
+                <!-- DECORATIVE LINE                                -->
                 <!-- ============================================= -->
 
                 <Border Width="78"
@@ -448,7 +448,7 @@
 
 
                 <!-- ============================================= -->
-                <!-- CARD PRINCIPAL                                 -->
+                <!-- MAIN CARD                                      -->
                 <!-- ============================================= -->
 
                 <Border Width="575"
@@ -467,7 +467,7 @@
 
 
                         <!-- ===================================== -->
-                        <!-- APARÊNCIA                             -->
+                        <!-- APPEARANCE                             -->
                         <!-- ===================================== -->
 
                         <Button Grid.Row="0"
@@ -499,12 +499,12 @@
                                             VerticalAlignment="Center"
                                             Spacing="1">
 
-                                    <TextBlock Text="Aparência"
+                                    <TextBlock Text="Appearance"
                                                FontSize="16"
                                                FontWeight="Bold"
                                                Foreground="{StaticResource TextDark}"/>
 
-                                    <TextBlock Text="Tema e interface"
+                                    <TextBlock Text="Theme and interface"
                                                FontSize="13"
                                                Foreground="{StaticResource TextMuted}"/>
 
@@ -523,7 +523,7 @@
 
 
                         <!-- ===================================== -->
-                        <!-- SEGURANÇA                             -->
+                        <!-- SECURITY                               -->
                         <!-- ===================================== -->
 
                         <Button Grid.Row="0"
@@ -556,12 +556,12 @@
                                             VerticalAlignment="Center"
                                             Spacing="1">
 
-                                    <TextBlock Text="Segurança"
+                                    <TextBlock Text="Security"
                                                FontSize="16"
                                                FontWeight="Bold"
                                                Foreground="{StaticResource TextDark}"/>
 
-                                    <TextBlock Text="Privacidade e acesso"
+                                    <TextBlock Text="Privacy and access"
                                                FontSize="13"
                                                Foreground="{StaticResource TextMuted}"/>
 
@@ -580,7 +580,7 @@
 
 
                         <!-- ===================================== -->
-                        <!-- DADOS                                  -->
+                        <!-- DATA                                   -->
                         <!-- ===================================== -->
 
                         <Button Grid.Row="1"
@@ -612,12 +612,12 @@
                                             VerticalAlignment="Center"
                                             Spacing="1">
 
-                                    <TextBlock Text="Dados"
+                                    <TextBlock Text="Data"
                                                FontSize="16"
                                                FontWeight="Bold"
                                                Foreground="{StaticResource TextDark}"/>
 
-                                    <TextBlock Text="Armazenamento e backup"
+                                    <TextBlock Text="Storage and backup"
                                                FontSize="13"
                                                Foreground="{StaticResource TextMuted}"/>
 
@@ -636,7 +636,7 @@
 
 
                         <!-- ===================================== -->
-                        <!-- SOBRE                                  -->
+                        <!-- ABOUT                                  -->
                         <!-- ===================================== -->
 
                         <Button Grid.Row="1"
@@ -669,12 +669,12 @@
                                             VerticalAlignment="Center"
                                             Spacing="1">
 
-                                    <TextBlock Text="Sobre"
+                                    <TextBlock Text="About"
                                                FontSize="16"
                                                FontWeight="Bold"
                                                Foreground="{StaticResource TextDark}"/>
 
-                                    <TextBlock Text="Versão e informações"
+                                    <TextBlock Text="Version and information"
                                                FontSize="13"
                                                Foreground="{StaticResource TextMuted}"/>
 
@@ -693,7 +693,7 @@
 
 
                         <!-- ===================================== -->
-                        <!-- VOLTAR                                 -->
+                        <!-- BACK                                   -->
                         <!-- ===================================== -->
 
                         <Button Grid.Row="2"
@@ -715,7 +715,7 @@
                                            FontWeight="Normal"
                                            VerticalAlignment="Center"/>
 
-                                <TextBlock Text="VOLTAR"
+                                <TextBlock Text="BACK"
                                            FontSize="16"
                                            FontWeight="Bold"
                                            VerticalAlignment="Center"/>

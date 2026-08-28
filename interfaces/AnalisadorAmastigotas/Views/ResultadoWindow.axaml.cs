@@ -43,12 +43,12 @@ public partial class ResultadoWindow : Window
 
         LaminaTextBlock.Text =
             resultado.Lamina.HasValue
-                ? $"Lâmina {resultado.Lamina}"
+                ? $"Slide {resultado.Lamina}"
                 : "—";
 
         PocoTextBlock.Text =
             resultado.Poco.HasValue
-                ? $"Poço {resultado.Poco}"
+                ? $"Well {resultado.Poco}"
                 : "—";
 
 
@@ -57,9 +57,9 @@ public partial class ResultadoWindow : Window
         // --------------------------------------------------------
 
         QuadrantesTextBlock.Text =
-            $"{resultado.QuadrantesAnalisados} de 4 quadrantes foram analisados.\n"
-            + "O resultado final da lâmina corresponde à média "
-            + "dos quadrantes efetivamente analisados.";
+            $"{resultado.QuadrantesAnalisados} of 4 quadrants were analyzed.\n"
+            + "The final slide result corresponds to the average "
+            + "of the quadrants that were effectively analyzed.";
 
 
         // --------------------------------------------------------
@@ -125,24 +125,24 @@ public partial class ResultadoWindow : Window
 
 
         titulo.Text =
-            $"QUADRANTE {numero}";
+            $"QUADRANT {numero}";
 
 
         if (quadrante == null ||
             !quadrante.Analisado)
         {
             resultadoTextBlock.Text =
-                "Não analisado.";
+                "Not analyzed.";
 
             return;
         }
 
 
         resultadoTextBlock.Text =
-            $"Células detectadas: {quadrante.NumeroCelulas:F2}\n"
-            + $"Células grandes: {quadrante.NumeroCelulasGrandes:F2}\n"
-            + $"Células pequenas: {quadrante.NumeroCelulasPequenas:F2}\n"
-            + $"Células infectadas: {quadrante.NumeroInfectadas:F2}";
+            $"Detected cells: {quadrante.NumeroCelulas:F2}\n"
+            + $"Large cells: {quadrante.NumeroCelulasGrandes:F2}\n"
+            + $"Small cells: {quadrante.NumeroCelulasPequenas:F2}\n"
+            + $"Infected cells: {quadrante.NumeroInfectadas:F2}";
     }
 
 
@@ -178,6 +178,7 @@ public partial class ResultadoWindow : Window
         Close();
     }
 
+
     // ============================================================
     // NOVA ANÁLISE
     // ============================================================
@@ -209,15 +210,15 @@ public partial class ResultadoWindow : Window
             await StorageProvider.SaveFilePickerAsync(
                 new FilePickerSaveOptions
                 {
-                    Title = "Salvar relatório em PDF",
+                    Title = "Save report as PDF",
                     SuggestedFileName =
-                        $"LUMA_Resultado_Lamina_{resultado.Lamina ?? 0}.pdf",
+                        $"LUMA_Analysis_Result_Slide_{resultado.Lamina ?? 0}.pdf",
                     FileTypeChoices =
                     [
-                        new FilePickerFileType("Documento PDF")
+                        new FilePickerFileType("PDF Document")
                         {
                             Patterns =
-                            [   
+                            [
                                 "*.pdf"
                             ]
                         }
@@ -245,16 +246,16 @@ public partial class ResultadoWindow : Window
 
             await MessageBoxService.Mostrar(
                 this,
-                "PDF salvo com sucesso.",
+                "PDF saved successfully.",
                 "L.U.M.A.");
         }
         catch (Exception ex)
         {
             await MessageBoxService.Mostrar(
                 this,
-                "Não foi possível gerar o PDF.\n\n"
+                "The PDF could not be generated.\n\n"
                 + ex.Message,
-                "Erro");
+                "Error");
         }
     }
 
